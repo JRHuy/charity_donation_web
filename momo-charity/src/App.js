@@ -134,7 +134,7 @@ function App() {
 
       <section>
         <div className="container pb-3">
-          <img src="home.png" className="fa fa-fw fa-home" />{" "}
+          <i className="fa fa-fw fa-home" />
           <img src={chevronRight} />
           <span>Ví Nhân Ái</span>
         </div>
