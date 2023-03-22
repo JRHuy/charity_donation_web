@@ -20,10 +20,11 @@ function App() {
     //   </header>
     // </div>
     <div>
+      <section id='1'>
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
           <a className="navbar-brand" href="#">
-            <img src="dollar.png" width="35" height="35" alt="logo" />
+            <img src="momo.png" width="35" height="35" alt="logo" />
           </a>
           <a class="navbar-brand mb-0 h1" href="#">Ví Nhân Ái</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +38,7 @@ function App() {
               <li className="nav-item">
                 <a className="nav-link" href="#">Heo Đất Momo</a>
               </li>
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Hoàn Cảnh Quyên Góp
                 </a>
@@ -68,9 +69,12 @@ function App() {
           </div>
         </nav>
       </div>
-      <hr />
+      </section>
+      <hr/>
+
+      <section>
       <div className='container pb-3'>
-        <img src='home.png' className='fa fa-fw fa-home' /> <img src={chevronRight} /><span>Ví Nhân Ái</span>
+        <img src='home.png' className='fa fa-fw fa-home'/> <img src={chevronRight} /><span>Ví Nhân Ái</span>
       </div>
       <img src="momo_banner.jpg" className='img-fluid' alt='banner' />
       <div className='container p-5'>
@@ -119,6 +123,16 @@ function App() {
           </div>
         </div>
       </div>
+      </section>
+
+      {/* Ví Nhân Ái - Thiện nguyện mỗi ngày */}
+      <section id='block-3'>
+        <div className='p-5'>
+          <h2>Ví Nhân Ái - Thiện nguyện mỗi ngày</h2>
+        </div>
+      </section>
+
+    
     </div>
   );
 }
