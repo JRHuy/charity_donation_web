@@ -44,6 +44,7 @@
 
 #text-header-2 {
   color: #d82f8b;
+  
 }
 
 .title-block-3 {
@@ -276,4 +277,14 @@
 #social {
   width: 30px;
   height: 30px;
+}
+
+#paragraph {
+  font-size: 16px;
+  color: #000000D9;
+
+}
+
+#col-paragraph {
+  padding: 0px 100px;
 }
