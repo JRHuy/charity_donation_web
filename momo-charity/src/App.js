@@ -244,16 +244,62 @@ function App() {
         <div id="text-header-2" className="text-center p-5">
           <h2>Ví Nhân Ái - Thiện nguyện mỗi ngày</h2>
         </div>
-        <div className="container text-center">
+        <div  className="container">
           <div className="row">
-            <div className="col">Column</div>
-            <div className="col-6 mobile-img">
-              <img src="vinhanai.jpeg"
-                className="img-fluid"
-                alt="vi-nhan-ai"
-              />
+            <div id="col-1" className="col">
+              <img id="img-1" src="1.png" className="rounded-4 shadow-4 float-xl-start"
+                alt="ad" style={{width: "100px", height: "90px"}} />
+                <h3 className="title-block-3">Quyên góp nhanh chóng, dễ dàng</h3>
+                <div>
+                <p></p>
+                <p id="text-col" >Chỉ với vài chạm, bạn đã góp phần giúp đỡ 1 hoàn cảnh khó khăn có cuộc sống tốt đẹp hơn.</p>
+                </div>
+                
+                <div> <br/> </div>
+
+                <img id="img-2" src="2.png" className="rounded-4 shadow-4 float-xl-start"
+                  alt="ad" style={{width: "100px", height: "90px"}} />
+                  <h3 className="title-block-3">1000đ cũng là đáng quý</h3>
+                  <div>
+                  <p></p>
+                  <p id="text-col" >Với mức ủng hộ tối thiểu 1.000 đồng, bạn đã cùng hàng triệu nhà hảo tâm khác của “Trái tim MoMo” giúp đỡ những mảnh đời khó khăn.</p>
+                  </div>
             </div>
-            <div className="col">Column</div>
+
+            <div id="col-2" className="col-4">
+
+              <div id="container-image" className="container">
+              <img src="vinhanai.jpeg"
+                   className="rounded mx-auto d-block img-fluid"
+                   alt="vi-nhan-ai"     
+              />
+              <div class="reason-cta absolute bottom-4 w-full text-center">
+                <div class="qrtype-22 w-full md:flex md:items-center md:justify-center">
+                <button type="button" className="btn-primary">QUYÊN GÓP NGAY</button>
+                </div>
+              </div> 
+
+              </div>
+            </div>
+
+            <div id="col-3" className="col">   
+              <img id="img-3" src="3.png" className="rounded-4 shadow-4 float-end"
+                  alt="ad" style={{width: "100px", height: "90px"}} />
+                  <h3 className="title-block-3 text-end">Minh bạch, công khai mọi khoản đóng góp</h3>
+                <div>
+                  <p></p>
+                  <p id="text-col" className="text-end" >Mọi thông tin về hoạt động đóng góp, tài trợ đều được công khai và cập nhật liên tục.</p>
+                </div>
+
+                <div> <br/> </div>
+
+              <img id="img-4" src="4.png" className="rounded-4 shadow-4 float-end" alt="ad" style={{width: "100px", height: "90px"}}/>
+              <h3 className="title-block-3 text-end">Đối tác của các cơ quan, tổ chức hảo tâm uy tín</h3>
+              <div>
+                <p></p>
+                <p id="text-col" className="text-end">“Trái tim MoMo” đã và đang kết nối được với rất nhiều đơn vị bảo trợ, báo chí, đơn vị hảo tâm uy tín trên cả nước.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

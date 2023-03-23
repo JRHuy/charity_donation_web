@@ -38,12 +38,72 @@
   }
 }
 
-#block-3 {
+#block-3{
   background-color: #fafafa;
 }
 
 #text-header-2 {
   color: #d82f8b;
+}
+
+.title-block-3 {
+  color: #D82D8B;
+  font-size: 18px ;
+  margin: 0px 0px 8px;
+  font-weight: 700;
+}
+
+#text-col{
+  font-size: 14px;
+  color: #737373;
+  overflow: hidden; /* can chinh khong bi lech */
+}
+
+#col-1{
+  padding: 40px 8px 0px;
+}
+
+#img-1, #img-2{
+  margin: 0px 0px 0px 90px;
+}
+
+#col-3{
+  padding: 35px 0px 0px 0px;
+}
+
+#img-3 , #img-4{
+  margin: 0px 90px 0px 0px;
+}
+
+.btn-primary{
+  color: #FFFFFFF2;
+  background-color: #D82D8B;
+  font-size: 14px ;
+  padding: 8px 16px;
+  display: inline-block;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  opacity: 1;
+  border-color: rgb(216, 45, 139);
+  font-weight: 700;
+  line-height: 1.25rem;
+  cursor: pointer;
+  border: 0;
+
+  position: absolute;
+  transform: translate(-50%, -150%);
+  -ms-transform: translate(50%, 50%);
+  
+}
+
+.btn-primary:hover{
+  color: #FFFFFFF2;
+  background-color: #a50064;
+}
+
+/* Container needed to position the button. Adjust the width as needed */
+#container-image{
+  position: relative;
 }
 
 #text-header-5 {
