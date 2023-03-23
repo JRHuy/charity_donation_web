@@ -176,3 +176,44 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: auto;
 }
+
+#block-8 {
+  background-color: #171717;
+}
+
+#bottom-menu {
+  color: #fafafa;
+  font-weight: bolder;
+  /* align-items: center; */
+}
+
+#submenu-information, #submenu-link, #submenu-link:visited {
+  color: rgb(229, 229, 229);
+  text-decoration: none;
+  font-size: small;
+}
+
+#submenu-link:hover {
+  color: #fafafa;
+}
+
+#contact {
+  color: #fafafa;
+  font-weight: bolder;
+}
+
+#contact:hover {
+  color: rgb(235, 47, 150);
+}
+
+#for-credit {
+  width: 50%;
+  padding-bottom: 30pt;
+  margin: auto;
+  color: rgb(229, 229, 229);
+}
+
+#social {
+  width: 30px;
+  height: 30px;
+}

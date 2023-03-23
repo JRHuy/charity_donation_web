@@ -1,4 +1,5 @@
 import "./App.css";
+import BottomCredit from "./BottomCredit";
 import chevronRight from "./chevron-right.svg";
 import Partner from "./Partner";
 
@@ -79,7 +80,32 @@ function App() {
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
+                        Bệnh Hiểm Nghèo
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
                         Hoàn Cảnh Khó Khăn
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Hỗ Trợ Giáo Dục
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Đầu Tư Cơ Sở Vật Chất
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Cứu Trợ Động Vật
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Bảo Vệ Môi Trường
                       </a>
                     </li>
                   </ul>
@@ -118,6 +144,11 @@ function App() {
                     <li>
                       <a className="dropdown-item" href="#">
                         Sống Thông Minh
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Sống Vui
                       </a>
                     </li>
                   </ul>
@@ -235,6 +266,10 @@ function App() {
         </div>
       </section>
       <Partner />
+
+
+      {/* Phần thông tin ở cuối trang */}
+      <BottomCredit/>
     </div >
   );
 }

@@ -432,7 +432,7 @@ function Partner() {
                 </button>
 
                 <div className="text-center p-5">
-                    <button type="button" className="btn btn-outline-custom">Xem thêm</button>
+                    <button type="button" className="btn btn-outline-custom">Xem tất cả</button>
                 </div>
             </section>
         </>
