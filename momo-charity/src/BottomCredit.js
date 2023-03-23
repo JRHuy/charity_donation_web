@@ -83,6 +83,8 @@ function BottomCredit() {
                         </div>
                     </div>
                 </div>
+
+                {/* Phần thông tin công ty */}
                 <div className="pt-5">
                     <hr id="for-credit"></hr>
                     <div className="container">
