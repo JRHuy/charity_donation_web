@@ -1,5 +1,6 @@
 import "./App.css";
 import chevronRight from "./chevron-right.svg";
+import Partner from "./Partner";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
             <a className="navbar-brand" href="#">
               <img src="momo.png" width="35" height="35" alt="logo" />
             </a>
-            <a class="navbar-brand mb-0 h1" href="#">
+            <a className="navbar-brand mb-0 h1" href="#">
               Ví Nhân Ái
             </a>
             <button
@@ -57,7 +58,7 @@ function App() {
                 </li>
                 <li className="nav-item dropdown">
                   <a
-                    class="nav-link dropdown-toggle"
+                    className="nav-link dropdown-toggle"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -65,19 +66,19 @@ function App() {
                   >
                     Hoàn Cảnh Quyên Góp
                   </a>
-                  <ul class="dropdown-menu">
+                  <ul className="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a className="dropdown-item" href="#">
                         Vì Trẻ Em
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a className="dropdown-item" href="#">
                         Người Già, Người Khuyết Tật
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a className="dropdown-item" href="#">
                         Hoàn Cảnh Khó Khăn
                       </a>
                     </li>
@@ -93,9 +94,9 @@ function App() {
                     Tin Tức Cộng Đồng
                   </a>
                 </li>
-                <li class="nav-item dropdown">
+                <li className="nav-item dropdown">
                   <a
-                    class="nav-link dropdown-toggle"
+                    className="nav-link dropdown-toggle"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -103,25 +104,21 @@ function App() {
                   >
                     Blog Cuộc Sống
                   </a>
-                  <ul class="dropdown-menu">
+                  <ul className="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a className="dropdown-item" href="#">
                         Sống Tốt
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a className="dropdown-item" href="#">
                         Sống Khỏe
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a className="dropdown-item" href="#">
                         Sống Thông Minh
                       </a>
-                    </li>
-                    <li>
-                      {" "}
-                      <i className="fa fa-fw fa-home"></i>
                     </li>
                   </ul>
                 </li>
@@ -153,7 +150,7 @@ function App() {
                 <div className="col-sm-3">
                   <div className="hstack gap-2">
                     <div
-                      class="vr"
+                      className="vr"
                       style={{ color: "darkviolet", width: "2px" }}
                     ></div>
                     <h5 className="">874</h5>
@@ -163,7 +160,7 @@ function App() {
                 <div className="col-sm-3">
                   <div className="hstack gap-2">
                     <div
-                      class="vr"
+                      className="vr"
                       style={{ color: "darkviolet", width: "2px" }}
                     ></div>
                     <h5>56+ tỷ</h5>
@@ -173,7 +170,7 @@ function App() {
                 <div className="col-sm-3">
                   <div className="hstack gap-2">
                     <div
-                      class="vr"
+                      className="vr"
                       style={{ color: "darkviolet", width: "2px" }}
                     ></div>
                     <h5>777+ triệu</h5>
@@ -183,7 +180,7 @@ function App() {
                 <div className="col-sm-3">
                   <div className="hstack gap-2">
                     <div
-                      class="vr"
+                      className="vr"
                       style={{ color: "darkviolet", width: "2px" }}
                     ></div>
                     <h5>128+ triệu</h5>
@@ -216,20 +213,29 @@ function App() {
         <div id="text-header-2" className="text-center p-5">
           <h2>Ví Nhân Ái - Thiện nguyện mỗi ngày</h2>
         </div>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col">Column</div>
-            <div class="col-6 mobile-img">
-              <img src="1.png"
-                   className="img-fluid"
-                   alt="vi-nhan-ai"
+        <div className="container text-center">
+          <div className="row">
+            <div className="col">Column</div>
+            <div className="col-6 mobile-img">
+              <img src="vinhanai.jpeg"
+                className="img-fluid"
+                alt="vi-nhan-ai"
               />
             </div>
-            <div class="col">Column</div>
+            <div className="col">Column</div>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* Các đối tác đồng hành  */}
+      <section id="block-4">
+        <div id="text-header-2" className="text-center p-5">
+          <h2><b>Các đối tác đồng hành</b></h2>
+          <h5 id="text-header-5" className="text-center">Các tổ chức nhân đạo Phi Lợi Nhuận đồng hành cùng Ví MoMo giúp đỡ các hoàn cảnh khó khăn<br /> trên khắp cả nước.</h5>
+        </div>
+      </section>
+      <Partner />
+    </div >
   );
 }
 
