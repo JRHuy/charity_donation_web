@@ -307,13 +307,12 @@
 }
 
 #card-items {
-    padding-left: 400px;
-    padding-right: 400px;
+    width: 30%;
+    flex-shrink: 0;
 }
 
 #card-context {
     background-color: #fafafa;
-    width: 33.33%;
 }
 
 #card-context:hover {
@@ -421,4 +420,14 @@
 
 #card-title:hover {
     color: #d82f8b;
+}
+
+#info-container {
+    margin-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }

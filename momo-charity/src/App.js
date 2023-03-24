@@ -321,15 +321,13 @@ function App() {
                         </a>
                     </li>
                 </ul>
-                <div className="">
-                    <div className="row">
-                        <div className="col">
-                            <CardItem />
-                        </div>
-                        <div className="col">
-                            <CardItem />
-                        </div>
-                    </div>
+                <div id="info-container">
+                    <CardItem />
+                    <CardItem />
+                    <CardItem />
+                    <CardItem />
+                    <CardItem />
+                    <CardItem />
                 </div>
             </section>
 
