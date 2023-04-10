@@ -431,3 +431,22 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+
+#btn-quyengop {
+    font-size: 0.75rem;
+    width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.count-label {
+    font-size: 0.75rem;
+}
+
+.program-title {
+    font-size: 1rem;
+}
+
+.org-name {
+    font-size: 0.85rem;
+}

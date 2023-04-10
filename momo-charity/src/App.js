@@ -3,6 +3,11 @@ import BottomCredit from "./BottomCredit";
 import chevronRight from "./chevron-right.svg";
 import Partner from "./Partner";
 import CardItem from "./CardItem";
+import Button from "react-bootstrap/button";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 
 function App() {
     return (
@@ -321,14 +326,96 @@ function App() {
                         </a>
                     </li>
                 </ul>
-                <div id="info-container">
+                {/* <div id="info-container">
+                    <CardItem></CardItem>
                     <CardItem />
                     <CardItem />
                     <CardItem />
                     <CardItem />
                     <CardItem />
-                    <CardItem />
-                </div>
+                </div> */}
+                <Container>
+                    <Row xs={1} md={2} lg={3}>
+                        <Col>
+                            <CardItem
+                                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                                dayCount="57"
+                                current="4.459.000đ"
+                                target="150.000.000đ"
+                                pbar="10"
+                                donateCount="612"
+                                donatePercentage="2.97%"
+                            />
+                            <CardItem
+                                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                                dayCount="57"
+                                current="4.459.000đ"
+                                target="150.000.000đ"
+                                pbar="10"
+                                donateCount="612"
+                                donatePercentage="2.97%"
+                            />
+                        </Col>
+                        <Col>
+                            <CardItem
+                                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                                dayCount="57"
+                                current="4.459.000đ"
+                                target="150.000.000đ"
+                                pbar="10"
+                                donateCount="612"
+                                donatePercentage="2.97%"
+                            />
+                            <CardItem
+                                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                                dayCount="57"
+                                current="4.459.000đ"
+                                target="150.000.000đ"
+                                pbar="10"
+                                donateCount="612"
+                                donatePercentage="2.97%"
+                            />
+                        </Col>
+                        <Col>
+                            <CardItem
+                                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                                dayCount="57"
+                                current="4.459.000đ"
+                                target="150.000.000đ"
+                                pbar="10"
+                                donateCount="612"
+                                donatePercentage="2.97%"
+                            />
+                            <CardItem
+                                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                                dayCount="57"
+                                current="4.459.000đ"
+                                target="150.000.000đ"
+                                pbar="10"
+                                donateCount="612"
+                                donatePercentage="2.97%"
+                            />
+                        </Col>
+                    </Row>
+                </Container>
             </section>
 
             {/* Ví Nhân Ái - Thiện nguyện mỗi ngày */}
