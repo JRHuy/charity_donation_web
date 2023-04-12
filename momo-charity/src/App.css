@@ -450,3 +450,31 @@
 .org-name {
     font-size: 0.85rem;
 }
+
+.rmrl-btn{
+    
+    background-color: transparent;
+    border: 0;
+    border-radius: .375rem;
+    box-sizing: border-box;
+    font-weight: 500;
+    color: rgb(59, 130, 246);
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px 15px
+}
+
+.rmrl-btn:hover{
+    
+    /* background-color: rgb(29, 10, 46); */
+    background-color: rgba(239 246 255);
+    opacity: 1;
+
+    border: 100;
+    border-radius: .375rem;
+    box-sizing: border-box;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px 15px
+}
