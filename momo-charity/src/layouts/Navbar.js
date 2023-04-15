@@ -1,27 +1,13 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 
-function Navbar() {
-    // const [stickyNav, setStickyNav] = useState('relative');
-
-    // useEffect(() => {
-    //     window.addEventListener('scroll', stickNavbar);
-    //     return () => window.removeEventListener('scroll', stickNavbar);
-    // }, []);
-
-    // const stickNavbar = () => {
-    //     if (window !== undefined) {
-    //         let windowHeight = window.scrollY;
-    //         windowHeight > 150 ? setStickyNav('fixed top-0 left-0 z-50') : setStickyNav('relative');
-    //     }
-    // };
-
+function NavBar() {
     return (
         <section id="1" className='sticky-top'>
             <div className="container-fluid px-0 d-flex justify-content-center" style={{ backgroundColor: "white" }}>
                 <nav className="navbar navbar-expand-lg bg-body-tertiary">
                     <a className="navbar-brand" href="#">
                         <img
-                            src="momo.png"
+                            src="/momo.png"
                             width="35"
                             height="35"
                             alt="logo"
@@ -188,4 +174,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default NavBar;

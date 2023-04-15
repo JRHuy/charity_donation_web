@@ -74,11 +74,11 @@ function BottomCredit() {
                                 <p>Hotline: <a id="contact">1900 5454 41</a> (1000 đ/phút)</p>
                                 <p>Email: <a id="contact">hotro@momo.vn</a></p>
                                 <p>Tổng đài gọi ra: <a id="contact">028.7306.5555</a> - <a id="contact">028.9999.5555</a></p>
-                                <a href=""><img src="apps/appmomo.png" style={{ width: 200, height: 50 }}></img></a>
+                                <a href=""><img src="/apps/appmomo.png" style={{ width: 200, height: 50 }}></img></a>
                                 <br />
                                 <br />
-                                <a href="" className="pe-3"><img src="apps/appstore.png" style={{ width: 100, height: 30 }}></img></a>
-                                <a href=""><img src="apps/appstore.png" style={{ width: 100, height: 30 }}></img></a>
+                                <a href="" className="pe-3"><img src="/apps/appstore.png" style={{ width: 100, height: 30 }}></img></a>
+                                <a href=""><img src="/apps/appstore.png" style={{ width: 100, height: 30 }}></img></a>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ function BottomCredit() {
                             <div className="col-sm-6">
                                 <div className="row">
                                     <div className="col-md-auto">
-                                        <img src="momo.png" width="55" height="55"></img>
+                                        <img src="/momo.png" width="55" height="55"></img>
                                     </div>
                                     <div className="col-md-10">
                                         <h6 id="bottom-menu">Công Ty Cổ Phần Dịch Vụ Di Động Trực Tuyến (viết tắt M_Service)</h6>
@@ -101,14 +101,14 @@ function BottomCredit() {
                                 </div>
                             </div>
                             <div className="col-sm-3">
-                                <a href="#" className="pe-2"><img src="social/Facebook.png" id="social"></img></a>
-                                <a href="#" className="pe-2"><img src="social/LinkedIn.png" id="social"></img></a>
-                                <a href="#" className="pe-2"><img src="social/youtube.png" id="social"></img></a>
+                                <a href="#" className="pe-2"><img src="/social/Facebook.png" id="social"></img></a>
+                                <a href="#" className="pe-2"><img src="/social/LinkedIn.png" id="social"></img></a>
+                                <a href="#" className="pe-2"><img src="/social/youtube.png" id="social"></img></a>
                                 <p id="submenu-information" className="pt-2">©Copyright M_Service 2023</p>
                             </div>
                             <div className="col-sm-3">
                                 <p id="submenu-information" className="pt-2">Chứng nhận bởi</p>
-                                <a href="#" className="pt-2"><img src="socongthuong.png" id="certification"></img></a>
+                                <a href="#" className="pt-2"><img src="/socongthuong.png" id="certification"></img></a>
                             </div>
                         </div>
                     </div>

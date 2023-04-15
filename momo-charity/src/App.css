@@ -56,7 +56,8 @@
 #text-col {
     font-size: 14px;
     color: #737373;
-    overflow: hidden; /* can chinh khong bi lech */
+    overflow: hidden;
+    /* can chinh khong bi lech */
 }
 
 #col-1 {
@@ -149,7 +150,7 @@
     margin-top: 20px;
 }
 
-.btn-outline-custom {
+#btn-outline-custom {
     border-bottom-color: rgb(216, 45, 139);
     border-bottom-left-radius: 9999px;
     border-bottom-right-radius: 9999px;
@@ -193,7 +194,7 @@
     width: auto;
 }
 
-.btn-outline-custom:hover {
+#btn-outline-custom:hover {
     background-color: rgb(255, 240, 246);
     border-bottom-color: rgb(216, 45, 139);
     border-bottom-left-radius: 9999px;
@@ -382,6 +383,7 @@
     font-weight: 700;
     line-height: 1.25rem;
 }
+
 #donate-btn {
     padding: 5px;
     padding-left: 0.75rem;
@@ -451,8 +453,8 @@
     font-size: 0.85rem;
 }
 
-.rmrl-btn{
-    
+.rmrl-btn {
+
     background-color: transparent;
     border: 0;
     border-radius: .375rem;
@@ -464,8 +466,8 @@
     padding: 4px 15px
 }
 
-.rmrl-btn:hover{
-    
+.rmrl-btn:hover {
+
     /* background-color: rgb(29, 10, 46); */
     background-color: rgba(239 246 255);
     opacity: 1;
@@ -477,4 +479,13 @@
     cursor: pointer;
     display: inline-block;
     padding: 4px 15px
+}
+
+#detailed-photos {
+    width: 357px;
+    height: 268px;
+}
+
+#partner-ProjectDetailed {
+    width: 4rem;
 }
