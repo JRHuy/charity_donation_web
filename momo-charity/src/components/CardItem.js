@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import Badge from "react-bootstrap/Badge";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import { Link } from "react-router-dom";
 
 function CardItem(props) {
     return (
@@ -71,10 +72,12 @@ function CardItem(props) {
         //     </div>
         // </div>
         <Card style={{ width: "20rem" }} className="my-4 mx-auto">
-            <Card.Img variant="top" src={props.image} />
-            <Card.Body>
-                <h5 className="program-title">{props.title}</h5>
-            </Card.Body>
+            <Link to="/details/program" style={{textDecoration:"none", color:"black"}}>
+                <Card.Img variant="top" src={props.image} />
+                <Card.Body>
+                    <h5 className="program-title">{props.title}</h5>
+                </Card.Body>
+            </Link>
             <Card.Footer className="">
                 <div className="d-flex align-items-center gap-2 mt-2">
                     <div className="avatar flex-shrink-0">
