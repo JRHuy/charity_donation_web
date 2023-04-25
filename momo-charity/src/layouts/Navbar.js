@@ -5,7 +5,7 @@ function NavBar() {
         <section id="1" className='sticky-top'>
             <div className="container-fluid px-0 d-flex justify-content-center" style={{ backgroundColor: "white" }}>
                 <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                    <a className="navbar-brand" href="#">
+                    <a className="navbar-brand" href="/">
                         <img
                             src="/momo.png"
                             width="35"
@@ -13,7 +13,7 @@ function NavBar() {
                             alt="logo"
                         />
                     </a>
-                    <a className="navbar-brand mb-0 h1" href="#">
+                    <a className="navbar-brand mb-0 h1" href="/">
                         Ví Nhân Ái
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerContent" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

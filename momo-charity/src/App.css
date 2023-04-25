@@ -130,6 +130,7 @@
     /* width: 349px;
   height: 100px; */
     transition: 0.2s;
+    border-color: #E6E6E6;
 }
 
 #card-doitac:hover {
@@ -463,7 +464,7 @@
     color: rgb(59, 130, 246);
     cursor: pointer;
     display: inline-block;
-    padding: 4px 15px
+    padding: 4px 15px;
 }
 
 .rmrl-btn:hover {
@@ -488,4 +489,16 @@
 
 #partner-ProjectDetailed {
     width: 4rem;
+}
+
+.vertical-line {
+    /* border-left: 6px solid blue;
+    /* height: 200px; */
+    /* height:fit-content;
+    position: absolute;
+    overflow:auto; */
+    /* left: 50%; */
+
+    border-left: solid #E6E6E6;
+    padding-left: 10rem;
 }

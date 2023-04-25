@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Partner() {
     return (
         <>
@@ -432,7 +434,11 @@ function Partner() {
                 </button>
 
                 <div className="text-center p-5">
-                    <button type="button" className="btn" id="btn-outline-custom">Xem tất cả</button>
+                    <button type="button" className="btn" id="btn-outline-custom">
+                        <Link to="/partners" style={{textDecoration:"none", color:"rgb(165, 0, 100)"}}>
+                            Xem tất cả
+                        </Link>
+                    </button>
                 </div>
             </section>
         </>

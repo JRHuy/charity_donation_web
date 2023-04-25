@@ -1,6 +1,6 @@
 import { Button, Card, Carousel, Col, Container, ListGroup, Navbar, ProgressBar, Row, Stack, Tab, Tabs } from "react-bootstrap";
 import chevronRight from "../chevron-right.svg";
-import CardItem from "../CardItem";
+import CardItem from "../components/CardItem";
 import CardProgramInfo from "../components/CardProgramInfo";
 
 function Program() {
@@ -38,7 +38,7 @@ function Program() {
                     </div>
                     <Container fluid>
                         <Row>
-                            <Col md={7}>
+                            <Col md={12} lg={7}>
                                 <Tabs id="tab-content" defaultActiveKey="story" style={{ justifyContent: "left" }}>
                                     {/* <Tab eventKey="circumstance" title="Hoàn cảnh">/</Tab> */}
                                     <Tab eventKey="story" title="Câu chuyện"></Tab>

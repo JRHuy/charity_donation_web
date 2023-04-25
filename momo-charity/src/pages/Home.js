@@ -2,14 +2,14 @@ import "../App.css";
 // import BottomCredit from "./BottomCredit";
 import chevronRight from "../chevron-right.svg";
 import Partner from "../Partner";
-import CardItem from "../CardItem";
+import CardItem from "../components/CardItem";
 import Button from "react-bootstrap/button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 // import Navbar from "./Navbar";
-import ReadMoreReadLess from "../ReadMoreReadLess";
+import ReadMoreReadLess from "../components/ReadMoreReadLess";
 
 function Home() {
     return (
