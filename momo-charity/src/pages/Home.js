@@ -1,7 +1,7 @@
 import "../App.css";
 // import BottomCredit from "./BottomCredit";
 import chevronRight from "../chevron-right.svg";
-import Partner from "../Partner";
+import Partner from "../components/Partner";
 import CardItem from "../components/CardItem";
 import Button from "react-bootstrap/button";
 import "bootstrap/dist/css/bootstrap.min.css";

@@ -1,0 +1,78 @@
+.form4enter{
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background: #191919; */
+    background-color: white;
+    border: 2px solid;
+    border-color: #124d6c;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* .outside{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #34495e;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+} */
+
+input[type="email"], input[type="text"], input[type="password"], input[type="date"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    /* border: 2px solid #3498db; */
+    border: 2px solid #7d7e8f;
+    padding: 14px 10px;
+    width: 250px;
+    outline: none;
+    /* color: white; */
+    color: #34495e;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus{
+    width: 350px;
+    border-color: #d82f8b;
+}
+
+#loginbtn{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #74162a;
+    padding: 14px 40px;
+    width: 100%;
+    outline: none;
+    color: black;
+    /* font-weight: bold; */
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+#loginbtn:hover{
+    background: #74162a;
+    color: azure;
+}
+
+#redirection{
+    color: #677900;
+}
+
+#title_page {
+    font-weight: 500;
+    /* font-weight: lighter; */
+    color: red;
+}
