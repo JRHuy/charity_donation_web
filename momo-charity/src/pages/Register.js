@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import '../styles/style.css';
+import '../styles/style.css';
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ export default function Register() {
         }
     });
 
-    const { userEmail, name, userPassword, phoneNum, citizenIdentityNum, dateOfBirth, gender } = user;
+    const { userEmail, name, userPassword, phoneNum, citizenIdentityNum, dateOfBirth, gender, role } = user;
 
     const onInputChange = (e) => {
         if (e.target.name !== "gender") {

@@ -2,10 +2,12 @@ import Axios from "axios";
 import { useEffect, useState } from "react";
 import { Navbar, Container, Nav, Table, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import '../styles/style.css';
+import '../styles/user_style.css';
 
 export default function UserList() {
     const [users, setUsers] = useState(null);
+    const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+    const [selectedUserId, setSelectedUserId] = useState(null);
 
     let { id } = useParams();
     // const params = useParams();
@@ -17,6 +19,7 @@ export default function UserList() {
     const showUsers = () => {
         Axios.get("http://localhost:8080/api/users").then(res => {
             // console.log(res.data.userID);
+            console.log(res.data);
             setUsers(res.data);
         })
             .catch((err) => {
@@ -28,6 +31,20 @@ export default function UserList() {
         await Axios.delete(`http://localhost:8080/api/user/${id}`);
         showUsers();
     }
+
+    const handleDeleteClick = (id) => {
+        setSelectedUserId(id);
+        setShowConfirmDialog(true);
+    };
+
+    const handleConfirmDelete = () => {
+        deleteUser(selectedUserId);
+        setShowConfirmDialog(false);
+    };
+
+    const handleCancelDelete = () => {
+        setShowConfirmDialog(false);
+    };
 
     return (
         <>
@@ -53,7 +70,7 @@ export default function UserList() {
                             <th>Citizen Identity Number</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Password</th>
+                            <th>Active State</th>
                             <th>Date Of Birth</th>
                             <th>Gender</th>
                             <th>Action</th>
@@ -68,12 +85,12 @@ export default function UserList() {
                                     <td>{user?.citizenIdentityNum}</td>
                                     <td>{user?.name}</td>
                                     <td>{user?.userEmail}</td>
-                                    <td>{user?.userPassword}</td>
+                                    <td>{user?.isActive.toString()}</td>
                                     <td>{user?.dateOfBirth}</td>
                                     <td>{user?.gender}</td>
                                     <td>
                                         <Button href={`/admin/user/edit/${user?.userID}`} className="mx-2" variant="outline-primary">Edit</Button>
-                                        <Button variant="outline-danger" onClick={() => deleteUser(user?.userID)}>Delete</Button>
+                                        <Button variant="outline-danger" onClick={() => handleDeleteClick(user?.userID)}>Delete</Button>
                                     </td>
                                 </tr>
                             ))
@@ -81,6 +98,29 @@ export default function UserList() {
                     </tbody>
                 </Table>
             </Container>
+
+            {showConfirmDialog && (
+                <div className='modal-overlay'>
+                    <div className='modalContainer'>
+                        <h3>Xác nhận</h3>
+                        <p>Bạn có chắc chắn muốn xóa người dùng này?</p>
+                        <div>
+                            <button
+                                className='btn btn-confirm btn-danger'
+                                onClick={handleConfirmDelete}
+                            >
+                                Xóa
+                            </button>
+                            <button
+                                className='btn btn-cancel btn-secondary'
+                                onClick={handleCancelDelete}
+                            >
+                                Hủy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
         </>
     )
