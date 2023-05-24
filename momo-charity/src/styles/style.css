@@ -1,16 +1,17 @@
 .form4enter{
-    width: 500px;
+    width: 750px;
     padding: 40px;
-    position: absolute;
+    /* position: absolute; */
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    /* transform: translate(-50%,-50%); */
     /* background: #191919; */
     background-color: white;
     border: 2px solid;
     border-color: #124d6c;
     text-align: center;
     border-radius: 20px;
+    margin: 0 auto;
 }
 
 /* .outside{
@@ -27,7 +28,8 @@ input[type="email"], input[type="text"], input[type="password"], input[type="dat
     border: 0;
     background: none;
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
+    /* justify-content: center; */
     text-align: center;
     /* border: 2px solid #3498db; */
     border: 2px solid #7d7e8f;
@@ -40,9 +42,32 @@ input[type="email"], input[type="text"], input[type="password"], input[type="dat
     transition: 0.25s;
 }
 
+#phoneNum, #userPassword {
+    width: 350px;
+}
+
+#showPasswordBtn {
+    border: 0;
+    background: none;
+    display: block;
+    /* border: 2px solid #3498db; */
+    /* border: 2px solid #7d7e8f; */
+    /* padding: 10px; */
+    /* width: 250px; */
+    outline: none;
+    color: #34495e;
+    border-radius: 24px;
+    margin-left: -50px;
+}
+
 input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus{
     width: 350px;
     border-color: #d82f8b;
+    /* margin: 10px; */
+}
+
+#phoneNum:focus, #userPassword:focus {
+    width: 450px;
 }
 
 #loginbtn{

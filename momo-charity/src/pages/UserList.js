@@ -3,11 +3,14 @@ import { useEffect, useState } from "react";
 import { Navbar, Container, Nav, Table, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import '../styles/user_style.css';
+import AuthService from "../services/AuthService";
 
 export default function UserList() {
     const [users, setUsers] = useState(null);
     const [showConfirmDialog, setShowConfirmDialog] = useState(false);
     const [selectedUserId, setSelectedUserId] = useState(null);
+    const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState(null);
 
     let { id } = useParams();
     // const params = useParams();
@@ -19,11 +22,13 @@ export default function UserList() {
     const showUsers = () => {
         Axios.get("http://localhost:8080/api/users").then(res => {
             // console.log(res.data.userID);
-            console.log(res.data);
             setUsers(res.data);
         })
             .catch((err) => {
+                setError(true);
+                // console.log(err.response.data.message);
                 console.log(err);
+                setErrorMessage(err.response.data.message);
             })
     }
 
@@ -46,6 +51,10 @@ export default function UserList() {
         setShowConfirmDialog(false);
     };
 
+    const logout = () => {
+        AuthService.logout();
+    }
+
     return (
         <>
             <Navbar bg="dark" variant="dark">
@@ -55,6 +64,9 @@ export default function UserList() {
                         <Nav.Link href="#home">User</Nav.Link>
                         <Nav.Link href="#features">Program</Nav.Link>
                         <Nav.Link href="#pricing">Partner</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        <Button variant="danger" onClick={logout}>Log out</Button>
                     </Nav>
                 </Container>
             </Navbar>
@@ -73,6 +85,7 @@ export default function UserList() {
                             <th>Active State</th>
                             <th>Date Of Birth</th>
                             <th>Gender</th>
+                            <th>Role</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -88,6 +101,7 @@ export default function UserList() {
                                     <td>{user?.isActive.toString()}</td>
                                     <td>{user?.dateOfBirth}</td>
                                     <td>{user?.gender}</td>
+                                    <td>{user?.roleID}</td>
                                     <td>
                                         <Button href={`/admin/user/edit/${user?.userID}`} className="mx-2" variant="outline-primary">Edit</Button>
                                         <Button variant="outline-danger" onClick={() => handleDeleteClick(user?.userID)}>Delete</Button>
@@ -121,6 +135,13 @@ export default function UserList() {
                     </div>
                 </div>
             )}
+
+            {error ?
+                <div className="alert alert-danger" role="alert">
+                    {/* Full authentication is required to access this resource */}
+                    {errorMessage}
+                </div>
+                : ""}
 
         </>
     )

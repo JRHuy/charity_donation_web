@@ -280,8 +280,8 @@ function Home() {
                                     className="rounded mx-auto d-block img-fluid"
                                     alt="vi-nhan-ai"
                                 />
-                                <div class="reason-cta absolute bottom-4 w-full text-center">
-                                    <div class="qrtype-22 w-full md:flex md:items-center md:justify-center">
+                                <div className="reason-cta absolute bottom-4 w-full text-center">
+                                    <div className="qrtype-22 w-full md:flex md:items-center md:justify-center">
                                         <button type="button" className="btn-primary">
                                             QUYÊN GÓP NGAY
                                         </button>

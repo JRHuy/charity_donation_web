@@ -11,7 +11,6 @@ function Partner() {
                         {/* Slide đầu tiên */}
                         <div className="carousel-item active">
                             <div className="row">
-                                {/* <div class="overflow-auto row flex-row flex-nowrap mt-4 pb-4 pt-2"> */}
                                 <div className="col-sm-6 col-md-4">
                                     <div className="card" id="card-doitac">
                                         {/* make card as a button using stretched-link */}

@@ -1,19 +1,9 @@
 import Axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { setAuthToken } from "../components/setAuthToken";
 
-export default function Login() {
-    // const required = (value) => {
-    //     if (!value) {
-    //         return (
-    //             <div className="alert alert-danger" role="alert">
-    //                 This field is required!
-    //             </div>
-    //         )
-    //     }
-    // }
-
+function Login() {
     let navigate = useNavigate();
 
     const [user, setUser] = useState({
@@ -22,6 +12,11 @@ export default function Login() {
     });
 
     const [error, setError] = useState(false);
+
+    const [showPassword, setShowPassword] = useState(false);
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
 
     const { userPassword, phoneNum } = user;
 
@@ -38,21 +33,24 @@ export default function Login() {
             Axios.post("http://localhost:8080/api/auth/login", user)
                 .then(res => {
                     const token = res.data.token;
+                    // console.log(res.data.role[0].authority);
+                    const authority = res.data.role[0].authority;
 
                     // save token to local storage
                     localStorage.setItem("token", token);
+                    localStorage.setItem("authority", authority);
 
                     // set token to headers
                     setAuthToken(token);
 
-                    // window.location.href = '/';
-                    navigate('/admin/users');
+                    // navigate('/admin/users');
+                    navigate('/');
                 }).catch(err => console.log(err));
         }
     };
 
     return (
-        <div className="outside">
+        <div className="container">
             <div className="form4enter">
                 <div className="row justify-content-center">
                     <h3 id='title_page' className="text-center text-secondary mt-5 mb-3">LOGIN</h3>
@@ -65,8 +63,31 @@ export default function Login() {
                                 This field is required!
                             </div>
                             : ""}
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <input type="password" name="userPassword" id="userPassword" className="form-control" placeholder="Enter password" value={userPassword} onChange={(e) => onInputChange(e)} />
+                        </div> */}
+                        <div className="form-group" style={{ display: "inline-flex", justifyContent: "center" }}>
+                            <input
+                                type={showPassword ? 'text' : 'password'}
+                                name="userPassword"
+                                id="userPassword"
+                                className="form-control"
+                                placeholder="Enter password"
+                                value={userPassword}
+                                onChange={(e) => onInputChange(e)}
+                            />
+                            <button
+                                type="button"
+                                className="btn btn-outline-secondary"
+                                id='showPasswordBtn'
+                                onClick={toggleShowPassword}
+                            >
+                                {showPassword ? (
+                                    <i className="fa fa-eye"></i>
+                                ) : (
+                                    <i className="fa fa-eye-slash"></i>
+                                )}
+                            </button>
                         </div>
                         {error && userPassword.length <= 0 ?
                             <div className="alert alert-danger" role="alert">
@@ -77,11 +98,13 @@ export default function Login() {
                             <button type="submit" value="register" id="loginbtn">LOGIN</button>
                         </div>
                     </form>
-                    {/* <div className="redirection">
-                        <a href="" id="redirection">Back To Login Page</a>
-                    </div> */}
+                    <div className="redirection">
+                        <p>Don't have an account yet? <Link to={"/register"} id="redirection">Register Now</Link></p>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
+
+export default Login;

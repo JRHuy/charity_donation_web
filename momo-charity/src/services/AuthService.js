@@ -24,7 +24,9 @@ class AuthService {
     }
 
     logout() {
-        localStorage.removeItem("token");
+        // localStorage.removeItem("token");
+        // localStorage.removeItem("authority");
+        localStorage.clear();
         window.location.href = '/login';
     }
 }

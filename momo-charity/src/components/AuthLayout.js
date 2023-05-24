@@ -10,21 +10,21 @@ function hasJWT() {
     return flag
 }
 
-const AuthLayout = () => {
-    let isAuthenticated = hasJWT();
+function isAllowedRole(allowedRole) {
+    let authority = localStorage.getItem("authority");
+    if (authority === allowedRole) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-    // return (
-    //     <Route {...rest}
-    //         render={props => (
-    //             hasJWT() ?
-    //                 <Component {...props} />
-    //                 :
-    //                 <Link to={{ pathname: '/login' }} />
-    //         )}
-    //     />
-    // );
+const AuthLayout = ({ allowedRole }) => {
+    let isAuthenticated = hasJWT();
+    let role = isAllowedRole(allowedRole);
+
     return (
-        isAuthenticated ? <Outlet /> : <Navigate to={"/login"}  />
+        (isAuthenticated && role) ? <Outlet /> : <Navigate to={"/unauthorized"} />
     )
 };
 
