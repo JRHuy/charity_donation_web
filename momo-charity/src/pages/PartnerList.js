@@ -3,8 +3,12 @@ import chevronRight from "../chevron-right.svg";
 import PartnerCard from "../components/PartnerCard";
 import ReadMoreReadLess from "../components/ReadMoreReadLess";
 import CardItem from "../components/CardItem";
+import { useEffect } from "react";
 
 function PartnerList() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <section id="partnerlist">
@@ -17,7 +21,9 @@ function PartnerList() {
                 </div>
                 {/* list of partners */}
                 <Row>
-                    <Col xs={12} style={{ opacity: "0.5" }}><hr /></Col>
+                    <Col xs={12} style={{ opacity: "0.5" }}>
+                        <hr />
+                    </Col>
                 </Row>
                 <Container>
                     <Row>
@@ -123,7 +129,7 @@ function PartnerList() {
                             </Row>
 
                             <div className="m-3">
-                                <ReadMoreReadLess >
+                                <ReadMoreReadLess>
                                     <Row>
                                         <Col sm={6} xs={12} className="mt-3">
                                             <PartnerCard
@@ -302,14 +308,20 @@ function PartnerList() {
                             />
 
                             <div className="text-center p-3">
-                                <button type="button" className="btn" id="btn-outline-custom">Xem tất cả</button>
+                                <button
+                                    type="button"
+                                    className="btn"
+                                    id="btn-outline-custom"
+                                >
+                                    Xem tất cả
+                                </button>
                             </div>
                         </Col>
                     </Row>
                 </Container>
             </section>
         </>
-    )
+    );
 }
 
 export default PartnerList;
