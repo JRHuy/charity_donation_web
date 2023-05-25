@@ -116,6 +116,7 @@
 #doitac {
     font-weight: bold;
     color: #d82f8b;
+    /* position: absolute; */
 }
 
 /* partner description */
@@ -123,6 +124,8 @@
     font-size: small;
     color: #737373;
     font-weight: normal;
+    margin-top: .600rem;
+    line-height: 1rem;
 }
 
 #card-doitac {
@@ -139,8 +142,11 @@
 
 #xemchitiet {
     font-weight: normal;
-    font-size: smaller;
+    font-size: 80%;
+    /* font-size: .9375rem; */
+    cursor: pointer;
     /* color: blue; */
+    /* padding-block-start: 75px; */
 }
 
 #row-doitac {
@@ -501,4 +507,38 @@
 
     border-left: solid #E6E6E6;
     padding-left: 10rem;
+}
+
+
+/* Partner list style css */
+.text-momo {
+    color: rgb(216 45 139);
+}
+.font-bold {
+    font-weight: 700;
+}
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.mb-3 {
+    margin-bottom: .75rem;
+    font-size: 24px;
+}
+.mb-4 {
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+.items-center {
+    align-items: center;
+}
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding-left: 49px;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }

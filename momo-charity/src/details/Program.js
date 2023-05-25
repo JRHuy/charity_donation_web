@@ -2,10 +2,17 @@ import { Button, Card, Carousel, Col, Container, ListGroup, Navbar, ProgressBar,
 import chevronRight from "../chevron-right.svg";
 import CardItem from "../components/CardItem";
 import CardProgramInfo from "../components/CardProgramInfo";
+import {Helmet} from "react-helmet";
 
 function Program() {
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Những câu chuyện thực tế và chương trình từ thiện | MoMo</title>
+                {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                <meta name="description" content="Program" />
+            </Helmet>
             <section id="detailedProgram">
                 <div className="container pb-3">
                     <i className="fa fa-fw fa-home" />

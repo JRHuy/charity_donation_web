@@ -4,6 +4,7 @@ import { Navbar, Container, Nav, Table, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import '../styles/user_style.css';
 import AuthService from "../services/AuthService";
+import {Helmet} from "react-helmet";
 
 export default function UserList() {
     const [users, setUsers] = useState(null);

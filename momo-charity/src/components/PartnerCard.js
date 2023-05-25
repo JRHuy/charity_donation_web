@@ -7,7 +7,7 @@ function PartnerCard(props) {
                     <div className="row card-body">
                         <img className="col-sm-6" src={props.partnerImg} style={{ width: 80, height: 60 }} />
                         <div className="col-sm-auto">
-                            <h6 className="card-title" id="doitac">
+                            <h6 className="card-title text-wrap" id="doitac">
                                 {props.partnerName}
                                 <br />
                                 <p className="card-text" id="card-description">{props.partnerDescription}</p>
