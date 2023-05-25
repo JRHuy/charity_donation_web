@@ -3,6 +3,7 @@ import '../styles/style.css';
 import Axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
+import {Helmet} from "react-helmet";
 
 export default function Register() {
     let navigate = useNavigate();

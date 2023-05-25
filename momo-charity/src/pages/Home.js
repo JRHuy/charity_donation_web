@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import {Helmet} from "react-helmet";
 // import Navbar from "./Navbar";
 import ReadMoreReadLess from "../components/ReadMoreReadLess";
 
@@ -16,6 +17,12 @@ function Home() {
         <div>
             {/* ------------------ Section 1 ----------------- */}
             {/* <Navbar /> */}
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Ví Nhân Ái - Triệu người chung tay quyên góp vì một Việt Nam tốt đẹp hơn | MoMo</title>
+                {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                <meta name="description" content="Home" />
+            </Helmet>
 
             <section id="block-2">
                 <div className="container pb-3">

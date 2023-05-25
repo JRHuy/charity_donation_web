@@ -4,13 +4,21 @@ import PartnerCard from "../components/PartnerCard";
 import ReadMoreReadLess from "../components/ReadMoreReadLess";
 import CardItem from "../components/CardItem";
 import { useEffect } from "react";
+import '../App.css';
+import {Helmet} from "react-helmet";
 
 function PartnerList() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
     return (
-        <>
+        <>  
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Các tổ chức quỹ từ thiện giúp đỡ cộng đồng đồng hành cùng MoMo</title>
+                {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                <meta name="description" content="PartnerList" />
+            </Helmet>
             <section id="partnerlist">
                 <div className="container pb-3">
                     <i className="fa fa-fw fa-home" />
@@ -28,29 +36,29 @@ function PartnerList() {
                 <Container>
                     <Row>
                         <Col md={12} lg={8}>
-                            <h4>Các đối tác đồng hành</h4>
+                            <h4 className="text-momo opacity-100 mb-3 text-2xl font-bold">Các đối tác đồng hành</h4>
                             <Row>
                                 <Col sm={6} xs={12} className="mt-3">
                                     <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
-                                        partnerName="Saigon Children's Charity"
-                                        partnerDescription="Hỗ trợ trẻ em"
+                                        partnerImg="doitac/sucmanh2000.jpeg"
+                                        partnerName="Sức mạnh 2000"
+                                        partnerDescription="Tiền lẻ mỗi ngày xây ngay nghìn trường mới"
                                     />
                                 </Col>
                                 <Col className="mt-3">
                                     <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
-                                        partnerName="Saigon Children's Charity"
-                                        partnerDescription="Hỗ trợ trẻ em"
+                                        partnerImg="doitac/quyhyvong.jpeg"
+                                        partnerName="Quỹ Hy Vọng"
+                                        partnerDescription="Hỗ trợ các hoàn cảnh khó khăn"
                                     />
                                 </Col>
                             </Row>
                             <Row>
                                 <Col sm={6} xs={12} className="mt-3">
                                     <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
-                                        partnerName="Saigon Children's Charity"
-                                        partnerDescription="Hỗ trợ trẻ em"
+                                        partnerImg="doitac/MSD.jpeg"
+                                        partnerName="Viện Nghiên cứu Quản lý Phát triển bền vững (MSD)"
+                                        partnerDescription="Bảo vệ các đối tượng có hoàn cảnh khó khăn"
                                     />
                                 </Col>
                                 <Col className="mt-3">
@@ -267,7 +275,7 @@ function PartnerList() {
                         </Col>
 
                         <Col className="vertical-line">
-                            <h5>Hoàn cảnh quyên góp mới nhất</h5>
+                            <h5 className="mb-4 flex items-center text-xl font-bold text-momo">Hoàn cảnh quyên góp mới nhất</h5>
                             <CardItem
                                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
                                 title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"

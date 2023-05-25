@@ -12,6 +12,7 @@ import AuthService from "./services/AuthService";
 import AuthVerify from "./common/auth-verify";
 import AuthLayout from "./components/AuthLayout";
 import NoPage from "./pages/NoPage";
+import {Helmet} from "react-helmet";
 
 function App() {
   // check jwt
