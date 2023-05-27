@@ -1,13 +1,19 @@
 package com.example.demo.controller;
-
-
+import com.example.demo.DTO.MoneyFormDTO;
+import com.example.demo.exception.NotEnoughMoneyException;
+import com.example.demo.exception.ProgramNotFoundException;
 import com.example.demo.exception.TransactionNotFoundException;
+import com.example.demo.exception.UserNotFoundException;
+import com.example.demo.model.Program;
+import com.example.demo.model.Transaction;
 import com.example.demo.model.TransactionHistory;
+import com.example.demo.model.User;
+import com.example.demo.repository.ProgramRepository;
 import com.example.demo.repository.TransactionRepository;
+import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.text.DateFormat;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -15,7 +21,13 @@ public class TransactionController {
 
     @Autowired
     private TransactionRepository transactionRepository;
+    @Autowired
+    private UserRepository userRepository;
 
+    @Autowired
+    private ProgramRepository programRepository;
+
+    LocalDateTime now = LocalDateTime.now();
     @PostMapping("/transaction")
     TransactionHistory newTransaction(@RequestBody TransactionHistory newTransaction) {
 
@@ -39,7 +51,6 @@ public class TransactionController {
         return transactionRepository.findById(id)
                 .map(transaction -> {
                     transaction.setTransactionTime(newTransaction.getTransactionTime());
-                    transaction.setActive(newTransaction.isActive());
                     transaction.setMoney(newTransaction.getMoney());
                     transaction.setDateConfirm(newTransaction.getDateConfirm());
                     transaction.setUser(newTransaction.getUser());
@@ -56,4 +67,74 @@ public class TransactionController {
         transactionRepository.deleteById(id);
         return "Transaction with id " + id + " has been deleted.";
     }
+
+    @PostMapping("api/user/deposit")
+    User depositMoney(@RequestBody MoneyFormDTO moneyFormDTO) {
+        return userRepository.findById(moneyFormDTO.getId())
+                .map(user -> {
+                    user.setMoney(user.getMoney().add(moneyFormDTO.getMoney()));
+                    saveToTransaction(user);
+                    return userRepository.save(user);
+                })
+                .orElseThrow(() -> new UserNotFoundException(moneyFormDTO.getId()));
+    }
+
+    void saveToTransaction(User user) {
+        TransactionHistory transactionHistory = TransactionHistory.builder()
+                .user(user)
+                .money(user.getMoney())
+                .transaction(Transaction.AddMoney)
+                .transactionTime(now)
+                .build();
+        transactionRepository.save(transactionHistory);
+    }
+
+    @PostMapping("api/user/donate")
+    TransactionHistory donate(@RequestBody TransactionHistory transactionHistory){
+        User user = transactionHistory.getUser();
+        Program program = transactionHistory.getProgram();
+        MoneyFormDTO userDonate = new MoneyFormDTO(user.getUserID(), transactionHistory.getMoney());
+        boolean checkCondition = takeMoney(userDonate);
+        if (checkCondition) {
+            MoneyFormDTO addMoneyToProgram = new MoneyFormDTO(program.getProgramID(), transactionHistory.getMoney());
+            boolean success = addMoneyProgram(addMoneyToProgram);
+            if (success) {
+                TransactionHistory newTransactionHistory = TransactionHistory.builder()
+                        .user(transactionHistory.getUser())
+                        .program(transactionHistory.getProgram())
+                        .money(transactionHistory.getMoney())
+                        .transaction(Transaction.Donate)
+                        .transactionTime(now)
+                        .build();
+                return transactionRepository.save(newTransactionHistory);
+            }
+        }
+        return null;
+
+    }
+
+    boolean takeMoney(MoneyFormDTO userDonate) {
+        User user = userRepository.findById(userDonate.getId()).orElseThrow(() -> new UserNotFoundException(userDonate.getId()));
+        System.out.println(user.getMoney());
+        System.out.println(userDonate.getMoney());
+        // check if user have enough money (cannot donate more money than the amount user has
+        if (userDonate.getMoney().compareTo(user.getMoney()) == -1) {
+            user.setMoney(user.getMoney().subtract(userDonate.getMoney()));
+            userRepository.save(user);
+            return true;
+        }
+        throw new NotEnoughMoneyException();
+//        return false;
+    }
+
+    boolean addMoneyProgram(MoneyFormDTO moneyFormDTO) {
+//        Program = programRepository.findById(moneyFormDTO.getId()).orElseThrow(() -> new UserNotFoundException(moneyFormDTO.getId()));
+         return programRepository.findById(moneyFormDTO.getId())
+                 .map(addMoney->{
+                     addMoney.setCurrentMoney(addMoney.getCurrentMoney().add(moneyFormDTO.getMoney()));
+                     programRepository.save(addMoney);
+                     return true;
+                 }).orElseThrow(() -> new ProgramNotFoundException(moneyFormDTO.getId()));
+    }
+
 }

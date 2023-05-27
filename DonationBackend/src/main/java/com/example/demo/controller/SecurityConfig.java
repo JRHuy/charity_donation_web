@@ -69,8 +69,7 @@ public class SecurityConfig {
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeHttpRequests()
-//                Sau nay dung sau
-                .requestMatchers("/api/auth/login", "api/users", "api/user","/**").permitAll()
+                .requestMatchers("/api/auth/login", "api/users", "api/user/**", "/**").permitAll()
                 .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());

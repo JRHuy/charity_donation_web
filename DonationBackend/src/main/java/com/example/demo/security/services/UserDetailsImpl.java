@@ -7,6 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
@@ -24,9 +25,10 @@ public class UserDetailsImpl implements UserDetails {
     private String gender;
 
     private Role.RoleName role;
+    private BigDecimal money;
 
     public UserDetailsImpl(int userID, boolean isActive, String phoneNum, String citizenIdentityNum, String name, String userEmail, String userPassword,
-                           LocalDate dateOfBirth, String gender, Role.RoleName role) {
+                           LocalDate dateOfBirth, String gender, Role.RoleName role, BigDecimal money) {
         this.userID = userID;
         this.isActive = isActive;
         this.phoneNum = phoneNum;
@@ -37,6 +39,7 @@ public class UserDetailsImpl implements UserDetails {
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.role = role;
+        this.money = money;
     }
 
     public static UserDetailsImpl build(User user) {
@@ -50,7 +53,8 @@ public class UserDetailsImpl implements UserDetails {
                 user.getUserPassword(),
                 user.getDateOfBirth(),
                 user.getGender(),
-                user.getRole().getRoleName());
+                user.getRole().getRoleName(),
+                user.getMoney());
     }
 
     @Override

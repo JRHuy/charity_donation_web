@@ -2,13 +2,17 @@ package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 //import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@NoArgsConstructor
 public class User implements Serializable {
 //    private static final long serialVersionUID = 1L;
     @Id
@@ -29,12 +33,14 @@ public class User implements Serializable {
     private LocalDate dateOfBirth;
     private String gender;
 
-    @JsonBackReference
+    private BigDecimal money;
+
+//    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "roleID")
     private Role role;
-    public User() {
-    }
+//    public User() {
+//    }
 
     public User(boolean isActive, String phoneNum, String citizenIdentityNum, String name, String userEmail, String userPassword, LocalDate dateOfBirth, String gender, Role role) {
         this.isActive = isActive;
@@ -46,6 +52,7 @@ public class User implements Serializable {
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.role = role;
+        this.money = BigDecimal.valueOf(0.00);
     }
 
     public int getUserID() {
@@ -126,5 +133,13 @@ public class User implements Serializable {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    public void setMoney(BigDecimal money) {
+        this.money = money;
     }
 }

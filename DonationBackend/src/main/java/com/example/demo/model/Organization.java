@@ -16,7 +16,7 @@ public class Organization implements Serializable {
     @Id
     @Column(name = "organizationID")
     @GeneratedValue
-    private Short organizationID;
+    private int organizationID;
 
     @Column(name = "programName", length = 50, nullable = false)
     private String programName;
@@ -24,18 +24,18 @@ public class Organization implements Serializable {
     @Column(name = "description", length = 100, nullable = false)
     private String description;
 
-    private Short numOfProjects, projectSucceeded;
+    private int numOfProjects, projectSucceeded;
 
     private BigDecimal ogDonate;
 
     @OneToMany (mappedBy = "organizationID")
     private List<Program> program;
 
-    public Short getOrganizationID() {
+    public int getOrganizationID() {
         return organizationID;
     }
 
-    public void setOrganizationID(Short organizationID) {
+    public void setOrganizationID(int organizationID) {
         this.organizationID = organizationID;
     }
 
@@ -55,15 +55,15 @@ public class Organization implements Serializable {
         this.description = description;
     }
 
-    public short getNumOfProjects() {
+    public int getNumOfProjects() {
         return numOfProjects;
     }
 
-    public void setNumOfProjects(Short numOfProjects) {
+    public void setNumOfProjects(int numOfProjects) {
         this.numOfProjects = numOfProjects;
     }
 
-    public Short getProjectSucceeded() {
+    public int getProjectSucceeded() {
         return projectSucceeded;
     }
 
