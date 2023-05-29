@@ -542,3 +542,9 @@
     flex-wrap: wrap;
     justify-content: flex-start;
 }
+
+#login {
+    color: white;
+    background-color: #d82d8b;
+    border-color: #d82d8b;
+}

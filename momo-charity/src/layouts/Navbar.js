@@ -1,6 +1,12 @@
-// import React, { useEffect, useState } from 'react';
+import { Button, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import AuthService from "../services/AuthService";
 
-function NavBar() {
+const logout = () => {
+    AuthService.logout();
+  }
+
+const NavBar = ({ user }) => {
     return (
         <section id="1" className='sticky-top'>
             <div className="container-fluid px-0 d-flex justify-content-center" style={{ backgroundColor: "white" }}>
@@ -167,6 +173,21 @@ function NavBar() {
                                 </ul>
                             </li>
                         </ul>
+                        {user ?
+                            <NavDropdown title={user} id="basic-nav-dropdown">
+                                <NavDropdown.Item href="">Xem trang cá nhân</NavDropdown.Item>
+                                <NavDropdown.Item href="/details/program/deposit">
+                                    Nạp tiền vào tài khoản
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href="">Lịch sử giao dịch</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="" onClick={logout}>
+                                    Log out
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                            :
+                            <Button variant="warning" id="login"><Link to={"/login"} style={{ color: "inherit", textDecoration: "none" }}>Login</Link></Button>
+                        }
                     </div>
                 </nav>
             </div>

@@ -20,7 +20,7 @@ function CardProgramInfo(props) {
                     <Col>{props.daysLeft}</Col>
                 </Row>
                 <div className="d-grid gap-2 pt-4">
-                    <Button variant="warning" size="lg" style={{ color: "white" }}>
+                    <Button variant="warning" size="lg" style={{ color: "white" }} onClick={"/details/program/donate"}>
                         Quyên góp
                     </Button>
                 </div>

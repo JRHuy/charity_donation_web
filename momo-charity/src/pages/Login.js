@@ -2,7 +2,7 @@ import Axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { setAuthToken } from "../components/setAuthToken";
-import {Helmet} from "react-helmet";
+// import {Helmet} from "react-helmet";
 
 function Login() {
     let navigate = useNavigate();
@@ -28,16 +28,25 @@ function Login() {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        // console.log(userPassword, phoneNum);
         if (userPassword.length === 0 || userPassword.length === 0) {
             setError(true);
         } else {
             Axios.post("http://localhost:8080/api/auth/login", user)
                 .then(res => {
                     const token = res.data.token;
-                    // console.log(res.data.role[0].authority);
+                    console.log(res.data);
                     const authority = res.data.role[0].authority;
 
-                    // save token to local storage
+                    const user = {
+                        id: res.data.id,
+                        email: res.data.email,
+                        'phoneNum': res.data.phoneNum,
+                        'name': res.data.name
+                    }
+
+                    // save data to local storage
+                    localStorage.setItem("user", JSON.stringify(user));
                     localStorage.setItem("token", token);
                     localStorage.setItem("authority", authority);
 

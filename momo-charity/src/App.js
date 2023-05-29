@@ -12,7 +12,8 @@ import AuthService from "./services/AuthService";
 import AuthVerify from "./common/auth-verify";
 import AuthLayout from "./components/AuthLayout";
 import NoPage from "./pages/NoPage";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+import Deposit from "./pages/Deposit";
 
 function App() {
   // check jwt
@@ -39,6 +40,9 @@ function App() {
             <Route path="users" element={<UserList />} />
             {/* <Route path="users" element={admin ? <UserList /> : <Navigate replace to={"/login"} />} /> */}
             <Route path="user/edit/:id" element={<EditUser />} />
+          </Route>
+          <Route path="/" element={<AuthLayout allowedRole={"CUSTOMER"} />}>
+            <Route path="details/program/deposit" element={<Deposit />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="*" element={<NoPage />} />
