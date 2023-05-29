@@ -34,7 +34,7 @@ function PartnerList() {
                     </Col>
                 </Row>
                 <Container>
-                    <Row>
+                <Row>
                         <Col md={12} lg={8}>
                             <h4 className="text-momo opacity-100 mb-3 text-2xl font-bold">Các đối tác đồng hành</h4>
                             <Row>
@@ -63,7 +63,7 @@ function PartnerList() {
                                 </Col>
                                 <Col className="mt-3">
                                     <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
+                                        partnerImg="doitac/hoachiase.jpeg"
                                         partnerName="Saigon Children's Charity"
                                         partnerDescription="Hỗ trợ trẻ em"
                                     />
@@ -72,14 +72,14 @@ function PartnerList() {
                             <Row>
                                 <Col sm={6} xs={12} className="mt-3">
                                     <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
+                                        partnerImg="doitac/vinacapital.jpeg"
                                         partnerName="Saigon Children's Charity"
                                         partnerDescription="Hỗ trợ trẻ em"
                                     />
                                 </Col>
                                 <Col className="mt-3">
                                     <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
+                                        partnerImg="doitac/vitamvocviet.jpeg"
                                         partnerName="Saigon Children's Charity"
                                         partnerDescription="Hỗ trợ trẻ em"
                                     />
@@ -88,31 +88,14 @@ function PartnerList() {
                             <Row>
                                 <Col sm={6} xs={12} className="mt-3">
                                     <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
+                                        partnerImg="doitac/saigonchildren.jpeg"
                                         partnerName="Saigon Children's Charity"
                                         partnerDescription="Hỗ trợ trẻ em"
                                     />
                                 </Col>
                                 <Col className="mt-3">
                                     <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
-                                        partnerName="Saigon Children's Charity"
-                                        partnerDescription="Hỗ trợ trẻ em"
-                                    />
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col sm={6} xs={12} className="mt-3">
-                                    <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
-                                        partnerName="Saigon Children's Charity"
-                                        partnerDescription="Hỗ trợ trẻ em"
-                                    />
-                                </Col>
-                                <Col className="mt-3">
-                                    <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
+                                        partnerImg="doitac/scdi.jpeg"
                                         partnerName="Saigon Children's Charity"
                                         partnerDescription="Hỗ trợ trẻ em"
                                     />
@@ -122,14 +105,31 @@ function PartnerList() {
                             <Row>
                                 <Col sm={6} xs={12} className="mt-3">
                                     <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
+                                        partnerImg="doitac/thiennhan.jpeg"
                                         partnerName="Saigon Children's Charity"
                                         partnerDescription="Hỗ trợ trẻ em"
                                     />
                                 </Col>
                                 <Col className="mt-3">
                                     <PartnerCard
-                                        partnerImg="doitac/saigonchildren.png"
+                                        partnerImg="doitac/tuonglaicentre.jpeg"
+                                        partnerName="Saigon Children's Charity"
+                                        partnerDescription="Hỗ trợ trẻ em"
+                                    />
+                                </Col>
+                            </Row>
+
+                            <Row>
+                                <Col sm={6} xs={12} className="mt-3">
+                                    <PartnerCard
+                                        partnerImg="doitac/quytrangkhuyet.jpeg"
+                                        partnerName="Saigon Children's Charity"
+                                        partnerDescription="Hỗ trợ trẻ em"
+                                    />
+                                </Col>
+                                <Col className="mt-3">
+                                    <PartnerCard
+                                        partnerImg="doitac/operationsmile.jpeg"
                                         partnerName="Saigon Children's Charity"
                                         partnerDescription="Hỗ trợ trẻ em"
                                     />
@@ -141,14 +141,14 @@ function PartnerList() {
                                     <Row>
                                         <Col sm={6} xs={12} className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/isee.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
                                         </Col>
                                         <Col className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/duannuoiem.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
@@ -157,14 +157,14 @@ function PartnerList() {
                                     <Row>
                                         <Col sm={6} xs={12} className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/quyphananh.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
                                         </Col>
                                         <Col className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/vc.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
@@ -173,14 +173,14 @@ function PartnerList() {
                                     <Row>
                                         <Col sm={6} xs={12} className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/baolaodong.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
                                         </Col>
                                         <Col className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/giaohoiphatgiao.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
@@ -189,14 +189,14 @@ function PartnerList() {
                                     <Row>
                                         <Col sm={6} xs={12} className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/baodantri.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
                                         </Col>
                                         <Col className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/baonguoilaodong.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
@@ -206,14 +206,14 @@ function PartnerList() {
                                     <Row>
                                         <Col sm={6} xs={12} className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/baotuoitre.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
                                         </Col>
                                         <Col className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/mattrantoquocvn.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
@@ -223,14 +223,14 @@ function PartnerList() {
                                     <Row>
                                         <Col sm={6} xs={12} className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/nangbuoctuoitho.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
                                         </Col>
                                         <Col className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/red.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
@@ -240,14 +240,14 @@ function PartnerList() {
                                     <Row>
                                         <Col sm={6} xs={12} className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/bebetter.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
                                         </Col>
                                         <Col className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/sachvahanhdong.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
@@ -257,19 +257,258 @@ function PartnerList() {
                                     <Row>
                                         <Col sm={6} xs={12} className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/ruybangtim.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
                                         </Col>
                                         <Col className="mt-3">
                                             <PartnerCard
-                                                partnerImg="doitac/saigonchildren.png"
+                                                partnerImg="doitac/quynamphuong.jpeg"
                                                 partnerName="Saigon Children's Charity"
                                                 partnerDescription="Hỗ trợ trẻ em"
                                             />
                                         </Col>
                                     </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/pn.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/greenviet.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/onesky.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/pannature.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/bcn.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/joy.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/asvho.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/childrenofvietnam.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/change.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/vitamingaugau.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/thaodan.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/handson.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/sac.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/thinkplaygrounds.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/thienchi.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/vulcan.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/maison.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/vimoitruongvacongdong.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/ecue.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/anhduong.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/doancoquantrunguong.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/thapsangniemtin.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/libdream.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/phad.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/nhiptimvietnam.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/sanggroup.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={6} xs={12} className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/savevietnamwildlife.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col>
+                                        {/* <Col className="mt-3">
+                                            <PartnerCard
+                                                partnerImg="doitac/.jpeg"
+                                                partnerName="Saigon Children's Charity"
+                                                partnerDescription="Hỗ trợ trẻ em"
+                                            />
+                                        </Col> */}
+                                    </Row>
+                                    
                                 </ReadMoreReadLess>
                             </div>
                         </Col>

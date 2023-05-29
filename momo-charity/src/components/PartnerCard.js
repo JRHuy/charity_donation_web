@@ -5,9 +5,9 @@ function PartnerCard(props) {
                 {/* make card as a button using stretched-link */}
                 <a href="#" className="card-block stretched-link text-decoration-none">
                     <div className="row card-body">
-                        <img className="col-sm-6" src={props.partnerImg} style={{ width: 80, height: 60 }} />
-                        <div className="col-sm-auto">
-                            <h6 className="card-title text-wrap" id="doitac">
+                        <img className="col-sm-3" src={props.partnerImg} style={{ width: 80, height: 60 }} />
+                        <div className="col-sm-9">
+                            <h6 className="card-title" id="doitac">
                                 {props.partnerName}
                                 <br />
                                 <p className="card-text" id="card-description">{props.partnerDescription}</p>
