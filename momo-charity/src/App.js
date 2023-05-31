@@ -14,6 +14,7 @@ import AuthLayout from "./components/AuthLayout";
 import NoPage from "./pages/NoPage";
 import { Helmet } from "react-helmet";
 import Deposit from "./pages/Deposit";
+import SucManh2000 from "./pages/donors/SucManh2000";
 
 function App() {
   // check jwt
@@ -34,6 +35,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/details/program" element={<Program />} />
             <Route path="partners" element={<PartnerList />} />
+            <Route path="donor" element={<SucManh2000 />} />
           </Route>
           <Route path="register" element={<Register />} />
           <Route path="/admin" element={<AuthLayout allowedRole={"ADMIN"} />}>
