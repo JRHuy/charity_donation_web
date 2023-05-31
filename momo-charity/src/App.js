@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Program from "./details/Program";
 import PartnerList from "./pages/PartnerList";
 import UserList from "./pages/UserList";
-import Register from "./pages/Register"
+import Register from "./pages/Register";
 import EditUser from "./pages/EditUser";
 import Login from "./pages/Login";
 import { setAuthToken } from "./components/setAuthToken";
@@ -24,14 +24,14 @@ function App() {
 
   const logout = () => {
     AuthService.logout();
-  }
+  };
 
   return (
     <BrowserRouter>
       <div>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/details/program" element={<Program />} />
             <Route path="partners" element={<PartnerList />} />
           </Route>
