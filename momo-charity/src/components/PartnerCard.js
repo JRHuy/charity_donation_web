@@ -3,7 +3,10 @@ function PartnerCard(props) {
     <>
       <div className="card" id="card-doitac">
         {/* make card as a button using stretched-link */}
-        <a href="#" className="card-block stretched-link text-decoration-none">
+        <a
+          href={props.link}
+          className="card-block stretched-link text-decoration-none"
+        >
           <div className="row card-body">
             <img
               className="col-sm-3"

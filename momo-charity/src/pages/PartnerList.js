@@ -47,6 +47,7 @@ function PartnerList() {
                     partnerImg="doitac/sucmanh2000.jpeg"
                     partnerName="Sức mạnh 2000"
                     partnerDescription="Tiền lẻ mỗi ngày xây ngay nghìn trường mới"
+                    link="/sucmanh2000"
                   />
                 </Col>
                 <Col className="mt-3">

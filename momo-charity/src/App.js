@@ -35,7 +35,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/details/program" element={<Program />} />
             <Route path="partners" element={<PartnerList />} />
-            <Route path="donor" element={<SucManh2000 />} />
+            <Route path="sucmanh2000" element={<SucManh2000 />} />
           </Route>
           <Route path="register" element={<Register />} />
           <Route path="/admin" element={<AuthLayout allowedRole={"ADMIN"} />}>
