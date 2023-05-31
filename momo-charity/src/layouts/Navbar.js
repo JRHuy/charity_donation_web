@@ -1,7 +1,6 @@
 import { Button, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AuthService from "../services/AuthService";
-import Breadcrumbs from "../components/Breadcrumbs";
 
 const logout = () => {
   AuthService.logout();
@@ -166,7 +165,6 @@ const NavBar = ({ user }) => {
           </div>
         </nav>
       </div>
-      <Breadcrumbs />
     </section>
   );
 };
