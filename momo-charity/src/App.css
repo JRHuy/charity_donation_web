@@ -116,6 +116,8 @@
 #doitac {
   font-weight: bold;
   color: #d82f8b;
+  width: 220px;
+  height: 50px;
   /* position: absolute; */
 }
 
@@ -126,13 +128,14 @@
   font-weight: normal;
   margin-top: 0.6rem;
   line-height: 1rem;
+  height: 20px;
 }
 
 #card-doitac {
   /* style={{ width: 349, height: 125 }} */
   /* width: 349px;
   height: 100px; */
-  height: 130px;
+  height: 110px;
   transition: 0.2s;
   border-color: #e6e6e6;
 }
@@ -144,6 +147,7 @@
 #xemchitiet {
   font-weight: normal;
   font-size: 80%;
+  margin-top: 15px;
   /* font-size: .9375rem; */
   cursor: pointer;
   /* color: blue; */
