@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -9,6 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "Organization")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "organizationID")
 public class Organization implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -18,8 +21,8 @@ public class Organization implements Serializable {
     @GeneratedValue
     private int organizationID;
 
-    @Column(name = "programName", length = 50, nullable = false)
-    private String programName;
+//    @Column(name = "programName", length = 50, nullable = false)
+    private String organizationName;
 
     @Column(name = "description", length = 100, nullable = false)
     private String description;
@@ -28,7 +31,8 @@ public class Organization implements Serializable {
 
     private BigDecimal ogDonate;
 
-    @OneToMany (mappedBy = "organizationID")
+    @OneToMany(mappedBy = "organization")
+//    @OneToMany
     private List<Program> program;
 
     public int getOrganizationID() {
@@ -39,12 +43,12 @@ public class Organization implements Serializable {
         this.organizationID = organizationID;
     }
 
-    public String getProgramName() {
-        return programName;
+    public String getOrganizationName() {
+        return organizationName;
     }
 
-    public void setProgramName(String programName) {
-        this.programName = programName;
+    public void setOrganizationName(String organizationName) {
+        this.organizationName = organizationName;
     }
 
     public String getDescription() {

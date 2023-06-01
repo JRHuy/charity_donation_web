@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 public class ProgramController {
     @Autowired
     private ProgramRepository programRepository;
@@ -19,12 +20,12 @@ public class ProgramController {
 
     @PostMapping("/program")
     Program newProgram(@RequestBody Program newProgram) {
-        organizationRepository.findById(newProgram.getOrganizationID().getOrganizationID())
+        organizationRepository.findById(newProgram.getOrganization().getOrganizationID())
                 .map(organization -> {
                     organization.setNumOfProjects(organization.getNumOfProjects() + 1);
-                    List<Program> programs = organization.getProgram();
-                    programs.add(newProgram);
-                    organization.setProgram(programs);
+//                    List<Program> programs = organization.getProgram();
+//                    programs.add(newProgram);
+//                    organization.setProgram(programs);
                     return organizationRepository.save(organization);
                 }).orElseThrow(() -> new ProgramNotFoundException(newProgram.getProgramID()));
 
@@ -46,7 +47,7 @@ public class ProgramController {
     Program updateProgram(@RequestBody Program newProgram, @PathVariable int id) {
         return programRepository.findById(id)
                 .map(program -> {
-                    program.setProgName(newProgram.getProgName());
+                    program.setProgramName(newProgram.getProgramName());
                     program.setProgramDescription(newProgram.getProgramDescription());
                     program.setCurrentMoney(newProgram.getCurrentMoney());
                     program.setTargetMoney(newProgram.getTargetMoney());

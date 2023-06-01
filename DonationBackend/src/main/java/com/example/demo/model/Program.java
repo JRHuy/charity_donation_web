@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,6 +19,7 @@ import java.math.BigDecimal;
 @Builder
 @Entity
 @Table(name = "Program")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "programID")
 public class Program implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -27,12 +30,12 @@ public class Program implements Serializable {
     private int programID;
 
     @Column(length = 100, nullable = false)
-    private String progName;
+    private String programName;
 
-    @JsonBackReference
+//    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "organizationID", nullable = true)
-    private Organization organizationID;
+    private Organization organization;
 
     @Column
     private BigDecimal targetMoney;
