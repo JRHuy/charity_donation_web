@@ -8,11 +8,72 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 // import Navbar from "./Navbar";
 import ReadMoreReadLess from "../components/ReadMoreReadLess";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function Home() {
+    const [program1, setProgram1] = useState(null);
+    const [program2, setProgram2] = useState(null);
+    const [program3, setProgram3] = useState(null);
+    const [program4, setProgram4] = useState(null);
+    const [program5, setProgram5] = useState(null);
+    const [program6, setProgram6] = useState(null);
+
+    useEffect(() => {
+        showProgram1();
+        showProgram2();
+        showProgram3();
+        showProgram4();
+        showProgram5();
+        showProgram6();
+    }, [])
+
+    const showProgram1 = () => {
+        axios.get("http://localhost:8080/program/1")
+            .then((res) => {
+                console.log(res.data);
+                setProgram1(res.data);
+            }).catch(err => console.log(err))
+    }
+    const showProgram2 = () => {
+        axios.get("http://localhost:8080/program/2")
+            .then((res) => {
+                console.log(res.data);
+                setProgram2(res.data);
+            }).catch(err => console.log(err))
+    }
+    const showProgram3 = () => {
+        axios.get("http://localhost:8080/program/3")
+            .then((res) => {
+                console.log(res.data);
+                setProgram3(res.data);
+            }).catch(err => console.log(err))
+    }
+    const showProgram4 = () => {
+        axios.get("http://localhost:8080/program/4")
+            .then((res) => {
+                console.log(res.data);
+                setProgram4(res.data);
+            }).catch(err => console.log(err))
+    }
+    const showProgram5 = () => {
+        axios.get("http://localhost:8080/program/5")
+            .then((res) => {
+                console.log(res.data);
+                setProgram5(res.data);
+            }).catch(err => console.log(err))
+    }
+    const showProgram6 = () => {
+        axios.get("http://localhost:8080/program/6")
+            .then((res) => {
+                console.log(res.data);
+                setProgram6(res.data);
+            }).catch(err => console.log(err))
+    }
+
     return (
         <div>
             {/* ------------------ Section 1 ----------------- */}
@@ -152,78 +213,78 @@ function Home() {
                         <Col>
                             <CardItem
                                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                                title={program1?.programName}
                                 avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                                orgName={program1?.organization.organizationName}
                                 dayCount="57"
-                                current="4.459.000đ"
-                                target="150.000.000đ"
+                                current={program1?.currentMoney + "đ"}
+                                target={program1?.targetMoney + "đ"}
                                 pbar="10"
-                                donateCount="612"
+                                donateCount={program1?.donateTotal}
                                 donatePercentage="2.97%"
                             />
                             <CardItem
                                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                                title={program2?.programName}
                                 avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                                orgName={program2?.organization.organizationName}
                                 dayCount="57"
-                                current="4.459.000đ"
-                                target="150.000.000đ"
+                                current={program2?.currentMoney + "đ"}
+                                target={program2?.targetMoney + "đ"}
                                 pbar="10"
-                                donateCount="612"
-                                donatePercentage="2.97%"
-                            />
-                        </Col>
-                        <Col>
-                            <CardItem
-                                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
-                                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
-                                dayCount="57"
-                                current="4.459.000đ"
-                                target="150.000.000đ"
-                                pbar="10"
-                                donateCount="612"
-                                donatePercentage="2.97%"
-                            />
-                            <CardItem
-                                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
-                                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
-                                dayCount="57"
-                                current="4.459.000đ"
-                                target="150.000.000đ"
-                                pbar="10"
-                                donateCount="612"
+                                donateCount={program2?.donateTotal}
                                 donatePercentage="2.97%"
                             />
                         </Col>
                         <Col>
                             <CardItem
                                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                                title={program3?.programName}
                                 avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                                orgName={program3?.organization.organizationName}
                                 dayCount="57"
-                                current="4.459.000đ"
-                                target="150.000.000đ"
+                                current={program3?.currentMoney + "đ"}
+                                target={program3?.targetMoney + "đ"}
                                 pbar="10"
-                                donateCount="612"
+                                donateCount={program3?.donateTotal}
                                 donatePercentage="2.97%"
                             />
                             <CardItem
                                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                                title={program4?.programName}
                                 avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                                orgName={program4?.organization.organizationName}
                                 dayCount="57"
-                                current="4.459.000đ"
-                                target="150.000.000đ"
+                                current={program4?.currentMoney + "đ"}
+                                target={program4?.targetMoney + "đ"}
                                 pbar="10"
-                                donateCount="612"
+                                donateCount={program4?.donateTotal}
+                                donatePercentage="2.97%"
+                            />
+                        </Col>
+                        <Col>
+                            <CardItem
+                                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                                title={program5?.programName}
+                                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                                orgName={program5?.organization.organizationName}
+                                dayCount="57"
+                                current={program5?.currentMoney + "đ"}
+                                target={program5?.targetMoney + "đ"}
+                                pbar="10"
+                                donateCount={program5?.donateTotal}
+                                donatePercentage="2.97%"
+                            />
+                            <CardItem
+                                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                                title={program6?.programName}
+                                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                                orgName={program6?.organization.organizationName}
+                                dayCount="57"
+                                current={program6?.currentMoney + "đ"}
+                                target={program6?.targetMoney + "đ"}
+                                pbar="10"
+                                donateCount={program6?.donateTotal}
                                 donatePercentage="2.97%"
                             />
                         </Col>
