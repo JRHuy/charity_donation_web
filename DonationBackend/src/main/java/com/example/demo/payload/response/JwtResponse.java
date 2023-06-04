@@ -1,6 +1,5 @@
 package com.example.demo.payload.response;
 
-import com.example.demo.model.Role;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
@@ -11,13 +10,15 @@ public class JwtResponse {
     private int id;
     private String phoneNum;
     private String email;
+    private String name;
     private Collection<? extends GrantedAuthority> role;
 
-    public JwtResponse(String token, int id, String phoneNum, String email, Collection<? extends GrantedAuthority> role) {
+    public JwtResponse(String token, int id, String phoneNum, String email, String name, Collection<? extends GrantedAuthority> role) {
         this.token = token;
         this.id = id;
         this.phoneNum = phoneNum;
         this.email = email;
+        this.name = name;
         this.role = role;
     }
 
@@ -59,6 +60,14 @@ public class JwtResponse {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Collection<? extends GrantedAuthority> getRole() {

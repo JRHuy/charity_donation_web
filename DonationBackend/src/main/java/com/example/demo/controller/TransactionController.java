@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 public class TransactionController {
 
     @Autowired
@@ -73,16 +74,16 @@ public class TransactionController {
         return userRepository.findById(moneyFormDTO.getId())
                 .map(user -> {
                     user.setMoney(user.getMoney().add(moneyFormDTO.getMoney()));
-                    saveToTransaction(user);
+                    saveToTransaction(user, moneyFormDTO);
                     return userRepository.save(user);
                 })
                 .orElseThrow(() -> new UserNotFoundException(moneyFormDTO.getId()));
     }
 
-    void saveToTransaction(User user) {
+    void saveToTransaction(User user, MoneyFormDTO moneyFormDTO) {
         TransactionHistory transactionHistory = TransactionHistory.builder()
                 .user(user)
-                .money(user.getMoney())
+                .money(moneyFormDTO.getMoney())
                 .transaction(Transaction.AddMoney)
                 .transactionTime(now)
                 .build();
@@ -110,13 +111,10 @@ public class TransactionController {
             }
         }
         return null;
-
     }
 
     boolean takeMoney(MoneyFormDTO userDonate) {
         User user = userRepository.findById(userDonate.getId()).orElseThrow(() -> new UserNotFoundException(userDonate.getId()));
-        System.out.println(user.getMoney());
-        System.out.println(userDonate.getMoney());
         // check if user have enough money (cannot donate more money than the amount user has
         if (userDonate.getMoney().compareTo(user.getMoney()) == -1) {
             user.setMoney(user.getMoney().subtract(userDonate.getMoney()));
@@ -137,4 +135,13 @@ public class TransactionController {
                  }).orElseThrow(() -> new ProgramNotFoundException(moneyFormDTO.getId()));
     }
 
+    @GetMapping("api/transaction/highestList")
+    List<TransactionHistory> findHighestDonatorsList() {
+        return transactionRepository.findTop3ByTransactionOrderByMoneyDesc(Transaction.valueOf("Donate"));
+    }
+
+    @GetMapping("api/transaction/recentList")
+    List<TransactionHistory> findRecentDonatorsList() {
+        return transactionRepository.findTop3ByTransactionOrderByTransactionIDDesc(Transaction.valueOf("Donate"));
+    }
 }
