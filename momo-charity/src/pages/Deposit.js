@@ -46,7 +46,7 @@ function Deposit() {
             <div className="container">
                 <div className="form4enter">
                     <div className="row justify-content-center">
-                        <h3 id='title_page' className="text-center text-secondary mt-5 mb-3">DEPOSIT</h3>
+                        <h3 id='title_page' className="text-center text-secondary mt-5 mb-3">THÊM TIỀN VÀO TÀI KHOẢN</h3>
                         <form method="POST" onSubmit={(e) => onSubmit(e)}>
                             <div className="form-group">
                                 <label style={{ display: "flex" }} htmlFor="money">Nhập số tiền</label>
