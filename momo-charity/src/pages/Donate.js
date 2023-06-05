@@ -65,7 +65,7 @@ function Donate() {
                             <Link onClick={goBack} id="redirection">Cancel</Link>
                         </div>
                         {success && <div className="alert alert-success" role="alert">
-                            Nạp tiền thành công!
+                            Quyên góp thành công!
                         </div>}
                     </div>
                 </div>

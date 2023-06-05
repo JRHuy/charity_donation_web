@@ -41,7 +41,7 @@ function Home() {
     axios
       .get("http://localhost:8080/program/1")
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setProgram1(res.data);
         setDayCount1(dayCalculate(res.data.deadline));
       })
@@ -51,7 +51,6 @@ function Home() {
     axios
       .get("http://localhost:8080/program/2")
       .then((res) => {
-        console.log(res.data);
         setProgram2(res.data);
         setDayCount2(dayCalculate(res.data.deadline));
       })
@@ -61,7 +60,6 @@ function Home() {
     axios
       .get("http://localhost:8080/program/3")
       .then((res) => {
-        console.log(res.data);
         setProgram3(res.data);
         setDayCount3(dayCalculate(res.data.deadline));
       })
@@ -71,7 +69,6 @@ function Home() {
     axios
       .get("http://localhost:8080/program/4")
       .then((res) => {
-        console.log(res.data);
         setProgram4(res.data);
         setDayCount4(dayCalculate(res.data.deadline));
       })
@@ -81,7 +78,6 @@ function Home() {
     axios
       .get("http://localhost:8080/program/5")
       .then((res) => {
-        console.log(res.data);
         setProgram5(res.data);
         setDayCount5(dayCalculate(res.data.deadline));
       })
@@ -89,9 +85,8 @@ function Home() {
   };
   const showProgram6 = () => {
     axios
-      .get("http://localhost:8080/program/6")
+      .get("http://localhost:8080/program/52")
       .then((res) => {
-        console.log(res.data);
         setProgram6(res.data);
         setDayCount6(dayCalculate(res.data.deadline));
       })

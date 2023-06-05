@@ -7,6 +7,7 @@ function Deposit() {
 
     const [money, setMoney] = useState("");
     const [id, setId] = useState("");
+    const [success, setSuccess] = useState(false);
 
     const navigate = useNavigate();
 
@@ -33,6 +34,8 @@ function Deposit() {
         } else {
             Axios.post("http://localhost:8080/api/user/deposit", data)
                 .then(res => {
+                    setSuccess(true);
+                    setMoney("");
                     console.log(res.data);
                 }).catch(err => console.log(err));
         }
@@ -61,6 +64,9 @@ function Deposit() {
                         <div className="redirection">
                             <Link onClick={goBack} id="redirection">Cancel</Link>
                         </div>
+                        {success && <div className="alert alert-success" role="alert">
+                            Nạp tiền thành công!
+                        </div>}
                     </div>
                 </div>
             </div>
