@@ -39,7 +39,7 @@ function Login() {
                     const authority = res.data.role[0].authority;
 
                     const user = {
-                        id: res.data.id,
+                        userID: res.data.id,
                         email: res.data.email,
                         'phoneNum': res.data.phoneNum,
                         'name': res.data.name
