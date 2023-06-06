@@ -16,6 +16,7 @@ import { Helmet } from "react-helmet";
 import Deposit from "./pages/Deposit";
 import SucManh2000 from "./pages/donors/SucManh2000";
 import Donate from "./pages/Donate";
+import TransactionHistory from "./pages/TransactionHistory";
 
 function App() {
   // check jwt
@@ -37,6 +38,9 @@ function App() {
             <Route path="/details/program" element={<Program />} />
             <Route path="partners" element={<PartnerList />} />
             <Route path="sucmanh2000" element={<SucManh2000 />} />
+            <Route path="/user" element={<AuthLayout allowedRole={"CUSTOMER"} />}>
+              
+            </Route>
           </Route>
           <Route path="register" element={<Register />} />
           <Route path="/admin" element={<AuthLayout allowedRole={"ADMIN"} />}>
@@ -48,6 +52,7 @@ function App() {
             <Route path="details/program/deposit" element={<Deposit />} />
             <Route path="details/program/donate" element={<Donate />} />
           </Route>
+          <Route path="transaction_history" element={<TransactionHistory />} />
           <Route path="login" element={<Login />} />
           <Route path="*" element={<NoPage />} />
         </Routes>

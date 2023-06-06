@@ -3,7 +3,6 @@ import "../App.css";
 import chevronRight from "../chevron-right.svg";
 import Partner from "../components/Partner";
 import CardItem from "../components/CardItem";
-import Button from "react-bootstrap/button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
