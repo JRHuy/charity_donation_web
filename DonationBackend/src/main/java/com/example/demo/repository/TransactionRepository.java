@@ -11,9 +11,9 @@ import java.util.List;
 @Repository
 public interface TransactionRepository extends JpaRepository<TransactionHistory, Integer> {
 //    @Query(value = "select t from Donation.transaction_history t where transaction = ?1 order by t.money desc limit 3", nativeQuery = true)
-    List<TransactionHistory> findTop3ByProgram_programIDOrderByMoneyDesc(int programID);
+    List<TransactionHistory> findTop10ByProgram_programIDOrderByMoneyDesc(int programID);
 //    @Query("select t from TransactionHistory t where t.program.programID = ?1")
 //    List<TransactionHistory> findTop10Donors(int programID);
-    List<TransactionHistory> findTop3ByProgram_programIDOrderByTransactionIDDesc(int transactionID);
+    List<TransactionHistory> findTop10ByProgram_programIDOrderByTransactionIDDesc(int transactionID);
     List<TransactionHistory> findByUser_userIDOrderByTransactionIDDesc(int userID);
 }

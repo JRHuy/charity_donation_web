@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, ListGroup } from "react-bootstrap";
+import { NumericFormat } from "react-number-format";
 
 export default function UserTransactionHistory() {
     const [transactions, setTransactions] = useState(null);
@@ -33,7 +34,9 @@ export default function UserTransactionHistory() {
                                         <div style={{ color: "black", fontWeight: "bold" }}>Thêm tiền vào tài khoản thành công</div>
                                         <span style={{ fontSize: "13px" }}>{transaction?.transactionTime}</span>
                                     </div>
-                                    <div style={{ color: "black", fontWeight: "bold" }}>+{transaction?.money}đ</div>
+                                    <div style={{ color: "green", fontWeight: "bold" }}>+
+                                        <NumericFormat value={transaction?.money} suffix="đ" displayType="text" thousandSeparator="." decimalSeparator="," />
+                                    </div>
                                 </> :
                                 <>
                                     <img src="/donate.png" id="donate"></img>
@@ -41,7 +44,9 @@ export default function UserTransactionHistory() {
                                         <div style={{ color: "black", fontWeight: "bold" }}>Quyên góp thành công vào chương trình {transaction?.program.programName}</div>
                                         <span style={{ fontSize: "13px" }}>{transaction?.transactionTime}</span>
                                     </div>
-                                    <div style={{ color: "black", fontWeight: "bold" }}>-{transaction?.money}đ</div>
+                                    <div style={{ color: "red", fontWeight: "bold" }}>-
+                                        <NumericFormat value={transaction?.money} suffix="đ" displayType="text" thousandSeparator="." decimalSeparator="," />
+                                    </div>
                                 </>
                             }
                         </ListGroup.Item>

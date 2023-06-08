@@ -137,12 +137,12 @@ public class TransactionController {
 
     @GetMapping("api/transaction/highestList/{id}")
     List<TransactionHistory> findHighestDonatorsList(@PathVariable int id) {
-        return transactionRepository.findTop3ByProgram_programIDOrderByMoneyDesc(id);
+        return transactionRepository.findTop10ByProgram_programIDOrderByMoneyDesc(id);
     }
 
     @GetMapping("api/transaction/recentList/{id}")
     List<TransactionHistory> findRecentDonatorsList(@PathVariable int id) {
-        return transactionRepository.findTop3ByProgram_programIDOrderByTransactionIDDesc(id);
+        return transactionRepository.findTop10ByProgram_programIDOrderByTransactionIDDesc(id);
     }
 
     @GetMapping("api/user/transaction/{id}")
