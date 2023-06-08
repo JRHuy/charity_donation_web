@@ -4,13 +4,15 @@ import { Container, ListGroup } from "react-bootstrap";
 
 export default function UserTransactionHistory() {
     const [transactions, setTransactions] = useState(null);
+    const userData = JSON.parse(localStorage.getItem("user"));
+    const id = userData.userID;
 
     useEffect(() => {
         showHistory();
     }, []);
 
     const showHistory = () => {
-        axios.get('http://localhost:8080/transactions')
+        axios.get(`http://localhost:8080/api/user/transaction/${id}`)
             .then(res => {
                 // console.log(res.data);
                 setTransactions(res.data);
@@ -24,7 +26,7 @@ export default function UserTransactionHistory() {
                 {
                     transactions?.map((transaction) => (
                         <ListGroup.Item key={transaction.id} className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                            {transaction.transaction === "AddMoney" ?
+                            {transaction?.transaction === "AddMoney" ?
                                 <>
                                     <img src="/wallet.png" id="deposit"></img>
                                     <div className="ms-2 me-auto">

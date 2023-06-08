@@ -2,6 +2,7 @@ package com.example.demo.repository;
 
 import com.example.demo.model.Transaction;
 import com.example.demo.model.TransactionHistory;
+import com.example.demo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,4 +15,5 @@ public interface TransactionRepository extends JpaRepository<TransactionHistory,
 //    @Query("select t from TransactionHistory t where t.program.programID = ?1")
 //    List<TransactionHistory> findTop10Donors(int programID);
     List<TransactionHistory> findTop3ByProgram_programIDOrderByTransactionIDDesc(int transactionID);
+    List<TransactionHistory> findByUser_userIDOrderByTransactionIDDesc(int userID);
 }

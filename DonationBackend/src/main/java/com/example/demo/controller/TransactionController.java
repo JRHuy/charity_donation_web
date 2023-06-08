@@ -144,4 +144,9 @@ public class TransactionController {
     List<TransactionHistory> findRecentDonatorsList(@PathVariable int id) {
         return transactionRepository.findTop3ByProgram_programIDOrderByTransactionIDDesc(id);
     }
+
+    @GetMapping("api/user/transaction/{id}")
+    List<TransactionHistory> showUserTransaction(@PathVariable int id) {
+        return transactionRepository.findByUser_userIDOrderByTransactionIDDesc(id);
+    }
 }

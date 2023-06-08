@@ -35,7 +35,7 @@ function Login() {
             Axios.post("http://localhost:8080/api/auth/login", user)
                 .then(res => {
                     const token = res.data.token;
-                    console.log(res.data);
+                    // console.log(res.data);
                     const authority = res.data.role[0].authority;
 
                     const user = {
