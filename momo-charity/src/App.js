@@ -15,6 +15,7 @@ import NoPage from "./pages/NoPage";
 import { Helmet } from "react-helmet";
 import Deposit from "./pages/Deposit";
 import SucManh2000 from "./pages/donors/SucManh2000";
+import ProgramCRUD from "./pages/forms/ProgramCRUD";
 
 function App() {
   // check jwt
@@ -47,6 +48,7 @@ function App() {
             <Route path="details/program/deposit" element={<Deposit />} />
           </Route>
           <Route path="login" element={<Login />} />
+          <Route path="program-edit" element={<ProgramCRUD />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </div>
