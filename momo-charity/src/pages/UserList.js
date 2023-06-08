@@ -4,7 +4,8 @@ import { Navbar, Container, Nav, Table, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import '../styles/user_style.css';
 import AuthService from "../services/AuthService";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+import AdminNavbar from "../layouts/AdminNavbar";
 
 export default function UserList() {
     const [users, setUsers] = useState(null);
@@ -52,25 +53,9 @@ export default function UserList() {
         setShowConfirmDialog(false);
     };
 
-    const logout = () => {
-        AuthService.logout();
-    }
-
     return (
         <>
-            <Navbar bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="#home">Administrator</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">User</Nav.Link>
-                        <Nav.Link href="#features">Program</Nav.Link>
-                        <Nav.Link href="#pricing">Partner</Nav.Link>
-                    </Nav>
-                    <Nav>
-                        <Button variant="danger" onClick={logout}>Log out</Button>
-                    </Nav>
-                </Container>
-            </Navbar>
+            <AdminNavbar />
             <Container>
                 <div className="mt-2 d-flex justify-content-end">
                     <Button href="/register" variant="warning">Register</Button>

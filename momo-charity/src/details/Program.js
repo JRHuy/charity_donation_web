@@ -1,10 +1,47 @@
-import { Button, Card, Carousel, Col, Container, ListGroup, Navbar, ProgressBar, Row, Stack, Tab, Tabs } from "react-bootstrap";
+import { Carousel, Col, Container, ListGroup, Row, Stack, Tab, Tabs } from "react-bootstrap";
 import chevronRight from "../chevron-right.svg";
 import CardItem from "../components/CardItem";
 import CardProgramInfo from "../components/CardProgramInfo";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { NumericFormat } from "react-number-format";
 
 function Program() {
+    const [topDonors, setTopDonors] = useState(null);
+    const [recentDonors, setRecentDonors] = useState(null);
+    // const [displayPhone, setDisplayPhone] = useState('');
+
+    useEffect(() => {
+        showTopList();
+        showRecentList();
+    }, []);
+
+    const censorPhoneNum = (phoneNum) => {
+        const unhiddenPart = phoneNum.slice((phoneNum.length - 3) - phoneNum.length);
+        let censor = "";
+        for (let i = 0; i < phoneNum.length - 3; i++) {
+            censor += "*";
+        }
+        const newPhone = censor + unhiddenPart;
+        // console.log(newPhone);
+        return newPhone;
+    }
+
+    const showTopList = () => {
+        axios.get('http://localhost:8080/api/transaction/highestList/1')
+            .then(res => {
+                setTopDonors(res.data);
+            }).catch(err => console.log(err))
+    }
+
+    const showRecentList = () => {
+        axios.get('http://localhost:8080/api/transaction/recentList/1')
+            .then(res => {
+                setRecentDonors(res.data);
+            }).catch(err => console.log(err))
+    }
+
     return (
         <div>
             <Helmet>
@@ -125,77 +162,21 @@ function Program() {
                                                 <Col xs={12}><hr /></Col>
                                             </Row>
                                             <h3>Nhà hảo tâm hàng đầu</h3>
-                                            <ListGroup as="ol" numbered>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
+                                            <ListGroup as={"ol"} numbered>
+                                                {
+                                                    topDonors?.map((donor) => (
+                                                        <ListGroup.Item key={donor.transactionID} as={"li"} className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
+                                                            <div className="ms-2 me-auto">
+                                                                <div style={{ color: "black" }}>{donor?.user.name}</div>
+                                                                <span style={{ fontSize: "13px" }}>{donor?.user.phoneNum}</span>
+                                                            </div>
+                                                            {/* <div style={{ color: "black" }}>{donor?.money}đ</div> */}
+                                                            <div style={{ color: "black" }}>
+                                                                <NumericFormat value={donor?.money} suffix="đ" displayType="text" thousandSeparator="." decimalSeparator="," />
+                                                            </div>
+                                                        </ListGroup.Item>
+                                                    ))
+                                                }
                                             </ListGroup>
                                             <div className="text-center p-3">
                                                 <button type="button" className="btn" id="btn-outline-custom">Xem tất cả</button>
@@ -207,77 +188,22 @@ function Program() {
                                                 <Col xs={12}><hr /></Col>
                                             </Row>
                                             <h3>Nhà hảo tâm mới nhất</h3>
-                                            <ListGroup as="ol" numbered>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
-                                                <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
-                                                    <div className="ms-2 me-auto">
-                                                        <div style={{ color: "black" }}>Tran Thi Chanh</div>
-                                                        <span style={{ fontSize: "13px" }}>*******787</span>
-                                                    </div>
-                                                    <div style={{ color: "black" }}>200.000đ</div>
-                                                </ListGroup.Item>
+                                            <ListGroup as={"ol"} numbered>
+                                                {
+                                                    recentDonors?.map((donor) => (
+                                                        <ListGroup.Item key={donor.transactionID} as={"li"} className="d-flex justify-content-between align-items-start" style={{ color: "gray" }}>
+                                                            <div className="ms-2 me-auto">
+                                                                <div style={{ color: "black" }}>{donor?.user.name}</div>
+                                                                {/* <span style={{ fontSize: "13px" }}>{donor?.user.phoneNum}</span> */}
+                                                                <span style={{ fontSize: "13px" }}>{censorPhoneNum(donor?.user.phoneNum)}</span>
+                                                            </div>
+                                                            {/* <div style={{ color: "black" }}>{donor?.money}đ</div> */}
+                                                            <div style={{ color: "black" }}>
+                                                                <NumericFormat value={donor?.money} suffix="đ" displayType="text" thousandSeparator="." decimalSeparator="," />
+                                                            </div>
+                                                        </ListGroup.Item>
+                                                    ))
+                                                }
                                             </ListGroup>
                                             <div className="text-center p-3">
                                                 <button type="button" className="btn" id="btn-outline-custom">Xem tất cả</button>

@@ -146,7 +146,7 @@ const NavBar = ({ user }) => {
                 <NavDropdown.Item href="/details/program/deposit">
                   Nạp tiền vào tài khoản
                 </NavDropdown.Item>
-                <NavDropdown.Item href="">Lịch sử giao dịch</NavDropdown.Item>
+                <NavDropdown.Item href="/transaction_history">Lịch sử giao dịch</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="" onClick={logout}>
                   Log out

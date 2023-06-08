@@ -7,6 +7,7 @@ function Deposit() {
 
     const [money, setMoney] = useState("");
     const [id, setId] = useState("");
+    const [success, setSuccess] = useState(false);
 
     const navigate = useNavigate();
 
@@ -33,6 +34,8 @@ function Deposit() {
         } else {
             Axios.post("http://localhost:8080/api/user/deposit", data)
                 .then(res => {
+                    setSuccess(true);
+                    setMoney("");
                     console.log(res.data);
                 }).catch(err => console.log(err));
         }
@@ -43,7 +46,7 @@ function Deposit() {
             <div className="container">
                 <div className="form4enter">
                     <div className="row justify-content-center">
-                        <h3 id='title_page' className="text-center text-secondary mt-5 mb-3">DEPOSIT</h3>
+                        <h3 id='title_page' className="text-center text-secondary mt-5 mb-3">THÊM TIỀN VÀO TÀI KHOẢN</h3>
                         <form method="POST" onSubmit={(e) => onSubmit(e)}>
                             <div className="form-group">
                                 <label style={{ display: "flex" }} htmlFor="money">Nhập số tiền</label>
@@ -61,6 +64,9 @@ function Deposit() {
                         <div className="redirection">
                             <Link onClick={goBack} id="redirection">Cancel</Link>
                         </div>
+                        {success && <div className="alert alert-success" role="alert">
+                            Nạp tiền thành công!
+                        </div>}
                     </div>
                 </div>
             </div>

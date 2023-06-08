@@ -16,6 +16,9 @@ import { Helmet } from "react-helmet";
 import Deposit from "./pages/Deposit";
 import SucManh2000 from "./pages/donors/SucManh2000";
 import ProgramCRUD from "./pages/forms/ProgramCRUD";
+import Donate from "./pages/Donate";
+import AllTransactions from "./pages/AllTransactions";
+import UserTransactionHistory from "./pages/UserTransactionHistory";
 
 function App() {
   // check jwt
@@ -37,15 +40,23 @@ function App() {
             <Route path="/details/program" element={<Program />} />
             <Route path="partners" element={<PartnerList />} />
             <Route path="sucmanh2000" element={<SucManh2000 />} />
+            <Route path="/" element={<AuthLayout allowedRole={"CUSTOMER"} />}>
+              <Route
+                path="transaction_history"
+                element={<UserTransactionHistory />}
+              />
+            </Route>
           </Route>
           <Route path="register" element={<Register />} />
           <Route path="/admin" element={<AuthLayout allowedRole={"ADMIN"} />}>
             <Route path="users" element={<UserList />} />
             {/* <Route path="users" element={admin ? <UserList /> : <Navigate replace to={"/login"} />} /> */}
             <Route path="user/edit/:id" element={<EditUser />} />
+            <Route path="transactions/all" element={<AllTransactions />} />
           </Route>
           <Route path="/" element={<AuthLayout allowedRole={"CUSTOMER"} />}>
             <Route path="details/program/deposit" element={<Deposit />} />
+            <Route path="details/program/donate" element={<Donate />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="program-edit" element={<ProgramCRUD />} />

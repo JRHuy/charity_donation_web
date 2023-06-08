@@ -1,4 +1,5 @@
 import { Card, ProgressBar, Row, Col, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 function CardProgramInfo(props) {
     return (
         <Card>
@@ -20,8 +21,8 @@ function CardProgramInfo(props) {
                     <Col>{props.daysLeft}</Col>
                 </Row>
                 <div className="d-grid gap-2 pt-4">
-                    <Button variant="warning" size="lg" style={{ color: "white" }} onClick={"/details/program/donate"}>
-                        Quyên góp
+                    <Button variant="warning" size="lg" style={{ color: "white" }}>
+                        <Link to="/details/program/donate" style={{ color: "inherit", textDecoration: "none", display: "block" }}>Quyên góp</Link>
                     </Button>
                 </div>
                 <Row>

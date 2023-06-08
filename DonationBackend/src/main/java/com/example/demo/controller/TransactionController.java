@@ -135,13 +135,18 @@ public class TransactionController {
                  }).orElseThrow(() -> new ProgramNotFoundException(moneyFormDTO.getId()));
     }
 
-    @GetMapping("api/transaction/highestList")
-    List<TransactionHistory> findHighestDonatorsList() {
-        return transactionRepository.findTop3ByTransactionOrderByMoneyDesc(Transaction.valueOf("Donate"));
+    @GetMapping("api/transaction/highestList/{id}")
+    List<TransactionHistory> findHighestDonatorsList(@PathVariable int id) {
+        return transactionRepository.findTop10ByProgram_programIDOrderByMoneyDesc(id);
     }
 
-    @GetMapping("api/transaction/recentList")
-    List<TransactionHistory> findRecentDonatorsList() {
-        return transactionRepository.findTop3ByTransactionOrderByTransactionIDDesc(Transaction.valueOf("Donate"));
+    @GetMapping("api/transaction/recentList/{id}")
+    List<TransactionHistory> findRecentDonatorsList(@PathVariable int id) {
+        return transactionRepository.findTop10ByProgram_programIDOrderByTransactionIDDesc(id);
+    }
+
+    @GetMapping("api/user/transaction/{id}")
+    List<TransactionHistory> showUserTransaction(@PathVariable int id) {
+        return transactionRepository.findByUser_userIDOrderByTransactionIDDesc(id);
     }
 }
