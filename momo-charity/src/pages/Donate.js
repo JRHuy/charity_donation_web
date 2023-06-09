@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CardProgramInfo from "../components/CardProgramInfo";
 import axios from "axios";
+import { NumericFormat } from "react-number-format";
+import style from "../styles/style.module.css"
 
 function Donate() {
     const [error, setError] = useState(false);
@@ -36,10 +38,10 @@ function Donate() {
         money: money
     }
 
-    const onInputChange = (e) => {
+    const onInputChange = (value) => {
         setUser(user);
         setProgram(donateInfo);
-        setMoney(e.target.value);
+        setMoney(value);
     };
 
     const goBack = () => {
@@ -72,7 +74,12 @@ function Donate() {
                             </div>
                             <div className="form-group">
                                 <label style={{ display: "flex" }} htmlFor="money">Nhập số tiền bạn muốn quyên góp</label>
-                                <input type="number" name="money" id="money" className="form-control" placeholder="0 VND" value={money} onChange={(e) => onInputChange(e)} />
+                                {/* <input type="number" name="money" id="money" className="form-control" placeholder="0 VND" value={money} onChange={(e) => onInputChange(e)} /> */}
+                                <NumericFormat name="money" id="money" value={money} suffix="đ" displayType="input" type="tel" thousandSeparator="." decimalSeparator="," placeholder="0đ" className={style.money} onValueChange={(values, e) => {
+                                    const {formattedValue, value, floatValue} = values;
+                                    console.log(values.value);
+                                    onInputChange(value);
+                                }} />
                             </div>
                             {error && money.length <= 0 ?
                                 <div className="alert alert-danger" role="alert">

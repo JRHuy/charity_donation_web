@@ -1,6 +1,8 @@
 import Axios from "axios";
 import { useState } from "react";
+import { NumericFormat } from "react-number-format";
 import { Link, useNavigate } from "react-router-dom";
+import style from "../styles/style.module.css"
 
 function Deposit() {
     const [error, setError] = useState(false);
@@ -18,10 +20,9 @@ function Deposit() {
         money: money
     }
 
-    const onInputChange = (e) => {
+    const onInputChange = (value) => {
         setId(user.userID);
-        console.log(user.userID);
-        setMoney(e.target.value);
+        setMoney(value);
     };
 
     const goBack = () => {
@@ -51,7 +52,12 @@ function Deposit() {
                         <form method="POST" onSubmit={(e) => onSubmit(e)}>
                             <div className="form-group">
                                 <label style={{ display: "flex" }} htmlFor="money">Nhập số tiền</label>
-                                <input type="number" name="money" id="money" className="form-control" placeholder="0 VND" value={money} onChange={(e) => onInputChange(e)} />
+                                <NumericFormat name="money" id="money" value={money} suffix="đ" displayType="input" type="tel" thousandSeparator="." decimalSeparator="," placeholder="0đ" className={style.money} onValueChange={(values, e) => {
+                                    const {formattedValue, value, floatValue} = values;
+                                    console.log(values.value);
+                                    onInputChange(value);
+                                }} />
+                                {/* <input type="number" className="form-control" placeholder="0 VND" value={money} onChange={(e) => onInputChange(e)} /> */}
                             </div>
                             {error && money.length <= 0 ?
                                 <div className="alert alert-danger" role="alert">

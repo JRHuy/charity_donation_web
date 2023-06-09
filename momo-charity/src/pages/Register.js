@@ -62,7 +62,7 @@ export default function Register() {
             setValidEmail(false);
         } else {
             await Axios.post('http://localhost:8080/api/user', user);
-            navigate('/admin/users');
+            navigate('/login');
         }
     };
 

@@ -1,3 +1,9 @@
 .input1 {
   width: 200px;
 }
+
+.money {
+  width: 650px;
+  height: 40px;
+  /* display: block; */
+}
