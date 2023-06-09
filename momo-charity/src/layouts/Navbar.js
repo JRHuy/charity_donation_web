@@ -6,6 +6,8 @@ const logout = () => {
   AuthService.logout();
 };
 
+const authority = localStorage.getItem('authority');
+
 const NavBar = ({ user }) => {
   return (
     <section id="1" className="sticky-top">
@@ -148,6 +150,7 @@ const NavBar = ({ user }) => {
                 </NavDropdown.Item>
                 <NavDropdown.Item href="/transaction_history">Lịch sử giao dịch</NavDropdown.Item>
                 <NavDropdown.Divider />
+                {authority === 'ADMIN' && <NavDropdown.Item href="/admin/users">Admin Quản lý</NavDropdown.Item>}
                 <NavDropdown.Item href="" onClick={logout}>
                   Log out
                 </NavDropdown.Item>

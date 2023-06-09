@@ -19,7 +19,8 @@ function Deposit() {
     }
 
     const onInputChange = (e) => {
-        setId(user.id)
+        setId(user.userID);
+        console.log(user.userID);
         setMoney(e.target.value);
     };
 

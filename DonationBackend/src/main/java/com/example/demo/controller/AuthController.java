@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.exception.UserNotFoundException;
 import com.example.demo.payload.request.LoginRequest;
 import com.example.demo.payload.response.JwtResponse;
 import com.example.demo.repository.RoleRepository;
