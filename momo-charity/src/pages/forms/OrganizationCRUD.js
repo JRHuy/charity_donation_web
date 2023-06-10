@@ -19,7 +19,7 @@ export default function OrganizationCRUD() {
     e.preventDefault();
     console.log(org);
     axios
-      .post("http://localhost:8080/program", org)
+      .post("http://localhost:8080/organization", org)
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
   };
