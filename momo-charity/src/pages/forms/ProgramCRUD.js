@@ -18,6 +18,7 @@ export default function ProgramCRUD() {
 
   const handleChange = (e) => {
     setProgram({ ...program, [e.target.name]: e.target.value });
+    //setProgram({ ...program, organization.organizationID: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -40,15 +41,27 @@ export default function ProgramCRUD() {
         <form action="" onSubmit={(e) => handleSubmit(e)} method="POST">
           <div>
             <span>Tên chương trình</span>
-            <input type="text" name="programName" onChange={(e) => handleChange(e)} />
+            <input
+              type="text"
+              name="programName"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
           <div>
             <span>Mục tiêu (VNĐ)</span>
-            <input type="text" name="targetMoney" onChange={(e) => handleChange(e)} />
+            <input
+              type="text"
+              name="targetMoney"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
           <div>
             <span>Mã tổ chức</span>
-            <input type="text" name="organizationID" onChange={(e) => handleChange(e)} />
+            <input
+              type="text"
+              name="organizationID"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
           <div>
             <span>Mô tả chương trình</span>
@@ -77,7 +90,11 @@ export default function ProgramCRUD() {
           </div>
           <div>
             <label htmlFor="">Ngày hết hạn</label>
-            <input type="date" name="deadline" onChange={(e) => handleChange(e)} />
+            <input
+              type="date"
+              name="deadline"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
           <div>
             <button

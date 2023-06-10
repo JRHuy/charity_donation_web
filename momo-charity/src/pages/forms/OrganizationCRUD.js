@@ -19,7 +19,7 @@ export default function OrganizationCRUD() {
     e.preventDefault();
     console.log(org);
     axios
-      .post("http://localhost:8080/program", org)
+      .post("http://localhost:8080/organization", org)
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
   };
@@ -35,15 +35,27 @@ export default function OrganizationCRUD() {
         <form action="" onSubmit={(e) => handleSubmit(e)} method="POST">
           <div>
             <span>Tên nhà tài trợ</span>
-            <input type="text" name="organizationName" onChange={(e) => handleChange(e)} />
+            <input
+              type="text"
+              name="organizationName"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
           <div>
             <span>Mô tả</span>
-            <input type="text" name="description" onChange={(e) => handleChange(e)} />
+            <input
+              type="text"
+              name="description"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
           <div>
             <span>Số lượng chương trình đã tham gia</span>
-            <input type="text" name="numOfProjects" onChange={(e) => handleChange(e)} />
+            <input
+              type="text"
+              name="numOfProjects"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
           <div>
             <span>Số lượng chương trình đã hoàn thành</span>
@@ -55,9 +67,13 @@ export default function OrganizationCRUD() {
           </div>
           <div>
             <span>Tiền nhà tài trợ</span>
-            <input type="text" name="ogDonate" onChange={(e) => handleChange(e)} />
+            <input
+              type="text"
+              name="ogDonate"
+              onChange={(e) => handleChange(e)}
+            />
           </div>
-          
+
           <div>
             <button
               type="submit"

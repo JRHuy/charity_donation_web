@@ -19,6 +19,7 @@ import ProgramCRUD from "./pages/forms/ProgramCRUD";
 import Donate from "./pages/Donate";
 import AllTransactions from "./pages/AllTransactions";
 import UserTransactionHistory from "./pages/UserTransactionHistory";
+import OrganizationCRUD from "./pages/forms/OrganizationCRUD";
 
 function App() {
   // check jwt
@@ -60,6 +61,7 @@ function App() {
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="program-edit" element={<ProgramCRUD />} />
+          <Route path="organization-edit" element={<OrganizationCRUD />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </div>

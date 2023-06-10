@@ -18,7 +18,7 @@ public class Organization implements Serializable {
 
     @Id
     @Column(name = "organizationID")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int organizationID;
 
 //    @Column(name = "programName", length = 50, nullable = false)

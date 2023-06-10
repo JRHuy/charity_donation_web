@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.exception.OrganizationNotFoundException;
 import com.example.demo.exception.ProgramNotFoundException;
 import com.example.demo.model.Program;
 import com.example.demo.repository.OrganizationRepository;
@@ -26,7 +27,7 @@ public class ProgramController {
 //                    programs.add(newProgram);
 //                    organization.setProgram(programs);
                     return organizationRepository.save(organization);
-                }).orElseThrow(() -> new ProgramNotFoundException(newProgram.getProgramID()));
+                }).orElseThrow(() -> new OrganizationNotFoundException(newProgram.getOrganization().getOrganizationID()));
 
         return programRepository.save(newProgram);
     }
