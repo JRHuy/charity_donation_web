@@ -24,7 +24,7 @@ export default function ProgramCRUD() {
     e.preventDefault();
     console.log(program);
     axios
-      .post("http://localhost:8080/program/", program)
+      .post("http://localhost:8080/program", program)
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
   };
@@ -37,25 +37,25 @@ export default function ProgramCRUD() {
         </h2>
       </div>
       <div id="form-enter" className="d-flex justify-content-start">
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" onSubmit={(e) => handleSubmit(e)} method="POST">
           <div>
             <span>Tên chương trình</span>
-            <input type="text" name="programName" onChange={handleChange} />
+            <input type="text" name="programName" onChange={(e) => handleChange(e)} />
           </div>
           <div>
             <span>Mục tiêu (VNĐ)</span>
-            <input type="text" name="targetMoney" onChange={handleChange} />
+            <input type="text" name="targetMoney" onChange={(e) => handleChange(e)} />
           </div>
           <div>
             <span>Mã tổ chức</span>
-            <input type="text" name="organizationID" onChange={handleChange} />
+            <input type="text" name="organizationID" onChange={(e) => handleChange(e)} />
           </div>
           <div>
             <span>Mô tả chương trình</span>
             <input
               type="text"
               name="programDescription"
-              onChange={handleChange}
+              onChange={(e) => handleChange(e)}
             />
           </div>
           <div>
@@ -65,19 +65,19 @@ export default function ProgramCRUD() {
               name="active"
               id=""
               value="true"
-              onChange={handleChange}
+              onChange={(e) => handleChange(e)}
             />
             <input
               type="radio"
               name="active"
               id=""
               value="false"
-              onChange={handleChange}
+              onChange={(e) => handleChange(e)}
             />
           </div>
           <div>
             <label htmlFor="">Ngày hết hạn</label>
-            <input type="date" name="deadline" onChange={handleChange} />
+            <input type="date" name="deadline" onChange={(e) => handleChange(e)} />
           </div>
           <div>
             <button
