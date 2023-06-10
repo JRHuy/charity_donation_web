@@ -16,6 +16,7 @@ import { Helmet } from "react-helmet";
 import Deposit from "./pages/Deposit";
 import SucManh2000 from "./pages/donors/SucManh2000";
 import ProgramCRUD from "./pages/forms/ProgramCRUD";
+import OrganizationCRUD from "./pages/forms/OrganizationCRUD";
 import Donate from "./pages/Donate";
 import AllTransactions from "./pages/AllTransactions";
 import UserTransactionHistory from "./pages/UserTransactionHistory";
