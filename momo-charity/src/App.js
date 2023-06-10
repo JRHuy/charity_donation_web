@@ -38,7 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/details/program" element={<Program />} />
+            <Route path="/details/program/:programID" element={<Program />} />
             <Route path="partners" element={<PartnerList />} />
             <Route path="sucmanh2000" element={<SucManh2000 />} />
             <Route path="/" element={<AuthLayout allowedRole={"CUSTOMER"} />}>

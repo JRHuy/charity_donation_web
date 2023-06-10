@@ -55,4 +55,7 @@ public class Program implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate deadline;
 
+    @Column
+    private String imageLink;
+
 }

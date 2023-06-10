@@ -239,7 +239,8 @@ function Home() {
           <Row xs={1} md={2} lg={3}>
             <Col>
               <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                id={program1?.programID}
+                image={program1?.imageLink}
                 title={program1?.programName}
                 avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
                 orgName={program1?.organization.organizationName}

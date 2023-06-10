@@ -11,11 +11,12 @@ export default function ProgramCRUD() {
       organizationID: 1,
     },
     targetMoney: "",
-    currentMoney: "",
+    currentMoney: 0,
     donateTotal: "",
     programDescription: "",
     active: "",
     deadline: "",
+    imageLink: "",
   });
 
   const handleChange = (e) => {
@@ -36,89 +37,98 @@ export default function ProgramCRUD() {
   };
 
   return (
-    <div><ConfettiComponent />
-    <div className="container">
-      {success && (
-        <div className="alert alert-success" role="alert">
-          Nạp tiền thành công!
+    <div>
+      <ConfettiComponent />
+      <div className="container">
+        {success && (
+          <div className="alert alert-success" role="alert">
+            Nạp tiền thành công!
+          </div>
+        )}
+        <div id="title-program">
+          <h2>
+            <b>CHỈNH SỬA CHƯƠNG TRÌNH</b>
+          </h2>
         </div>
-      )}
-      <div id="title-program">
-        <h2>
-          <b>CHỈNH SỬA CHƯƠNG TRÌNH</b>
-        </h2>
+        <div id="form-enter" className="d-flex justify-content-start">
+          <form action="" onSubmit={(e) => handleSubmit(e)} method="POST">
+            <div>
+              <span>Tên chương trình</span>
+              <input
+                type="text"
+                name="programName"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div>
+              <span>Mục tiêu (VNĐ)</span>
+              <input
+                type="text"
+                name="targetMoney"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div>
+              <span>Mã tổ chức</span>
+              <input
+                type="text"
+                name="organizationID"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div>
+              <span>Mô tả chương trình</span>
+              <input
+                type="text"
+                name="programDescription"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div>
+              <span>Hình ảnh</span>
+              <input
+                type="text"
+                name="imageLink"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div>
+              <label htmlFor="">Đang hoạt động</label>
+              <input
+                type="radio"
+                name="active"
+                id=""
+                value="true"
+                onChange={(e) => handleChange(e)}
+              />
+              <input
+                type="radio"
+                name="active"
+                id=""
+                value="false"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div>
+              <label htmlFor="">Ngày hết hạn</label>
+              <input
+                type="date"
+                name="deadline"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div>
+              <button
+                type="submit"
+                className="btn btn-outline-danger"
+                style={{ width: 200 }}
+              >
+                OK
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div id="form-enter" className="d-flex justify-content-start">
-        <form action="" onSubmit={(e) => handleSubmit(e)} method="POST">
-          <div>
-            <span>Tên chương trình</span>
-            <input
-              type="text"
-              name="programName"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          <div>
-            <span>Mục tiêu (VNĐ)</span>
-            <input
-              type="text"
-              name="targetMoney"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          <div>
-            <span>Mã tổ chức</span>
-            <input
-              type="text"
-              name="organizationID"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          <div>
-            <span>Mô tả chương trình</span>
-            <input
-              type="text"
-              name="programDescription"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          <div>
-            <label htmlFor="">Đang hoạt động</label>
-            <input
-              type="radio"
-              name="active"
-              id=""
-              value="true"
-              onChange={(e) => handleChange(e)}
-            />
-            <input
-              type="radio"
-              name="active"
-              id=""
-              value="false"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          <div>
-            <label htmlFor="">Ngày hết hạn</label>
-            <input
-              type="date"
-              name="deadline"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="btn btn-outline-danger"
-              style={{ width: 200 }}
-            >
-              OK
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
     </div>
   );
 }
