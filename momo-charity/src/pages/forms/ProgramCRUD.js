@@ -3,6 +3,7 @@ import "../../styles/style.css";
 import axios from "axios";
 
 export default function ProgramCRUD() {
+  const [success, setSuccess] = useState(false);
   const [program, setProgram] = useState({
     programName: "",
     organization: {
@@ -26,12 +27,20 @@ export default function ProgramCRUD() {
     console.log(program);
     axios
       .post("http://localhost:8080/program", program)
-      .then((response) => console.log(response))
+      .then((response) => {
+        console.log(response);
+        setSuccess(true);
+      })
       .catch((err) => console.log(err));
   };
 
   return (
     <div className="container">
+      {success && (
+        <div className="alert alert-success" role="alert">
+          Nạp tiền thành công!
+        </div>
+      )}
       <div id="title-program">
         <h2>
           <b>CHỈNH SỬA CHƯƠNG TRÌNH</b>

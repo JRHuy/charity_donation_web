@@ -20,7 +20,6 @@ import OrganizationCRUD from "./pages/forms/OrganizationCRUD";
 import Donate from "./pages/Donate";
 import AllTransactions from "./pages/AllTransactions";
 import UserTransactionHistory from "./pages/UserTransactionHistory";
-import OrganizationCRUD from "./pages/forms/OrganizationCRUD";
 
 function App() {
   // check jwt

@@ -3,6 +3,7 @@ import "../../styles/style.css";
 import axios from "axios";
 
 export default function OrganizationCRUD() {
+  const [success, setSuccess] = useState(false);
   const [org, setOrg] = useState({
     organizationName: "",
     description: "",
@@ -20,12 +21,20 @@ export default function OrganizationCRUD() {
     console.log(org);
     axios
       .post("http://localhost:8080/organization", org)
-      .then((response) => console.log(response))
+      .then((response) => {
+        console.log(response);
+        setSuccess(true);
+      })
       .catch((err) => console.log(err));
   };
 
   return (
     <div className="container">
+      {success && (
+        <div className="alert alert-success" role="alert">
+          Nạp tiền thành công!
+        </div>
+      )}
       <div id="title-program">
         <h2>
           <b>THÔNG TIN NHÀ TÀI TRỢ</b>
