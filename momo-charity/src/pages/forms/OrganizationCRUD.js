@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/style.css";
 import axios from "axios";
+import ConfettiComponent from "./Confetti";
 
 export default function OrganizationCRUD() {
   const [success, setSuccess] = useState(false);
@@ -29,6 +30,7 @@ export default function OrganizationCRUD() {
   };
 
   return (
+    <div><ConfettiComponent />
     <div className="container">
       {success && (
         <div className="alert alert-success" role="alert">
@@ -94,6 +96,7 @@ export default function OrganizationCRUD() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 }
