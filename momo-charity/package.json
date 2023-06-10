@@ -20,6 +20,7 @@
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "react-use": "^17.4.0",
+    "react-use-window-size": "^1.0.1",
     "react-validation": "^3.0.7",
     "redux-thunk": "^2.4.2",
     "validator": "^13.9.0",
