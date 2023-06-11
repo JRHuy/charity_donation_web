@@ -40,7 +40,7 @@ export default function OrganizationCRUD() {
           </div>
         )}
         <div id="title-program">
-          <h2>
+          <h2 id="h22">
             <b>THÔNG TIN NHÀ TÀI TRỢ</b>
           </h2>
         </div>

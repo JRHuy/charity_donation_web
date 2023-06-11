@@ -245,20 +245,20 @@ function Home() {
                 avatar={program1?.organization.pfpLink}
                 orgName={program1?.organization.organizationName}
                 dayCount={dayCount1}
-                current={program1?.currentMoney + "đ"}
-                target={program1?.targetMoney + "đ"}
+                current={program1?.currentMoney + " VND"}
+                target={program1?.targetMoney + " VND"}
                 pbar="10"
                 donateCount={program1?.donateTotal}
                 donatePercentage="2.97%"
               />
               <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                image={program2?.imageLink}
                 title={program2?.programName}
                 avatar={program1?.organization.pfpLink}
                 orgName={program2?.organization.organizationName}
                 dayCount={dayCount2}
-                current={program2?.currentMoney + "đ"}
-                target={program2?.targetMoney + "đ"}
+                current={program2?.currentMoney + " VND"}
+                target={program2?.targetMoney + " VND"}
                 pbar="10"
                 donateCount={program2?.donateTotal}
                 donatePercentage="2.97%"
@@ -266,25 +266,26 @@ function Home() {
             </Col>
             <Col>
               <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                // image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                image={program3?.imageLink}
                 title={program3?.programName}
-                avatar={program1?.organization.pfpLink}
+                avatar={program3?.organization.pfpLink}
                 orgName={program3?.organization.organizationName}
                 dayCount={dayCount3}
-                current={program3?.currentMoney + "đ"}
-                target={program3?.targetMoney + "đ"}
+                current={program3?.currentMoney + " VND"}
+                target={program3?.targetMoney + " VND"}
                 pbar="10"
                 donateCount={program3?.donateTotal}
                 donatePercentage="2.97%"
               />
               <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                image={program4?.imageLink}
                 title={program4?.programName}
-                avatar={program1?.organization.pfpLink}
+                avatar={program4?.organization.pfpLink}
                 orgName={program4?.organization.organizationName}
                 dayCount={dayCount4}
-                current={program4?.currentMoney + "đ"}
-                target={program4?.targetMoney + "đ"}
+                current={program4?.currentMoney + " VND"}
+                target={program4?.targetMoney + " VND"}
                 pbar="10"
                 donateCount={program4?.donateTotal}
                 donatePercentage="2.97%"
@@ -292,25 +293,25 @@ function Home() {
             </Col>
             <Col>
               <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                image={program5?.imageLink}
                 title={program5?.programName}
-                avatar={program1?.organization.pfpLink}
+                avatar={program5?.organization.pfpLink}
                 orgName={program5?.organization.organizationName}
                 dayCount={dayCount5}
-                current={program5?.currentMoney + "đ"}
-                target={program5?.targetMoney + "đ"}
+                current={program5?.currentMoney + " VND"}
+                target={program5?.targetMoney + " VND"}
                 pbar="10"
                 donateCount={program5?.donateTotal}
                 donatePercentage="2.97%"
               />
               <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                image={program6?.imageLink}
                 title={program6?.programName}
-                avatar={program1?.organization.pfpLink}
+                avatar={program6?.organization.pfpLink}
                 orgName={program6?.organization.organizationName}
                 dayCount={dayCount6}
-                current={program6?.currentMoney + "đ"}
-                target={program6?.targetMoney + "đ"}
+                current={program6?.currentMoney + " VND"}
+                target={program6?.targetMoney + " VND"}
                 pbar="10"
                 donateCount={program6?.donateTotal}
                 donatePercentage="2.97%"
