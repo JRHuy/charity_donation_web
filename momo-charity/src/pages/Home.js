@@ -26,8 +26,28 @@ function Home() {
   const [dayCount4, setDayCount4] = useState(null);
   const [dayCount5, setDayCount5] = useState(null);
   const [dayCount6, setDayCount6] = useState(null);
+  const [percentage1, setPercentage1] = useState(null);
+  const [percentage2, setPercentage2] = useState(null);
+  const [percentage3, setPercentage3] = useState(null);
+  const [percentage4, setPercentage4] = useState(null);
+  const [percentage5, setPercentage5] = useState(null);
+  const [percentage6, setPercentage6] = useState(null);
 
   useEffect(() => {
+    let value = document.querySelectorAll(".num");
+    let interval = 3000;
+    value.forEach((value) => {
+      let start = 0;
+      let end = parseInt(value.getAttribute("data-val"));
+      let duration = Math.floor(interval / end);
+      let counter = setInterval(() => {
+        start += 1;
+        value.textContent = start;
+        if (start == end) {
+          clearInterval(counter);
+        }
+      }, duration);
+    });
     showProgram1();
     showProgram2();
     showProgram3();
@@ -43,6 +63,7 @@ function Home() {
         // console.log(res.data);
         setProgram1(res.data);
         setDayCount1(dayCalculate(res.data.deadline));
+        setPercentage1(percent(res.data.currentMoney, res.data.targetMoney));
       })
       .catch((err) => console.log(err));
   };
@@ -52,6 +73,7 @@ function Home() {
       .then((res) => {
         setProgram2(res.data);
         setDayCount2(dayCalculate(res.data.deadline));
+        setPercentage2(percent(res.data.currentMoney, res.data.targetMoney));
       })
       .catch((err) => console.log(err));
   };
@@ -61,6 +83,7 @@ function Home() {
       .then((res) => {
         setProgram3(res.data);
         setDayCount3(dayCalculate(res.data.deadline));
+        setPercentage3(percent(res.data.currentMoney, res.data.targetMoney));
       })
       .catch((err) => console.log(err));
   };
@@ -70,6 +93,7 @@ function Home() {
       .then((res) => {
         setProgram4(res.data);
         setDayCount4(dayCalculate(res.data.deadline));
+        setPercentage4(percent(res.data.currentMoney, res.data.targetMoney));
       })
       .catch((err) => console.log(err));
   };
@@ -79,6 +103,7 @@ function Home() {
       .then((res) => {
         setProgram5(res.data);
         setDayCount5(dayCalculate(res.data.deadline));
+        setPercentage5(percent(res.data.currentMoney, res.data.targetMoney));
       })
       .catch((err) => console.log(err));
   };
@@ -88,6 +113,7 @@ function Home() {
       .then((res) => {
         setProgram6(res.data);
         setDayCount6(dayCalculate(res.data.deadline));
+        setPercentage6(percent(res.data.currentMoney, res.data.targetMoney));
       })
       .catch((err) => console.log(err));
   };
@@ -96,6 +122,16 @@ function Home() {
     const final = new Date(deadline);
 
     return Math.ceil((final - current) / (1000 * 60 * 60 * 24));
+  };
+
+  //Count-up script
+
+  //const countEffect = (value) => {};
+
+  //Percent calculation
+  const percent = (curr, target) => {
+    let num = (curr * 100) / target;
+    return num.toFixed(2);
   };
 
   return (
@@ -139,7 +175,9 @@ function Home() {
                         width: "2px",
                       }}
                     ></div>
-                    <h5 className="">874</h5>
+                    <h5 className="num" data-val="874">
+                      0
+                    </h5>
                   </div>
                   <p>dự án đã được gây quỹ thành công</p>
                 </div>
@@ -152,7 +190,12 @@ function Home() {
                         width: "2px",
                       }}
                     ></div>
-                    <h5>56+ tỷ</h5>
+                    <h5>
+                      <span className="num" data-val="56">
+                        0
+                      </span>
+                      <span>+ tỷ</span>
+                    </h5>
                   </div>
                   <p>đồng được quyên góp</p>
                 </div>
@@ -165,7 +208,12 @@ function Home() {
                         width: "2px",
                       }}
                     ></div>
-                    <h5>777+ triệu</h5>
+                    <h5>
+                      <span className="num" data-val="777">
+                        0
+                      </span>
+                      <span>+ triệu</span>
+                    </h5>
                   </div>
                   <p>heo vàng được quyên góp</p>
                 </div>
@@ -178,7 +226,12 @@ function Home() {
                         width: "2px",
                       }}
                     ></div>
-                    <h5>128+ triệu</h5>
+                    <h5>
+                      <span className="num" data-val="128">
+                        0
+                      </span>
+                      <span>+ triệu</span>
+                    </h5>
                   </div>
                   <p>lượt quyên góp</p>
                 </div>
@@ -186,12 +239,13 @@ function Home() {
               <div className="hstack gap-2 pb-3">
                 <button
                   type="button"
-                  className="btn btn-info"
-                  style={{ color: "white" }}
+                  id="quyengop-btn"
+                  className="btn btn-warning"
+                  style={{}}
                 >
                   Quyên góp
                 </button>
-                <button type="button" className="btn btn-outline-info">
+                <button type="button" id="gioithieu-btn" className="btn">
                   Giới thiệu
                 </button>
               </div>
@@ -247,9 +301,9 @@ function Home() {
                 dayCount={dayCount1}
                 current={program1?.currentMoney + " VND"}
                 target={program1?.targetMoney + " VND"}
-                pbar="10"
+                pbar={percentage1}
                 donateCount={program1?.donateTotal}
-                donatePercentage="2.97%"
+                donatePercentage={percentage1 + `%`}
               />
               <CardItem
                 id={program2?.programID}
@@ -260,9 +314,9 @@ function Home() {
                 dayCount={dayCount2}
                 current={program2?.currentMoney + " VND"}
                 target={program2?.targetMoney + " VND"}
-                pbar="10"
+                pbar={percentage2}
                 donateCount={program2?.donateTotal}
-                donatePercentage="2.97%"
+                donatePercentage={percentage2 + `%`}
               />
             </Col>
             <Col>
@@ -276,9 +330,9 @@ function Home() {
                 dayCount={dayCount3}
                 current={program3?.currentMoney + " VND"}
                 target={program3?.targetMoney + " VND"}
-                pbar="10"
+                pbar={percentage3}
                 donateCount={program3?.donateTotal}
-                donatePercentage="2.97%"
+                donatePercentage={percentage3 + `%`}
               />
               <CardItem
                 id={program4?.programID}
@@ -289,9 +343,9 @@ function Home() {
                 dayCount={dayCount4}
                 current={program4?.currentMoney + " VND"}
                 target={program4?.targetMoney + " VND"}
-                pbar="10"
+                pbar={percentage4}
                 donateCount={program4?.donateTotal}
-                donatePercentage="2.97%"
+                donatePercentage={percentage4 + `%`}
               />
             </Col>
             <Col>
@@ -304,9 +358,9 @@ function Home() {
                 dayCount={dayCount5}
                 current={program5?.currentMoney + " VND"}
                 target={program5?.targetMoney + " VND"}
-                pbar="10"
+                pbar={percentage5}
                 donateCount={program5?.donateTotal}
-                donatePercentage="2.97%"
+                donatePercentage={percentage5 + `%`}
               />
               <CardItem
                 id={program6?.programID}
@@ -317,9 +371,9 @@ function Home() {
                 dayCount={dayCount6}
                 current={program6?.currentMoney + " VND"}
                 target={program6?.targetMoney + " VND"}
-                pbar="10"
+                pbar={percentage6}
                 donateCount={program6?.donateTotal}
-                donatePercentage="2.97%"
+                donatePercentage={percentage6 + `%`}
               />
             </Col>
           </Row>

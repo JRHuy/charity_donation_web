@@ -76,8 +76,8 @@ function CardItem(props) {
         to={`/details/program/${props.id}`}
         style={{ textDecoration: "none", color: "black" }}
       >
-        <Card.Img variant="top" src={props.image} />
-        <Card.Body>
+        <Card.Img id="card-img" variant="top" src={props.image} />
+        <Card.Body style={{ height: "3rem" }}>
           <h5 className="program-title">{props.title}</h5>
         </Card.Body>
       </Link>

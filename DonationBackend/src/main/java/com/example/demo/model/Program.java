@@ -45,7 +45,7 @@ public class Program implements Serializable {
     @Column
     private int donateTotal;
 
-    @Column
+    @Column(length = 1000)
     private String programDescription;
 
     @Column

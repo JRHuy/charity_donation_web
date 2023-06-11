@@ -26,8 +26,8 @@ function Program() {
   // const [displayPhone, setDisplayPhone] = useState('');
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     showData();
-
     showTopList();
     showRecentList();
   }, []);
@@ -53,11 +53,16 @@ function Program() {
       .catch((err) => console.error(err));
   };
 
-  const percent = (curr, target) => (curr * 100) / target;
+  const percent = (curr, target) => {
+    let num = (curr * 100) / target;
+    return num.toFixed(2);
+  };
 
   const showTopList = () => {
     axios
-      .get(`http://localhost:8080/api/transaction/highestList/${params.programID}`)
+      .get(
+        `http://localhost:8080/api/transaction/highestList/${params.programID}`
+      )
       .then((res) => {
         setTopDonors(res.data);
       })
@@ -66,7 +71,9 @@ function Program() {
 
   const showRecentList = () => {
     axios
-      .get(`http://localhost:8080/api/transaction/recentList/${params.programID}`)
+      .get(
+        `http://localhost:8080/api/transaction/recentList/${params.programID}`
+      )
       .then((res) => {
         setRecentDonors(res.data);
       })
@@ -99,32 +106,26 @@ function Program() {
             <Carousel>
               <Carousel.Item>
                 <Stack direction="horizontal" gap={3}>
+                  <img src={program?.imageLink} id="detailed-photos"></img>
                   <img
-                    src="https://static.mservice.io/blogscontents/momo-upload-api-230411142539-638168199392425352.jpg"
+                    src="https://static.mservice.io/blogscontents/momo-upload-api-230608105803-638218186836699658.jpg"
                     id="detailed-photos"
                   ></img>
                   <img
-                    src="https://static.mservice.io/blogscontents/momo-upload-api-230411142539-638168199392425352.jpg"
-                    id="detailed-photos"
-                  ></img>
-                  <img
-                    src="https://static.mservice.io/blogscontents/momo-upload-api-230411142539-638168199392425352.jpg"
+                    src="https://static.mservice.io/blogscontents/s770x370/momo-upload-api-230523164714-638204572343870438.jpg"
                     id="detailed-photos"
                   ></img>
                 </Stack>
               </Carousel.Item>
               <Carousel.Item>
                 <Stack direction="horizontal" gap={3}>
+                  <img src={program?.imageLink} id="detailed-photos"></img>
                   <img
-                    src="https://static.mservice.io/blogscontents/momo-upload-api-230411142539-638168199392425352.jpg"
+                    src="https://static.mservice.io/blogscontents/momo-upload-api-230608105803-638218186836699658.jpg"
                     id="detailed-photos"
                   ></img>
                   <img
-                    src="https://static.mservice.io/blogscontents/momo-upload-api-230411142539-638168199392425352.jpg"
-                    id="detailed-photos"
-                  ></img>
-                  <img
-                    src="https://static.mservice.io/blogscontents/momo-upload-api-230411142539-638168199392425352.jpg"
+                    src="https://static.mservice.io/blogscontents/s770x370/momo-upload-api-230523164714-638204572343870438.jpg"
                     id="detailed-photos"
                   ></img>
                 </Stack>

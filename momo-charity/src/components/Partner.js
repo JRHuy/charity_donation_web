@@ -43,7 +43,7 @@ function Partner() {
                           <div className="row card-body">
                             <img
                               className="col-sm-6"
-                              src="doitac/saigonchildren.jpeg"
+                              src={org?.pfpLink}
                               style={{ width: 80, height: 60 }}
                             />
                             <div className="col-sm-auto">

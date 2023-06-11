@@ -551,6 +551,23 @@
   border-color: #d82d8b;
 }
 
+#quyengop-btn {
+  color: white;
+  background-color: #d82d8b;
+  border-color: #d82d8b;
+}
+
+#gioithieu-btn {
+  color: #d82d8b;
+  background-color: none;
+  border: 1px solid #d82d8b;
+}
+
+#gioithieu-btn:hover {
+  background-color: #d82d8b;
+  color: white;
+}
+
 #block-2 {
   background-color: white;
 }
@@ -559,11 +576,29 @@
   background-color: #f9b5c355;
 }
 
+#card-img {
+  height: 12rem;
+  object-fit: cover;
+}
 
-.st0{fill:#EC8C92;}
-.st1{fill:#FFFFFF;}
-.st2{fill:#274D76;}
-.st3{fill:#FFF3A1;}
-.st4{fill:#F2BDBA;}
-.st5{fill:#93B4F6;}
-.st6{fill:#74BAAB;}
+.st0 {
+  fill: #ec8c92;
+}
+.st1 {
+  fill: #ffffff;
+}
+.st2 {
+  fill: #274d76;
+}
+.st3 {
+  fill: #fff3a1;
+}
+.st4 {
+  fill: #f2bdba;
+}
+.st5 {
+  fill: #93b4f6;
+}
+.st6 {
+  fill: #74baab;
+}

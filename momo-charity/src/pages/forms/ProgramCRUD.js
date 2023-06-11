@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/style.css";
 import axios from "axios";
 import ConfettiComponent from "./Confetti";
@@ -8,16 +8,20 @@ export default function ProgramCRUD() {
   const [program, setProgram] = useState({
     programName: "",
     organization: {
-      organizationID: 1,
+      organizationID: 4,
     },
     targetMoney: "",
-    currentMoney: 0,
+    currentMoney: 250000,
     donateTotal: "",
     programDescription: "",
     active: "",
     deadline: "",
     imageLink: "",
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleChange = (e) => {
     setProgram({ ...program, [e.target.name]: e.target.value });
@@ -32,6 +36,8 @@ export default function ProgramCRUD() {
       .then((response) => {
         console.log(response);
         setSuccess(true);
+        document.getElementById("crud-form").reset();
+        window.scrollTo(0, 0);
       })
       .catch((err) => console.log(err));
   };
@@ -51,7 +57,12 @@ export default function ProgramCRUD() {
           </h2>
         </div>
         <div id="form-enter" className="d-flex justify-content-start">
-          <form action="" onSubmit={(e) => handleSubmit(e)} method="POST">
+          <form
+            id="crud-form"
+            action=""
+            onSubmit={(e) => handleSubmit(e)}
+            method="POST"
+          >
             <div>
               <span>Tên chương trình</span>
               <input

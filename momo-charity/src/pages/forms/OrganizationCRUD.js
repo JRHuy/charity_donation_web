@@ -26,6 +26,8 @@ export default function OrganizationCRUD() {
       .then((response) => {
         console.log(response);
         setSuccess(true);
+        document.getElementById("crud-form").reset();
+        window.scrollTo(0, 0);
       })
       .catch((err) => console.log(err));
   };
@@ -45,7 +47,12 @@ export default function OrganizationCRUD() {
           </h2>
         </div>
         <div id="form-enter" className="d-flex justify-content-start">
-          <form action="" onSubmit={(e) => handleSubmit(e)} method="POST">
+          <form
+            id="crud-form"
+            action=""
+            onSubmit={(e) => handleSubmit(e)}
+            method="POST"
+          >
             <div>
               <span>Tên nhà tài trợ</span>
               <input
