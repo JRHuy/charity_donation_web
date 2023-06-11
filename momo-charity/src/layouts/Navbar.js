@@ -144,7 +144,7 @@ const NavBar = ({ user }) => {
             </ul>
             {user ? (
               <NavDropdown title={user} id="basic-nav-dropdown">
-                <NavDropdown.Item href="">Xem trang cá nhân</NavDropdown.Item>
+                <NavDropdown.Item href="/profile">Xem trang cá nhân</NavDropdown.Item>
                 <NavDropdown.Item href="/details/program/deposit">
                   Nạp tiền vào tài khoản
                 </NavDropdown.Item>

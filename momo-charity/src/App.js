@@ -20,6 +20,8 @@ import OrganizationCRUD from "./pages/forms/OrganizationCRUD";
 import Donate from "./pages/Donate";
 import AllTransactions from "./pages/AllTransactions";
 import UserTransactionHistory from "./pages/UserTransactionHistory";
+import Profile from "./pages/Profile";
+import EditProfile from "./pages/EditProfile";
 
 function App() {
   // check jwt
@@ -60,6 +62,8 @@ function App() {
           <Route path="/" element={<AuthLayout allowedRole={"CUSTOMER"} />}>
             <Route path="details/program/deposit" element={<Deposit />} />
             <Route path="details/program/donate" element={<Donate />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="profile/edit/:userID" element={<EditProfile />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="*" element={<NoPage />} />

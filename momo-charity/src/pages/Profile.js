@@ -1,39 +1,85 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { NumericFormat } from "react-number-format";
+import { Link, useNavigate } from "react-router-dom";
+
 export default function Profile() {
+    const navigate = useNavigate();
+    const data = JSON.parse(localStorage.getItem('user'));
+    const id = data.userID;
+    const [user, setUser] = useState(null);
+    const [showMoney, setShowMoney] = useState(false);
+
+    const goBack = () => {
+        navigate(-1);
+    }
+
+    useEffect(() => {
+        showUserData();
+    }, []);
+
+    const toggleShowMoney = () => {
+        setShowMoney(!showMoney);
+    };
+
+    const showUserData = () => {
+        axios.get(`http://localhost:8080/api/user/${id}`).then(res => {
+            setUser(res.data);
+        }).catch(err => console.log(err))
+    }
+
     return (
         <>
             <div className="container">
                 <div className="form4enter">
                     <div className="row justify-content-center">
-                        <h3 id='title_page' className="text-center text-secondary mt-5 mb-3">Thông tin cá nhân</h3>
+                        <h1 id='profile_name' className="text-center mt-5 mb-3">{user?.name}</h1>
                         <form>
-                            <div className="form-group">
-                                <label style={{ display: "flex" }} htmlFor="money">Chương trình quyên góp</label>
-                                <input type="url" name="money" id="money" className="form-control" value={donateInfo?.programName} disabled />
+                            <i class="fa-solid fa-wallet" style={{ color: "#942192", marginRight: "10px" }}></i>
+                            <NumericFormat name="money" id="money" suffix="đ" displayType="text" type="tel" thousandSeparator="." decimalSeparator="," value={showMoney ? user?.money : '*****'} />
+                            <button
+                                type="button"
+                                className="btn btn-outline-secondary"
+                                id='showMoneyBtn'
+                                onClick={toggleShowMoney}
+                            >
+                                {showMoney ? (
+                                    <i className="fa fa-eye"></i>
+                                ) : (
+                                    <i className="fa fa-eye-slash"></i>
+                                )}
+                            </button>
+                            <div className="form-control mt-3" id="information">
+                                <i className="fa-solid fa-phone" style={{ color: "#257426", marginRight: "15px" }}></i>
+                                <input style={{ border: "none", backgroundColor: "white" }} type="url" value={user?.phoneNum} disabled />
+                            </div>
+                            <div className="form-control mt-3" id="information">
+                                <i className="fa-solid fa-envelope" style={{ color: "#d29d00", marginRight: "15px" }}></i>
+                                <input style={{ border: "none", backgroundColor: "white" }} type="url" value={user?.userEmail} disabled />
+                            </div>
+                            <div className="form-control mt-3" id="information">
+                                <i class="fa-solid fa-cake-candles" style={{ color: "#b51a00", marginRight: "15px" }}></i>
+                                <input style={{ border: "none", backgroundColor: "white" }} type="url" value={user?.dateOfBirth} disabled />
+                            </div>
+                            <div className="form-control mt-3" id="information">
+                                {user?.gender === "MALE" ? <i class="fa-solid fa-mars" style={{ color: "#0433ff", marginRight: "16px" }}></i> : <i class="fa-solid fa-venus" style={{ color: "#942192", marginRight: "16px" }}></i>}
+                                <input style={{ border: "none", backgroundColor: "white" }} type="url" value={user?.gender} disabled />
+                            </div>
+                            <div className="form-control mt-3" id="information">
+                                <i className="fa-regular fa-id-card" style={{ marginRight: "14px" }}></i>
+                                <input style={{ border: "none", backgroundColor: "white" }} type="url" value={user?.citizenIdentityNum} disabled />
                             </div>
                             <div className="form-group">
-                                <label style={{ display: "flex" }} htmlFor="money">Nhập số tiền bạn muốn quyên góp</label>
-                                {/* <input type="number" name="money" id="money" className="form-control" placeholder="0 VND" value={money} onChange={(e) => onInputChange(e)} /> */}
-                                <NumericFormat name="money" id="money" value={money} suffix="đ" displayType="input" type="tel" thousandSeparator="." decimalSeparator="," placeholder="0đ" className={style.money} onValueChange={(values, e) => {
-                                    const {formattedValue, value, floatValue} = values;
-                                    console.log(values.value);
-                                    onInputChange(value);
-                                }} />
-                            </div>
-                            {error && money.length <= 0 ?
-                                <div className="alert alert-danger" role="alert">
-                                    This field is required!
-                                </div>
-                                : ""}
-                            <div className="form-group">
-                                <button type="submit" value="register" id="loginbtn">Nạp tiền</button>
+                                <Link to={`/profile/edit/${user?.userID}`} style={{textDecoration: "none"}}>
+                                    <button type="submit" value="register" id="loginbtn">
+                                        Chỉnh sửa
+                                    </button>
+                                </Link>
                             </div>
                         </form>
                         <div className="redirection">
-                            <Link onClick={goBack} id="redirection">Hủy</Link>
+                            <Link onClick={goBack} id="redirection">Thoát</Link>
                         </div>
-                        {success && <div className="alert alert-success" role="alert">
-                            Quyên góp thành công!
-                        </div>}
                     </div>
                 </div>
             </div>

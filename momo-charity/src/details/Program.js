@@ -375,7 +375,7 @@ function Program() {
               <Col>
                 <CardProgramInfo
                   currentMoney={program?.currentMoney}
-                  target={program?.target}
+                  target={program?.targetMoney}
                   currentPercent={percentage}
                   count={program?.donateTotal}
                   daysLeft="59 ngày"

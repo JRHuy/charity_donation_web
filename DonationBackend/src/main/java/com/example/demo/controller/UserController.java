@@ -77,11 +77,22 @@ public class UserController {
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
 
+//    @DeleteMapping("api/user/{id}")
+//    String deleteUser(@PathVariable int id) {
+//        if(!userRepository.existsById(id))
+//            throw new UserNotFoundException(id);
+//        userRepository.deleteById(id);
+//
+//        return "User with id " + id + " has been deleted!";
+//    }
+
     @DeleteMapping("api/user/{id}")
     String deleteUser(@PathVariable int id) {
-        if(!userRepository.existsById(id))
-            throw new UserNotFoundException(id);
-        userRepository.deleteById(id);
+        userRepository.findById(id)
+                .map(user -> {
+                    user.setIsActive(false);
+                    return userRepository.save(user);
+                }).orElseThrow(() -> new UserNotFoundException(id));
 
         return "User with id " + id + " has been deleted!";
     }
