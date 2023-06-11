@@ -48,7 +48,6 @@ function Program() {
       .get(`http://localhost:8080/program/${params.programID}`)
       .then((res) => {
         setProgram(res.data);
-        console.log(res.data);
         setPercentage(percent(res.data.currentMoney, res.data.targetMoney));
       })
       .catch((err) => console.error(err));
@@ -58,7 +57,7 @@ function Program() {
 
   const showTopList = () => {
     axios
-      .get("http://localhost:8080/api/transaction/highestList/1")
+      .get(`http://localhost:8080/api/transaction/highestList/${params.programID}`)
       .then((res) => {
         setTopDonors(res.data);
       })
@@ -67,7 +66,7 @@ function Program() {
 
   const showRecentList = () => {
     axios
-      .get("http://localhost:8080/api/transaction/recentList/1")
+      .get(`http://localhost:8080/api/transaction/recentList/${params.programID}`)
       .then((res) => {
         setRecentDonors(res.data);
       })
@@ -137,9 +136,106 @@ function Program() {
               <Col md={12} lg={7}>
                 <Tabs
                   id="tab-content"
-                  defaultActiveKey="story"
+                  defaultActiveKey="donators"
                   style={{ justifyContent: "left" }}
                 >
+                  <Tab eventKey="donators" title="Nhà hảo tâm">
+                    <Container className="py-4">
+                      {/* list of top donators */}
+                      <Row>
+                        <Col xs={12}>
+                          <hr />
+                        </Col>
+                      </Row>
+                      <h3>Nhà hảo tâm hàng đầu</h3>
+                      <ListGroup as={"ol"} numbered>
+                        {topDonors?.map((donor) => (
+                          <ListGroup.Item
+                            key={donor.transactionID}
+                            as={"li"}
+                            className="d-flex justify-content-between align-items-start"
+                            style={{ color: "gray" }}
+                          >
+                            <div className="ms-2 me-auto">
+                              <div style={{ color: "black" }}>
+                                {donor?.user.name}
+                              </div>
+                              <span style={{ fontSize: "13px" }}>
+                                {donor?.user.phoneNum}
+                              </span>
+                            </div>
+                            {/* <div style={{ color: "black" }}>{donor?.money}đ</div> */}
+                            <div style={{ color: "black" }}>
+                              <NumericFormat
+                                value={donor?.money}
+                                suffix="đ"
+                                displayType="text"
+                                thousandSeparator="."
+                                decimalSeparator=","
+                              />
+                            </div>
+                          </ListGroup.Item>
+                        ))}
+                      </ListGroup>
+                      <div className="text-center p-3">
+                        <button
+                          type="button"
+                          className="btn"
+                          id="btn-outline-custom"
+                        >
+                          Xem tất cả
+                        </button>
+                      </div>
+
+                      {/* list of newest donators */}
+                      <Row>
+                        <Col xs={12}>
+                          <hr />
+                        </Col>
+                      </Row>
+                      <h3>Nhà hảo tâm mới nhất</h3>
+                      <ListGroup as={"ol"} numbered>
+                        {recentDonors?.map((donor) => (
+                          <ListGroup.Item
+                            key={donor.transactionID}
+                            as={"li"}
+                            className="d-flex justify-content-between align-items-start"
+                            style={{ color: "gray" }}
+                          >
+                            <div className="ms-2 me-auto">
+                              <div style={{ color: "black" }}>
+                                {donor?.user.name}
+                              </div>
+                              {/* <span style={{ fontSize: "13px" }}>{donor?.user.phoneNum}</span> */}
+                              <span style={{ fontSize: "13px" }}>
+                                {censorPhoneNum(donor?.user.phoneNum)}
+                              </span>
+                            </div>
+                            {/* <div style={{ color: "black" }}>{donor?.money}đ</div> */}
+                            <div style={{ color: "black" }}>
+                              <NumericFormat
+                                value={donor?.money}
+                                suffix="đ"
+                                displayType="text"
+                                thousandSeparator="."
+                                decimalSeparator=","
+                              />
+                            </div>
+                          </ListGroup.Item>
+                        ))}
+                      </ListGroup>
+                      <div className="text-center p-3">
+                        <button
+                          type="button"
+                          className="btn"
+                          id="btn-outline-custom"
+                        >
+                          Xem tất cả
+                        </button>
+                      </div>
+                    </Container>
+                  </Tab>
+
                   {/* <Tab eventKey="circumstance" title="Hoàn cảnh">/</Tab> */}
                   <Tab eventKey="story" title="Câu chuyện">
                     <Container className="py-4">
@@ -274,102 +370,6 @@ function Program() {
                       </p>
                     </Container>
                   </Tab>
-                  <Tab eventKey="donators" title="Nhà hảo tâm">
-                    <Container className="py-4">
-                      {/* list of top donators */}
-                      <Row>
-                        <Col xs={12}>
-                          <hr />
-                        </Col>
-                      </Row>
-                      <h3>Nhà hảo tâm hàng đầu</h3>
-                      <ListGroup as={"ol"} numbered>
-                        {topDonors?.map((donor) => (
-                          <ListGroup.Item
-                            key={donor.transactionID}
-                            as={"li"}
-                            className="d-flex justify-content-between align-items-start"
-                            style={{ color: "gray" }}
-                          >
-                            <div className="ms-2 me-auto">
-                              <div style={{ color: "black" }}>
-                                {donor?.user.name}
-                              </div>
-                              <span style={{ fontSize: "13px" }}>
-                                {donor?.user.phoneNum}
-                              </span>
-                            </div>
-                            {/* <div style={{ color: "black" }}>{donor?.money}đ</div> */}
-                            <div style={{ color: "black" }}>
-                              <NumericFormat
-                                value={donor?.money}
-                                suffix="đ"
-                                displayType="text"
-                                thousandSeparator="."
-                                decimalSeparator=","
-                              />
-                            </div>
-                          </ListGroup.Item>
-                        ))}
-                      </ListGroup>
-                      <div className="text-center p-3">
-                        <button
-                          type="button"
-                          className="btn"
-                          id="btn-outline-custom"
-                        >
-                          Xem tất cả
-                        </button>
-                      </div>
-
-                      {/* list of newest donators */}
-                      <Row>
-                        <Col xs={12}>
-                          <hr />
-                        </Col>
-                      </Row>
-                      <h3>Nhà hảo tâm mới nhất</h3>
-                      <ListGroup as={"ol"} numbered>
-                        {recentDonors?.map((donor) => (
-                          <ListGroup.Item
-                            key={donor.transactionID}
-                            as={"li"}
-                            className="d-flex justify-content-between align-items-start"
-                            style={{ color: "gray" }}
-                          >
-                            <div className="ms-2 me-auto">
-                              <div style={{ color: "black" }}>
-                                {donor?.user.name}
-                              </div>
-                              {/* <span style={{ fontSize: "13px" }}>{donor?.user.phoneNum}</span> */}
-                              <span style={{ fontSize: "13px" }}>
-                                {censorPhoneNum(donor?.user.phoneNum)}
-                              </span>
-                            </div>
-                            {/* <div style={{ color: "black" }}>{donor?.money}đ</div> */}
-                            <div style={{ color: "black" }}>
-                              <NumericFormat
-                                value={donor?.money}
-                                suffix="đ"
-                                displayType="text"
-                                thousandSeparator="."
-                                decimalSeparator=","
-                              />
-                            </div>
-                          </ListGroup.Item>
-                        ))}
-                      </ListGroup>
-                      <div className="text-center p-3">
-                        <button
-                          type="button"
-                          className="btn"
-                          id="btn-outline-custom"
-                        >
-                          Xem tất cả
-                        </button>
-                      </div>
-                    </Container>
-                  </Tab>
                 </Tabs>
               </Col>
               <Col>
@@ -381,6 +381,7 @@ function Program() {
                   daysLeft="59 ngày"
                   partnerImg="https://static.mservice.io/blogscontents/momo-upload-api-230413144833-638169941135279441.jpg"
                   partnerName={program?.organization.organizationName}
+                  programID={program?.programID}
                 />
 
                 <h4 className="mt-5">Chương trình đang diễn ra</h4>

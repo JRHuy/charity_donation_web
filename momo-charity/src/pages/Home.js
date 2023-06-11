@@ -255,7 +255,7 @@ function Home() {
                 id={program2?.programID}
                 image={program2?.imageLink}
                 title={program2?.programName}
-                avatar={program1?.organization.pfpLink}
+                avatar={program2?.organization.pfpLink}
                 orgName={program2?.organization.organizationName}
                 dayCount={dayCount2}
                 current={program2?.currentMoney + " VND"}
@@ -269,6 +269,7 @@ function Home() {
               <CardItem
                 id={program3?.programID}
                 // image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                id={program3?.programID}
                 image={program3?.imageLink}
                 title={program3?.programName}
                 avatar={program3?.organization.pfpLink}

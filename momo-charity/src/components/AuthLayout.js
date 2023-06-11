@@ -24,7 +24,7 @@ const AuthLayout = ({ allowedRole }) => {
     let role = isAllowedRole(allowedRole);
 
     return (
-        (isAuthenticated && role) ? <Outlet /> : <Navigate to={"/unauthorized"} />
+        (isAuthenticated && role) ? <Outlet /> : <Navigate to={"/login"} />
     )
 };
 

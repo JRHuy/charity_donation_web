@@ -8,7 +8,7 @@ export default function ProgramCRUD() {
   const [program, setProgram] = useState({
     programName: "",
     organization: {
-      organizationID: 5,
+      organizationID: 1,
     },
     targetMoney: "",
     currentMoney: 0,

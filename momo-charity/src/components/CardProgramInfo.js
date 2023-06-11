@@ -1,5 +1,8 @@
 import { Card, ProgressBar, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import style from "../styles/style.module.css"
+import { NumericFormat } from "react-number-format";
+
 function CardProgramInfo(props) {
   return (
     <Card>
@@ -7,11 +10,12 @@ function CardProgramInfo(props) {
         <Card.Title>Thông tin quyên góp</Card.Title>
         <div className="d-flex gap-1 align-items-baseline">
           <h5 className="pt-2" style={{ fontWeight: "bold" }}>
-            {props.currentMoney}
+            {/* {props.currentMoney} */}
+            <NumericFormat name="money" id="money" value={props.currentMoney} suffix="đ" displayType="text" thousandSeparator="." decimalSeparator="," className={style.money} />
           </h5>
           <span style={{ color: "gray", fontSize: "small" }}>
             {" "}
-            quyên góp / {props.target}
+            quyên góp / <NumericFormat name="money" id="money" value={props.target} suffix="đ" displayType="text" thousandSeparator="." decimalSeparator="," className={style.money} />
           </span>
         </div>
         <ProgressBar variant="warning" now={props.currentPercent}></ProgressBar>
@@ -28,7 +32,7 @@ function CardProgramInfo(props) {
         <div className="d-grid gap-2 pt-4">
           <Button variant="warning" size="lg" style={{ color: "white" }}>
             <Link
-              to="/details/program/donate"
+              to={`/details/program/donate/${props.programID}`}
               style={{
                 color: "inherit",
                 textDecoration: "none",

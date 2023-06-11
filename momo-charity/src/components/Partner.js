@@ -360,15 +360,15 @@ function Partner() {
                       <div className="row card-body">
                         <img
                           className="col-sm-6"
-                          src="doitac/saigonchildren.jpeg"
+                          src="doitac/isee.jpeg"
                           style={{ width: 80, height: 60 }}
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            Saigon Children's Charity
+                            iSEE
                             <br />
                             <p className="card-text" id="card-description">
-                              Hỗ trợ trẻ em
+                              Vì một xã hội bình đẳng
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -390,15 +390,15 @@ function Partner() {
                       <div className="row card-body">
                         <img
                           className="col-sm-6"
-                          src="doitac/saigonchildren.jpeg"
+                          src="doitac/quyphananh.jpeg"
                           style={{ width: 80, height: 60 }}
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            Saigon Children's Charity
+                            Quỹ Phan Anh
                             <br />
                             <p className="card-text" id="card-description">
-                              Hỗ trợ trẻ em
+                              Phát triển văn hóa giáo dục
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -421,15 +421,15 @@ function Partner() {
                       <div className="row card-body">
                         <img
                           className="col-sm-6"
-                          src="doitac/saigonchildren.jpeg"
+                          src="doitac/baolaodong.jpeg"
                           style={{ width: 80, height: 60 }}
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            Saigon Children's Charity
+                            Báo Lao Động
                             <br />
                             <p className="card-text" id="card-description">
-                              Hỗ trợ trẻ em
+                              Cơ quan của tổng LĐLĐ
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -455,15 +455,15 @@ function Partner() {
                       <div className="row card-body">
                         <img
                           className="col-sm-6"
-                          src="doitac/saigonchildren.jpeg"
+                          src="doitac/baotuoitre.jpeg"
                           style={{ width: 80, height: 60 }}
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            Saigon Children's Charity
+                            Báo Tuổi Trẻ
                             <br />
                             <p className="card-text" id="card-description">
-                              Hỗ trợ trẻ em
+                              Cơ quan ngôn luận của Đoàn...
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -485,15 +485,15 @@ function Partner() {
                       <div className="row card-body">
                         <img
                           className="col-sm-6"
-                          src="doitac/saigonchildren.jpeg"
+                          src="doitac/ruybangtim.jpeg"
                           style={{ width: 80, height: 60 }}
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            Saigon Children's Charity
+                            Ruy Băng Tím
                             <br />
                             <p className="card-text" id="card-description">
-                              Hỗ trợ trẻ em
+                              Phòng chống ung thư tại Việt Nam
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -516,15 +516,15 @@ function Partner() {
                       <div className="row card-body">
                         <img
                           className="col-sm-6"
-                          src="doitac/saigonchildren.jpeg"
+                          src="doitac/quynamphuong.jpeg"
                           style={{ width: 80, height: 60 }}
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            Saigon Children's Charity
+                            Quỹ Nam Phương
                             <br />
                             <p className="card-text" id="card-description">
-                              Hỗ trợ trẻ em
+                              Xây cầu cho trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -549,15 +549,15 @@ function Partner() {
                       <div className="row card-body">
                         <img
                           className="col-sm-6"
-                          src="doitac/saigonchildren.jpeg"
+                          src="doitac/joy.jpeg"
                           style={{ width: 80, height: 60 }}
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            Saigon Children's Charity
+                            Joy Foundation
                             <br />
                             <p className="card-text" id="card-description">
-                              Hỗ trợ trẻ em
+                              Giải quyết vấn đề xã hội, môi tr...
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -579,15 +579,15 @@ function Partner() {
                       <div className="row card-body">
                         <img
                           className="col-sm-6"
-                          src="doitac/saigonchildren.jpeg"
+                          src="doitac/thienchi.jpeg"
                           style={{ width: 80, height: 60 }}
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            Saigon Children's Charity
+                            Thiện Chí
                             <br />
                             <p className="card-text" id="card-description">
-                              Hỗ trợ trẻ em
+                              Phát triển cộng đồng
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -610,15 +610,15 @@ function Partner() {
                       <div className="row card-body">
                         <img
                           className="col-sm-6"
-                          src="doitac/saigonchildren.jpeg"
+                          src="doitac/doancoquantrunguong.jpeg"
                           style={{ width: 80, height: 60 }}
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            Hello
+                            Đoàn Cơ Quan Trung Ương
                             <br />
                             <p className="card-text" id="card-description">
-                              Hỗ trợ trẻ em
+                              Giúp đỡ bà con nhân dân và các e...
                             </p>
                           </h6>
                           <p id="xemchitiet">
