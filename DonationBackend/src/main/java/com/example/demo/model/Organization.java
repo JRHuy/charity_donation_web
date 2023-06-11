@@ -31,6 +31,10 @@ public class Organization implements Serializable {
 
     private BigDecimal ogDonate;
 
+
+
+    private String pfpLink;
+
     @OneToMany(mappedBy = "organization")
 //    @OneToMany
     private List<Program> program;
@@ -89,5 +93,13 @@ public class Organization implements Serializable {
 
     public void setProgram(List<Program> program) {
         this.program = program;
+    }
+
+    public String getPfpLink() {
+        return pfpLink;
+    }
+
+    public void setPfpLink(String pfpLink) {
+        this.pfpLink = pfpLink;
     }
 }

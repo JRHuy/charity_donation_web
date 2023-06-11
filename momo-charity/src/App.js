@@ -62,8 +62,9 @@ function App() {
             <Route path="details/program/donate" element={<Donate />} />
           </Route>
           <Route path="login" element={<Login />} />
-          
           <Route path="*" element={<NoPage />} />
+          {/* <Route path="organization-edit" element={<OrganizationCRUD />} /> */}
+          {/* <Route path="program-edit" element={<ProgramCRUD />} /> */}
         </Routes>
       </div>
       <AuthVerify logout={logout} />

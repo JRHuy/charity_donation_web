@@ -38,7 +38,7 @@ function Home() {
 
   const showProgram1 = () => {
     axios
-      .get("http://localhost:8080/program/1")
+      .get("http://localhost:8080/program/3")
       .then((res) => {
         // console.log(res.data);
         setProgram1(res.data);
@@ -242,7 +242,7 @@ function Home() {
                 id={program1?.programID}
                 image={program1?.imageLink}
                 title={program1?.programName}
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                avatar={program1?.organization.pfpLink}
                 orgName={program1?.organization.organizationName}
                 dayCount={dayCount1}
                 current={program1?.currentMoney + "đ"}
@@ -254,7 +254,7 @@ function Home() {
               <CardItem
                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
                 title={program2?.programName}
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                avatar={program1?.organization.pfpLink}
                 orgName={program2?.organization.organizationName}
                 dayCount={dayCount2}
                 current={program2?.currentMoney + "đ"}
@@ -268,7 +268,7 @@ function Home() {
               <CardItem
                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
                 title={program3?.programName}
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                avatar={program1?.organization.pfpLink}
                 orgName={program3?.organization.organizationName}
                 dayCount={dayCount3}
                 current={program3?.currentMoney + "đ"}
@@ -280,7 +280,7 @@ function Home() {
               <CardItem
                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
                 title={program4?.programName}
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                avatar={program1?.organization.pfpLink}
                 orgName={program4?.organization.organizationName}
                 dayCount={dayCount4}
                 current={program4?.currentMoney + "đ"}
@@ -294,7 +294,7 @@ function Home() {
               <CardItem
                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
                 title={program5?.programName}
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                avatar={program1?.organization.pfpLink}
                 orgName={program5?.organization.organizationName}
                 dayCount={dayCount5}
                 current={program5?.currentMoney + "đ"}
@@ -306,7 +306,7 @@ function Home() {
               <CardItem
                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
                 title={program6?.programName}
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
+                avatar={program1?.organization.pfpLink}
                 orgName={program6?.organization.organizationName}
                 dayCount={dayCount6}
                 current={program6?.currentMoney + "đ"}
