@@ -34,7 +34,7 @@ function Partner() {
               <div className="row">
                 {org1?.map((org) => {
                   return (
-                    <div className="col-sm-6 col-md-4">
+                    <div className="col-sm-6 col-md-4 mt-2">
                       <div className="card" id="card-doitac">
                         <a
                           href={`doi-tac/${org.organizationID}`}
@@ -351,7 +351,7 @@ function Partner() {
             <div className="carousel-item" id="row-doitac">
               <div className="row">
                 {/* <div class="overflow-auto row flex-row flex-nowrap mt-4 pb-4 pt-2"> */}
-                <div className="col-sm-6 col-md-4">
+                <div className="col-sm-6 col-md-4 mt-2">
                   <div className="card" id="card-doitac">
                     <a
                       href="#"
@@ -381,7 +381,7 @@ function Partner() {
                     </a>
                   </div>
                 </div>
-                <div className="col-sm-6 col-md-4">
+                <div className="col-sm-6 col-md-4 mt-2">
                   <div className="card" id="card-doitac">
                     <a
                       href="#"
@@ -412,7 +412,7 @@ function Partner() {
                   </div>
                 </div>
 
-                <div className="col-sm-6 col-md-4">
+                <div className="col-sm-6 col-md-4 mt-2">
                   <div className="card" id="card-doitac">
                     <a
                       href="#"
@@ -446,7 +446,7 @@ function Partner() {
               </div>
 
               <div className="row top-buffer">
-                <div className="col-sm-6 col-md-4">
+                <div className="col-sm-6 col-md-4 mt-2">
                   <div className="card" id="card-doitac">
                     <a
                       href="#"
@@ -476,7 +476,7 @@ function Partner() {
                     </a>
                   </div>
                 </div>
-                <div className="col-sm-6 col-md-4">
+                <div className="col-sm-6 col-md-4 mt-2">
                   <div className="card" id="card-doitac">
                     <a
                       href="#"
@@ -507,7 +507,7 @@ function Partner() {
                   </div>
                 </div>
 
-                <div className="col-sm-6 col-md-4">
+                <div className="col-sm-6 col-md-4 mt-2">
                   <div className="card" id="card-doitac">
                     <a
                       href="#"
@@ -540,7 +540,7 @@ function Partner() {
               </div>
 
               <div className="row top-buffer">
-                <div className="col-sm-6 col-md-4">
+                <div className="col-sm-6 col-md-4 mt-2">
                   <div className="card" id="card-doitac">
                     <a
                       href="#"
@@ -570,7 +570,7 @@ function Partner() {
                     </a>
                   </div>
                 </div>
-                <div className="col-sm-6 col-md-4">
+                <div className="col-sm-6 col-md-4 mt-2">
                   <div className="card" id="card-doitac">
                     <a
                       href="#"
@@ -601,7 +601,7 @@ function Partner() {
                   </div>
                 </div>
 
-                <div className="col-sm-6 col-md-4">
+                <div className="col-sm-6 col-md-4 mt-2">
                   <div className="card" id="card-doitac">
                     <a
                       href="#"

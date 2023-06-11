@@ -6,11 +6,26 @@ import CardItem from "../components/CardItem";
 import { useEffect } from "react";
 import "../App.css";
 import { Helmet } from "react-helmet";
+import { useState } from "react";
+import axios from "axios";
 
 function PartnerList() {
   useEffect(() => {
+    fetchOrg();
     window.scrollTo(0, 0);
   }, []);
+
+  const [org, setOrg] = useState(null);
+  const fetchOrg = () => {
+    axios
+      .get("http://localhost:8080/organizations")
+      .then((res) => {
+        console.log(res.data);
+        setOrg(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <>
       <Helmet>
@@ -42,21 +57,18 @@ function PartnerList() {
                 Các đối tác đồng hành
               </h4>
               <Row>
-                <Col sm={6} xs={12} className="mt-3">
-                  <PartnerCard
-                    partnerImg="doitac/sucmanh2000.jpeg"
-                    partnerName="Sức mạnh 2000"
-                    partnerDescription="Tiền lẻ mỗi ngày xây ngay nghìn trường mới"
-                    link="/sucmanh2000"
-                  />
-                </Col>
-                <Col className="mt-3">
-                  <PartnerCard
-                    partnerImg="doitac/quyhyvong.jpeg"
-                    partnerName="Quỹ Hy Vọng"
-                    partnerDescription="Hỗ trợ các hoàn cảnh khó khăn"
-                  />
-                </Col>
+                {org?.map((org) => {
+                  return (
+                    <Col sm={6} xs={12} className="mt-3">
+                      <PartnerCard
+                        partnerImg={org?.pfpLink}
+                        partnerName={org?.organizationName}
+                        partnerDescription={org?.description}
+                        link={`doi-tac/${org?.organizationID}`}
+                      />
+                    </Col>
+                  );
+                })}
               </Row>
               <Row>
                 <Col sm={6} xs={12} className="mt-3">

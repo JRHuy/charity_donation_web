@@ -56,18 +56,21 @@ function App() {
             {/* <Route path="users" element={admin ? <UserList /> : <Navigate replace to={"/login"} />} /> */}
             <Route path="user/edit/:id" element={<EditUser />} />
             {/* <Route path="program-edit" element={<ProgramCRUD />} /> */}
-            <Route path="organization-edit" element={<OrganizationCRUD />} />
+            {/* <Route path="organization-edit" element={<OrganizationCRUD />} /> */}
             <Route path="transactions/all" element={<AllTransactions />} />
           </Route>
           <Route path="/" element={<AuthLayout allowedRole={"CUSTOMER"} />}>
             <Route path="details/program/deposit" element={<Deposit />} />
-            <Route path="details/program/donate/:programID" element={<Donate />} />
+            <Route
+              path="details/program/donate/:programID"
+              element={<Donate />}
+            />
             <Route path="profile" element={<Profile />} />
             <Route path="profile/edit/:userID" element={<EditProfile />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="*" element={<NoPage />} />
-          {/* <Route path="organization-edit" element={<OrganizationCRUD />} /> */}
+          <Route path="organization-edit" element={<OrganizationCRUD />} />
           <Route path="program-edit" element={<ProgramCRUD />} />
         </Routes>
       </div>
