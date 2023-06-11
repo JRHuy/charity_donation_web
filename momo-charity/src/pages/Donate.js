@@ -88,7 +88,7 @@ function Donate() {
                                 </div>
                                 : ""}
                             <div className="form-group">
-                                <button type="submit" value="register" id="loginbtn">Nạp tiền</button>
+                                <button type="submit" value="register" id="loginbtn">Quyên góp ngay</button>
                             </div>
                         </form>
                         <div className="redirection">
