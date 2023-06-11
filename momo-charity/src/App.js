@@ -61,7 +61,7 @@ function App() {
           </Route>
           <Route path="/" element={<AuthLayout allowedRole={"CUSTOMER"} />}>
             <Route path="details/program/deposit" element={<Deposit />} />
-            <Route path="details/program/donate" element={<Donate />} />
+            <Route path="details/program/donate:id" element={<Donate />} />
             <Route path="profile" element={<Profile />} />
             <Route path="profile/edit/:userID" element={<EditProfile />} />
           </Route>

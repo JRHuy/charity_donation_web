@@ -23,7 +23,7 @@ export default function UserList() {
 
     const showUsers = () => {
         Axios.get("http://localhost:8080/api/users").then(res => {
-            // console.log(res.data.userID);
+            // console.log(res.data);
             setUsers(res.data);
         })
             .catch((err) => {
@@ -87,7 +87,7 @@ export default function UserList() {
                                     <td>{user?.isActive.toString()}</td>
                                     <td>{user?.dateOfBirth}</td>
                                     <td>{user?.gender}</td>
-                                    <td>{user?.roleID}</td>
+                                    <td>{user?.role.roleName}</td>
                                     <td>
                                         <Button href={`/admin/user/edit/${user?.userID}`} className="mx-2" variant="outline-primary">Edit</Button>
                                         <Button variant="outline-danger" onClick={() => handleDeleteClick(user?.userID)}>Delete</Button>

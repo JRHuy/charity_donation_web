@@ -56,7 +56,7 @@ function Donate() {
             Axios.post("http://localhost:8080/api/user/donate", data)
                 .then(res => {
                     setSuccess(true);
-                    setMoney("")
+                    setMoney("");
                 }).catch(err => console.log(err));
         }
     }
