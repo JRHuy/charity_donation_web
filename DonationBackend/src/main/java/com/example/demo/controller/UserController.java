@@ -66,7 +66,7 @@ public class UserController {
                     user.setName(updatedUser.getName());
                     user.setUserEmail(updatedUser.getUserEmail());
 //                    user.setUserPassword(updatedUser.getUserPassword());
-                    user.setUserPassword(passwordEncoder.encode(updatedUser.getUserPassword()));
+//                    user.setUserPassword(passwordEncoder.encode(updatedUser.getUserPassword()));
                     user.setDateOfBirth(updatedUser.getDateOfBirth());
                     user.setGender(updatedUser.getGender());
                     user.setIsActive(updatedUser.getIsActive());
