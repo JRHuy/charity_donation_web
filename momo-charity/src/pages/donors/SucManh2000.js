@@ -182,13 +182,13 @@ export default function SucManh2000() {
               <CardItem
                 image={org?.program[0]?.imageLink}
                 title={org?.program[0]?.programName}
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
+                avatar={org?.pfpLink}
+                orgName={org?.organizationName}
                 dayCount="57"
-                current="4.459.000đ"
-                target="150.000.000đ"
+                current={org?.program[0]?.currentMoney}
+                target={org?.program[0]?.targetMoney}
                 pbar="10"
-                donateCount="612"
+                donateCount={org?.program[0]?.donateTotal}
                 donatePercentage="2.97%"
               />
               <CardItem

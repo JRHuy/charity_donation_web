@@ -55,7 +55,7 @@ function App() {
             <Route path="users" element={<UserList />} />
             {/* <Route path="users" element={admin ? <UserList /> : <Navigate replace to={"/login"} />} /> */}
             <Route path="user/edit/:id" element={<EditUser />} />
-            <Route path="program-edit" element={<ProgramCRUD />} />
+            {/* <Route path="program-edit" element={<ProgramCRUD />} /> */}
             <Route path="organization-edit" element={<OrganizationCRUD />} />
             <Route path="transactions/all" element={<AllTransactions />} />
           </Route>
@@ -68,7 +68,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="*" element={<NoPage />} />
           {/* <Route path="organization-edit" element={<OrganizationCRUD />} /> */}
-          {/* <Route path="program-edit" element={<ProgramCRUD />} /> */}
+          <Route path="program-edit" element={<ProgramCRUD />} />
         </Routes>
       </div>
       <AuthVerify logout={logout} />
