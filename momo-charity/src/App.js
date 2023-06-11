@@ -53,6 +53,8 @@ function App() {
             <Route path="users" element={<UserList />} />
             {/* <Route path="users" element={admin ? <UserList /> : <Navigate replace to={"/login"} />} /> */}
             <Route path="user/edit/:id" element={<EditUser />} />
+            <Route path="program-edit" element={<ProgramCRUD />} />
+            <Route path="organization-edit" element={<OrganizationCRUD />} />
             <Route path="transactions/all" element={<AllTransactions />} />
           </Route>
           <Route path="/" element={<AuthLayout allowedRole={"CUSTOMER"} />}>
@@ -60,8 +62,7 @@ function App() {
             <Route path="details/program/donate" element={<Donate />} />
           </Route>
           <Route path="login" element={<Login />} />
-          <Route path="program-edit" element={<ProgramCRUD />} />
-          <Route path="organization-edit" element={<OrganizationCRUD />} />
+          
           <Route path="*" element={<NoPage />} />
         </Routes>
       </div>
