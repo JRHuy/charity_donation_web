@@ -269,7 +269,6 @@ function Home() {
               <CardItem
                 id={program3?.programID}
                 // image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                id={program3?.programID}
                 image={program3?.imageLink}
                 title={program3?.programName}
                 avatar={program3?.organization.pfpLink}
