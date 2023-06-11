@@ -140,7 +140,7 @@ export default function SucManh2000() {
             </div>
             <div className="col-6 mobile-img">
               <img
-                src="https://static.mservice.io/img/momo-upload-api-211201181824-637739795046905657.jpg"
+                src={org?.program[0]?.imageLink}
                 className="img-fluid"
                 alt="vi-nhan-ai"
               />
@@ -179,33 +179,25 @@ export default function SucManh2000() {
             </div> */}
         <Container>
           <Row xs={1} md={2} lg={3}>
-            <Col>
-              <CardItem
-                image={org?.program[0]?.imageLink}
-                title={org?.program[0]?.programName}
-                avatar={org?.pfpLink}
-                orgName={org?.organizationName}
-                dayCount="57"
-                current={org?.program[0]?.currentMoney}
-                target={org?.program[0]?.targetMoney}
-                pbar="10"
-                donateCount={org?.program[0]?.donateTotal}
-                donatePercentage="2.97%"
-              />
-              <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
-                dayCount="57"
-                current="4.459.000đ"
-                target="150.000.000đ"
-                pbar="10"
-                donateCount="612"
-                donatePercentage="2.97%"
-              />
-            </Col>
-            <Col>
+            {org?.program?.map((prog) => {
+              return (
+                <Col>
+                  <CardItem
+                    image={prog?.imageLink}
+                    title={prog?.programName}
+                    avatar={org?.pfpLink}
+                    orgName={org?.organizationName}
+                    dayCount="57"
+                    current={prog?.currentMoney}
+                    target={prog?.targetMoney}
+                    pbar="10"
+                    donateCount="0"
+                    donatePercentage="2.97%"
+                  />
+                </Col>
+              );
+            })}
+            {/* <Col>
               <CardItem
                 image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
                 title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
@@ -256,7 +248,7 @@ export default function SucManh2000() {
                 donateCount="612"
                 donatePercentage="2.97%"
               />
-            </Col>
+            </Col> */}
           </Row>
         </Container>
       </section>
