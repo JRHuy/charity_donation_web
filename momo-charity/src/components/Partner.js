@@ -37,7 +37,7 @@ function Partner() {
                     <div className="col-sm-6 col-md-4">
                       <div className="card" id="card-doitac">
                         <a
-                          href="http://localhost:3000/sucmanh2000"
+                          href={`doi-tac/${org.organizationID}`}
                           className="card-block stretched-link text-decoration-none"
                         >
                           <div className="row card-body">

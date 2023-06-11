@@ -13,13 +13,14 @@ import { Helmet } from "react-helmet";
 // import Navbar from "./Navbar";
 import ReadMoreReadLess from "../../components/ReadMoreReadLess";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export default function SucManh2000() {
   const [org, setOrg] = useState(null);
-
+  const params = useParams();
   const fetchOrg = () => {
     axios
-      .get("http://localhost:8080/organization/1")
+      .get(`http://localhost:8080/organization/${params.organizationID}`)
       .then((res) => {
         console.log(res.data);
         setOrg(res.data);

@@ -42,7 +42,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/details/program/:programID" element={<Program />} />
             <Route path="partners" element={<PartnerList />} />
-            <Route path="sucmanh2000" element={<SucManh2000 />} />
+            <Route path="doi-tac/:organizationID" element={<SucManh2000 />} />
             <Route path="/" element={<AuthLayout allowedRole={"CUSTOMER"} />}>
               <Route
                 path="transaction_history"

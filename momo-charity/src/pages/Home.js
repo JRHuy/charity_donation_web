@@ -38,7 +38,7 @@ function Home() {
 
   const showProgram1 = () => {
     axios
-      .get("http://localhost:8080/program/3")
+      .get("http://localhost:8080/program/1")
       .then((res) => {
         // console.log(res.data);
         setProgram1(res.data);
@@ -84,7 +84,7 @@ function Home() {
   };
   const showProgram6 = () => {
     axios
-      .get("http://localhost:8080/program/52")
+      .get("http://localhost:8080/program/6")
       .then((res) => {
         setProgram6(res.data);
         setDayCount6(dayCalculate(res.data.deadline));
@@ -252,6 +252,7 @@ function Home() {
                 donatePercentage="2.97%"
               />
               <CardItem
+                id={program2?.programID}
                 image={program2?.imageLink}
                 title={program2?.programName}
                 avatar={program1?.organization.pfpLink}
@@ -266,6 +267,7 @@ function Home() {
             </Col>
             <Col>
               <CardItem
+                id={program3?.programID}
                 // image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
                 image={program3?.imageLink}
                 title={program3?.programName}
@@ -279,6 +281,7 @@ function Home() {
                 donatePercentage="2.97%"
               />
               <CardItem
+                id={program4?.programID}
                 image={program4?.imageLink}
                 title={program4?.programName}
                 avatar={program4?.organization.pfpLink}
@@ -293,6 +296,7 @@ function Home() {
             </Col>
             <Col>
               <CardItem
+                id={program5?.programID}
                 image={program5?.imageLink}
                 title={program5?.programName}
                 avatar={program5?.organization.pfpLink}
@@ -305,6 +309,7 @@ function Home() {
                 donatePercentage="2.97%"
               />
               <CardItem
+                id={program6?.programID}
                 image={program6?.imageLink}
                 title={program6?.programName}
                 avatar={program6?.organization.pfpLink}
