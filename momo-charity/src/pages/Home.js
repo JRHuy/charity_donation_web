@@ -254,7 +254,7 @@ function Home() {
               <CardItem
                 image={program2?.imageLink}
                 title={program2?.programName}
-                avatar={program1?.organization.pfpLink}
+                avatar={program2?.organization.pfpLink}
                 orgName={program2?.organization.organizationName}
                 dayCount={dayCount2}
                 current={program2?.currentMoney + " VND"}
