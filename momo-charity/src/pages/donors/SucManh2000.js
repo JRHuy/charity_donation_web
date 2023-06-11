@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../App.css";
 // import BottomCredit from "./BottomCredit";
 import chevronRight from "../../chevron-right.svg";
@@ -12,8 +12,25 @@ import Container from "react-bootstrap/Container";
 import { Helmet } from "react-helmet";
 // import Navbar from "./Navbar";
 import ReadMoreReadLess from "../../components/ReadMoreReadLess";
+import axios from "axios";
 
 export default function SucManh2000() {
+  const [org, setOrg] = useState(null);
+
+  const fetchOrg = () => {
+    axios
+      .get("http://localhost:8080/organization/1")
+      .then((res) => {
+        console.log(res.data);
+        setOrg(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    fetchOrg();
+  }, []);
+
   return (
     <div>
       {/* ------------------ Section 1 ----------------- */}
@@ -34,19 +51,17 @@ export default function SucManh2000() {
         <img src={chevronRight} />
         <span>Đối Tác Đồng Hành</span>
         <img src={chevronRight} />
-        <span>Sức mạnh 2000</span>
+        <span>{org?.organizationName}</span>
       </div>
       <section id="block-2a">
         <div className="container p-5">
           <div className="row">
             <div className="col-md-6">
               <h1 className="pb-3" style={{ color: "#d82f8b" }}>
-                Sức Mạnh 200 - Ánh sáng núi rừng
+                {org?.organizationName} - Ánh sáng núi rừng
               </h1>
               <p className="pb-2">
-                Quỹ Sức mạnh 2000 thuộc hệ sinh thái Nuôi Em, được thành lập để
-                nâng cao chất lượng Cơ sở vật chất cho các em nhỏ khó khăn vùng
-                cao.
+                {org?.description}
                 <br />
                 <span></span>
                 <br />
@@ -165,8 +180,8 @@ export default function SucManh2000() {
           <Row xs={1} md={2} lg={3}>
             <Col>
               <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
+                image={org?.program[0]?.imageLink}
+                title={org?.program[0]?.programName}
                 avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
                 orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
                 dayCount="57"
