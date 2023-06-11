@@ -35,7 +35,7 @@ export default function Profile() {
                     <div className="row justify-content-center">
                         <h1 id='profile_name' className="text-center mt-5 mb-3">{user?.name}</h1>
                         <form>
-                            <i class="fa-solid fa-wallet" style={{ color: "#942192", marginRight: "10px" }}></i>
+                            <i className="fa-solid fa-wallet" style={{ color: "#942192", marginRight: "10px" }}></i>
                             <NumericFormat name="money" id="money" suffix="đ" displayType="text" type="tel" thousandSeparator="." decimalSeparator="," value={showMoney ? user?.money : '*****'} />
                             <button
                                 type="button"
@@ -58,11 +58,11 @@ export default function Profile() {
                                 <input style={{ border: "none", backgroundColor: "white" }} type="url" value={user?.userEmail} disabled />
                             </div>
                             <div className="form-control mt-3" id="information">
-                                <i class="fa-solid fa-cake-candles" style={{ color: "#b51a00", marginRight: "15px" }}></i>
+                                <i className="fa-solid fa-cake-candles" style={{ color: "#b51a00", marginRight: "15px" }}></i>
                                 <input style={{ border: "none", backgroundColor: "white" }} type="url" value={user?.dateOfBirth} disabled />
                             </div>
                             <div className="form-control mt-3" id="information">
-                                {user?.gender === "MALE" ? <i class="fa-solid fa-mars" style={{ color: "#0433ff", marginRight: "16px" }}></i> : <i class="fa-solid fa-venus" style={{ color: "#942192", marginRight: "16px" }}></i>}
+                                {user?.gender === "MALE" ? <i className="fa-solid fa-mars" style={{ color: "#0433ff", marginRight: "16px" }}></i> : <i className="fa-solid fa-venus" style={{ color: "#942192", marginRight: "16px" }}></i>}
                                 <input style={{ border: "none", backgroundColor: "white" }} type="url" value={user?.gender} disabled />
                             </div>
                             <div className="form-control mt-3" id="information">
