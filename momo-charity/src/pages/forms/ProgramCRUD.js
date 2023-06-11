@@ -42,7 +42,7 @@ export default function ProgramCRUD() {
       <div className="container">
         {success && (
           <div className="alert alert-success" role="alert">
-            Nạp tiền thành công!
+            Thêm chương trình thành công!
           </div>
         )}
         <div id="title-program">
@@ -123,7 +123,7 @@ export default function ProgramCRUD() {
                 className="btn btn-outline-danger"
                 style={{ width: 200 }}
               >
-                OK
+                Thêm chương trình
               </button>
             </div>
           </form>

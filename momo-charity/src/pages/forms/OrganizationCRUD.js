@@ -36,7 +36,7 @@ export default function OrganizationCRUD() {
       <div className="container">
         {success && (
           <div className="alert alert-success" role="alert">
-            Nạp tiền thành công!
+            Thêm nhà tài trợ thành công!
           </div>
         )}
         <div id="title-program">
@@ -79,7 +79,7 @@ export default function OrganizationCRUD() {
               />
             </div>
             <div>
-              <span>Tiền nhà tài trợ</span>
+              <span>Tiền của nhà tài trợ</span>
               <input
                 type="text"
                 name="ogDonate"
@@ -100,7 +100,7 @@ export default function OrganizationCRUD() {
                 className="btn btn-outline-danger"
                 style={{ width: 200 }}
               >
-                OK
+                Thêm
               </button>
             </div>
           </form>
