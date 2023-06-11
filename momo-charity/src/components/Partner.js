@@ -3,20 +3,21 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Partner() {
-  const [org, setOrg] = useState(null);
-  const fetchOrg = () => {
+  useEffect(() => {
+    fetchOrg1();
+  }, []);
+
+  const [org1, setOrg1] = useState(null);
+
+  const fetchOrg1 = () => {
     axios
       .get("http://localhost:8080/organizations")
       .then((res) => {
         console.log(res.data);
-        setOrg(res.data);
+        setOrg1(res.data);
       })
       .catch((err) => console.log(err));
   };
-
-  useEffect(() => {
-    fetchOrg();
-  });
 
   return (
     <>
@@ -31,9 +32,42 @@ function Partner() {
             {/* Slide đầu tiên */}
             <div className="carousel-item active">
               <div className="row">
-                <div className="col-sm-6 col-md-4">
+                {org1?.map((org) => {
+                  return (
+                    <div className="col-sm-6 col-md-4">
+                      <div className="card" id="card-doitac">
+                        <a
+                          href="http://localhost:3000/sucmanh2000"
+                          className="card-block stretched-link text-decoration-none"
+                        >
+                          <div className="row card-body">
+                            <img
+                              className="col-sm-6"
+                              src="doitac/saigonchildren.jpeg"
+                              style={{ width: 80, height: 60 }}
+                            />
+                            <div className="col-sm-auto">
+                              <h6 className="card-title" id="doitac">
+                                {org?.organizationName}
+                                <br />
+                                <p className="card-text" id="card-description">
+                                  {org?.description}
+                                </p>
+                              </h6>
+                              <p id="xemchitiet">
+                                Xem chi tiết{" "}
+                                <i className="fa-solid fa-chevron-right"></i>
+                                <i className="fa-solid fa-chevron-right"></i>
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })}
+                {/* <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="http://localhost:3000/sucmanh2000"
                       className="card-block stretched-link text-decoration-none"
@@ -46,10 +80,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[0]?.organizationName}
+                            {org1?.organizationName}
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[0]?.description}
+                              {org1?.description}
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -61,10 +95,9 @@ function Partner() {
                       </div>
                     </a>
                   </div>
-                </div>
-                <div className="col-sm-6 col-md-4">
+                </div> */}
+                {/*<div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -77,10 +110,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[1]?.organizationName}
+                            Sức mạnh 2000
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[1]?.description}
+                              Xây ngay nghìn trường mới
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -96,7 +129,6 @@ function Partner() {
 
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -109,10 +141,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[2]?.organizationName}
+                            Quỹ từ thiện Hoa Chia Sẻ
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[2]?.description}
+                              Hỗ trợ các hoàn cảnh khó khăn
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -124,14 +156,12 @@ function Partner() {
                       </div>
                     </a>
                   </div>
-                </div>
-                {/* </div> */}
+                </div>*/}
               </div>
 
-              <div className="row top-buffer">
+              {/* <div className="row top-buffer">
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -144,10 +174,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[3]?.organizationName}
+                            Quỹ Hy vọng
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[3]?.description}
+                              Hỗ trợ các hoàn cảnh khó khăn
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -162,7 +192,6 @@ function Partner() {
                 </div>
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -175,10 +204,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[4]?.organizationName}
+                            VinaCapital Foundation
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[4]?.description}
+                              Thay đổi cuộc sống cho phụ nữ và trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -194,7 +223,6 @@ function Partner() {
 
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -207,10 +235,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[5]?.organizationName}
+                            SCDI - Mỗi ngày Một quả trứng
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[5]?.description}
+                              Hỗ trợ Sáng kiến Phát triển Cộng đồng
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -227,7 +255,6 @@ function Partner() {
               <div className="row top-buffer">
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -240,10 +267,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[6]?.organizationName}
+                            MSD
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[6]?.description}
+                              Bảo vệ đối tượng có hoàn cảnh khó khăn
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -258,7 +285,6 @@ function Partner() {
                 </div>
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -271,10 +297,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[7]?.organizationName}
+                            Quỹ Vì Tầm Vóc Việt
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[7]?.description}
+                              Vì tầm vóc Việt
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -290,7 +316,6 @@ function Partner() {
 
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -303,10 +328,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[8]?.organizationName}
+                            Thien Nhan & Friends
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[8]?.description}
+                              Phẫu thuật BPSD cho trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -319,7 +344,7 @@ function Partner() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Slide thứ 2 */}
@@ -328,7 +353,6 @@ function Partner() {
                 {/* <div class="overflow-auto row flex-row flex-nowrap mt-4 pb-4 pt-2"> */}
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -341,10 +365,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[9]?.organizationName}
+                            Saigon Children's Charity
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[9]?.description}
+                              Hỗ trợ trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -359,7 +383,6 @@ function Partner() {
                 </div>
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -372,10 +395,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[10]?.organizationName}
+                            Saigon Children's Charity
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[10]?.description}
+                              Hỗ trợ trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -391,7 +414,6 @@ function Partner() {
 
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -404,10 +426,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[1]?.organizationName}
+                            Saigon Children's Charity
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[1]?.description}
+                              Hỗ trợ trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -426,7 +448,6 @@ function Partner() {
               <div className="row top-buffer">
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -439,10 +460,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[1]?.organizationName}
+                            Saigon Children's Charity
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[1]?.description}
+                              Hỗ trợ trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -457,7 +478,6 @@ function Partner() {
                 </div>
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -470,10 +490,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[1]?.organizationName}
+                            Saigon Children's Charity
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[1]?.description}
+                              Hỗ trợ trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -489,7 +509,6 @@ function Partner() {
 
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -502,10 +521,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[1]?.organizationName}
+                            Saigon Children's Charity
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[1]?.description}
+                              Hỗ trợ trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -523,7 +542,6 @@ function Partner() {
               <div className="row top-buffer">
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -536,10 +554,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[1]?.organizationName}
+                            Saigon Children's Charity
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[1]?.description}
+                              Hỗ trợ trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -554,7 +572,6 @@ function Partner() {
                 </div>
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -567,10 +584,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[1]?.organizationName}
+                            Saigon Children's Charity
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[1]?.description}
+                              Hỗ trợ trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
@@ -586,7 +603,6 @@ function Partner() {
 
                 <div className="col-sm-6 col-md-4">
                   <div className="card" id="card-doitac">
-                    {/* make card as a button using stretched-link */}
                     <a
                       href="#"
                       className="card-block stretched-link text-decoration-none"
@@ -599,10 +615,10 @@ function Partner() {
                         />
                         <div className="col-sm-auto">
                           <h6 className="card-title" id="doitac">
-                            {org[1]?.organizationName}
+                            Hello
                             <br />
                             <p className="card-text" id="card-description">
-                              {org[1]?.description}
+                              Hỗ trợ trẻ em
                             </p>
                           </h6>
                           <p id="xemchitiet">
