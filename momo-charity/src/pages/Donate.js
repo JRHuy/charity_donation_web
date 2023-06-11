@@ -1,7 +1,6 @@
 import Axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import CardProgramInfo from "../components/CardProgramInfo";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { NumericFormat } from "react-number-format";
 import style from "../styles/style.module.css"
@@ -19,15 +18,17 @@ function Donate() {
     const userData = JSON.parse(localStorage.getItem("user"));
 
     const [donateInfo, setDonateInfo] = useState(null);
+    
+    const params = useParams();
 
     useEffect(() => {
         showInfo();
     }, [])
 
     const showInfo = () => {
-        axios.get("http://localhost:8080/program/1")
+        axios.get(`http://localhost:8080/program/${params.programID}`)
             .then((res) => {
-                // console.log(res.data.programName);
+                console.log(res.data);
                 setDonateInfo(res.data);
             }).catch(err => console.log(err))
     }
@@ -77,7 +78,7 @@ function Donate() {
                                 {/* <input type="number" name="money" id="money" className="form-control" placeholder="0 VND" value={money} onChange={(e) => onInputChange(e)} /> */}
                                 <NumericFormat name="money" id="money" value={money} suffix="đ" displayType="input" type="tel" thousandSeparator="." decimalSeparator="," placeholder="0đ" className={style.money} onValueChange={(values, e) => {
                                     const {formattedValue, value, floatValue} = values;
-                                    console.log(values.value);
+                                    // console.log(values.value);
                                     onInputChange(value);
                                 }} />
                             </div>

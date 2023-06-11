@@ -38,7 +38,7 @@ function Home() {
 
   const showProgram1 = () => {
     axios
-      .get("http://localhost:8080/program/3")
+      .get("http://localhost:8080/program/1")
       .then((res) => {
         // console.log(res.data);
         setProgram1(res.data);
@@ -267,6 +267,7 @@ function Home() {
             <Col>
               <CardItem
                 // image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
+                id={program3?.programID}
                 image={program3?.imageLink}
                 title={program3?.programName}
                 avatar={program3?.organization.pfpLink}

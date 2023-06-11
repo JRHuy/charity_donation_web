@@ -48,7 +48,6 @@ function Program() {
       .get(`http://localhost:8080/program/${params.programID}`)
       .then((res) => {
         setProgram(res.data);
-        console.log(res.data);
         setPercentage(percent(res.data.currentMoney, res.data.targetMoney));
       })
       .catch((err) => console.error(err));
@@ -58,7 +57,7 @@ function Program() {
 
   const showTopList = () => {
     axios
-      .get("http://localhost:8080/api/transaction/highestList/1")
+      .get(`http://localhost:8080/api/transaction/highestList/${params.programID}`)
       .then((res) => {
         setTopDonors(res.data);
       })
@@ -67,7 +66,7 @@ function Program() {
 
   const showRecentList = () => {
     axios
-      .get("http://localhost:8080/api/transaction/recentList/1")
+      .get(`http://localhost:8080/api/transaction/recentList/${params.programID}`)
       .then((res) => {
         setRecentDonors(res.data);
       })
@@ -381,6 +380,7 @@ function Program() {
                   daysLeft="59 ngày"
                   partnerImg="https://static.mservice.io/blogscontents/momo-upload-api-230413144833-638169941135279441.jpg"
                   partnerName={program?.organization.organizationName}
+                  programID={program?.programID}
                 />
 
                 <h4 className="mt-5">Chương trình đang diễn ra</h4>
