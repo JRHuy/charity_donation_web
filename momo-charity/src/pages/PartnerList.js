@@ -69,6 +69,13 @@ function PartnerList() {
                     </Col>
                   );
                 })}
+                <Col sm={6} xs={12} className="mt-3">
+                  <PartnerCard
+                    partnerImg="doitac/MSD.jpeg"
+                    partnerName="Viện Nghiên cứu Quản lý Phát triển bền vững (MSD)"
+                    partnerDescription="Bảo vệ các đối tượng có hoàn cảnh khó khăn"
+                  />
+                </Col>
               </Row>
               <Row>
                 <Col sm={6} xs={12} className="mt-3">
