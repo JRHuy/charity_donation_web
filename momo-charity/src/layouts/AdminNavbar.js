@@ -12,8 +12,8 @@ function AdminNavbar() {
                 <Navbar.Brand href="/admin/users">Administrator</Navbar.Brand>
                 <Nav className="me-auto">
                     {/* <Nav.Link href="#home">User</Nav.Link> */}
-                    <Nav.Link href="#features">Program</Nav.Link>
-                    <Nav.Link href="#pricing">Partner</Nav.Link>
+                    <Nav.Link href="/forms/ProgramCRUD">program-edit</Nav.Link>
+                    <Nav.Link href="/forms/OrganizationCRUD">organization-edit</Nav.Link>
                     <Nav.Link href="/admin/transactions/all">Transaction History</Nav.Link>
                 </Nav>
                 <Nav>
