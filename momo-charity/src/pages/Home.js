@@ -120,8 +120,11 @@ function Home() {
   const dayCalculate = (deadline) => {
     const current = new Date();
     const final = new Date(deadline);
-
-    return Math.ceil((final - current) / (1000 * 60 * 60 * 24));
+    let diff = Math.ceil((final - current) / (1000 * 60 * 60 * 24));
+    if (diff <= 0) {
+      return 0;
+    }
+    return diff;
   };
 
   //Count-up script

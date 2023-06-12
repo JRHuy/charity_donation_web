@@ -13,8 +13,36 @@ function PartnerList() {
   useEffect(() => {
     fetchOrg();
     window.scrollTo(0, 0);
+    showProgram1();
+    showProgram2();
   }, []);
-
+  const [program1, setProgram1] = useState(null);
+  const [program2, setProgram2] = useState(null);
+  const [dayCount1, setDayCount1] = useState(null);
+  const [dayCount2, setDayCount2] = useState(null);
+  const [percentage1, setPercentage1] = useState(null);
+  const [percentage2, setPercentage2] = useState(null);
+  const showProgram1 = () => {
+    axios
+      .get("http://localhost:8080/program/1")
+      .then((res) => {
+        // console.log(res.data);
+        setProgram1(res.data);
+        setDayCount1(dayCalculate(res.data.deadline));
+        setPercentage1(percent(res.data.currentMoney, res.data.targetMoney));
+      })
+      .catch((err) => console.log(err));
+  };
+  const showProgram2 = () => {
+    axios
+      .get("http://localhost:8080/program/2")
+      .then((res) => {
+        setProgram2(res.data);
+        setDayCount2(dayCalculate(res.data.deadline));
+        setPercentage2(percent(res.data.currentMoney, res.data.targetMoney));
+      })
+      .catch((err) => console.log(err));
+  };
   const [org, setOrg] = useState(null);
   const fetchOrg = () => {
     axios
@@ -24,6 +52,19 @@ function PartnerList() {
         setOrg(res.data);
       })
       .catch((err) => console.log(err));
+  };
+  const dayCalculate = (deadline) => {
+    const current = new Date();
+    const final = new Date(deadline);
+    let diff = Math.ceil((final - current) / (1000 * 60 * 60 * 24));
+    if (diff <= 0) {
+      return 0;
+    }
+    return diff;
+  };
+  const percent = (curr, target) => {
+    let num = (curr * 100) / target;
+    return num.toFixed(2);
   };
 
   return (
@@ -541,42 +582,30 @@ function PartnerList() {
                 Hoàn cảnh quyên góp mới nhất
               </h5>
               <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
-                dayCount="57"
-                current="4.459.000đ"
-                target="150.000.000đ"
-                pbar="10"
-                donateCount="612"
-                donatePercentage="2.97%"
+                id={program1?.programID}
+                image={program1?.imageLink}
+                title={program1?.programName}
+                avatar={program1?.organization.pfpLink}
+                orgName={program1?.organization.organizationName}
+                dayCount={dayCount1}
+                current={program1?.currentMoney + " VND"}
+                target={program1?.targetMoney + " VND"}
+                pbar={percentage1}
+                donateCount={program1?.donateTotal}
+                donatePercentage={percentage1 + `%`}
               />
-
               <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
-                dayCount="57"
-                current="4.459.000đ"
-                target="150.000.000đ"
-                pbar="10"
-                donateCount="612"
-                donatePercentage="2.97%"
-              />
-
-              <CardItem
-                image="https://static.mservice.io/blogscontents/momo-upload-api-230407133412-638164712526405249.jpg"
-                title="Chung tay xây điểm trường mới giúp các em học sinh nghèo khó khăn Bản Xía Nọi chuyên tâm học tập"
-                avatar="https://static.mservice.io/blogscontents/momo-upload-api-230407133501-638164713012492867.jpg"
-                orgName="Đoàn Thanh niên cơ quan Trung ương Đoàn"
-                dayCount="57"
-                current="4.459.000đ"
-                target="150.000.000đ"
-                pbar="10"
-                donateCount="612"
-                donatePercentage="2.97%"
+                id={program2?.programID}
+                image={program2?.imageLink}
+                title={program2?.programName}
+                avatar={program2?.organization.pfpLink}
+                orgName={program2?.organization.organizationName}
+                dayCount={dayCount2}
+                current={program2?.currentMoney + " VND"}
+                target={program2?.targetMoney + " VND"}
+                pbar={percentage2}
+                donateCount={program2?.donateTotal}
+                donatePercentage={percentage2 + `%`}
               />
 
               <div className="text-center p-3">

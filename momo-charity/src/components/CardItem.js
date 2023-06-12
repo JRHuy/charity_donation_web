@@ -88,7 +88,7 @@ function CardItem(props) {
           </div>
           <div className="org-name">{props.orgName}</div>
           <Badge pill bg="warning" className="flex-shrink-0">
-            Còn {props.dayCount} ngày
+            {props.dayCount > 0 ? `Còn ${props.dayCount} ngày` : `Hoàn thành`}
           </Badge>
         </div>
         <div className="d-flex gap-1 mt-2">

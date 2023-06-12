@@ -29,6 +29,20 @@ export default function SucManh2000() {
   };
 
   useEffect(() => {
+    let value = document.querySelectorAll(".num");
+    let interval = 3000;
+    value.forEach((value) => {
+      let start = 0;
+      let end = parseInt(value.getAttribute("data-val"));
+      let duration = Math.floor(interval / end);
+      let counter = setInterval(() => {
+        start += 1;
+        value.textContent = start;
+        if (start == end) {
+          clearInterval(counter);
+        }
+      }, duration);
+    });
     fetchOrg();
   }, []);
 
@@ -59,7 +73,7 @@ export default function SucManh2000() {
           <div className="row">
             <div className="col-md-6">
               <h1 className="pb-3" style={{ color: "#d82f8b" }}>
-                {org?.organizationName} - Ánh sáng núi rừng
+                {org?.organizationName}
               </h1>
               <p className="pb-2">
                 {org?.description}
@@ -81,7 +95,9 @@ export default function SucManh2000() {
                         width: "2px",
                       }}
                     ></div>
-                    <h5 className="">874</h5>
+                    <h5 className="num" data-val="874">
+                      0
+                    </h5>
                   </div>
                   <p>dự án đã được gây quỹ thành công</p>
                 </div>
@@ -94,7 +110,12 @@ export default function SucManh2000() {
                         width: "2px",
                       }}
                     ></div>
-                    <h5>56+ tỷ</h5>
+                    <h5>
+                      <span className="num" data-val="56">
+                        0
+                      </span>
+                      <span>+ tỷ</span>
+                    </h5>
                   </div>
                   <p>đồng được quyên góp</p>
                 </div>
@@ -107,7 +128,12 @@ export default function SucManh2000() {
                         width: "2px",
                       }}
                     ></div>
-                    <h5>777+ triệu</h5>
+                    <h5>
+                      <span className="num" data-val="777">
+                        0
+                      </span>
+                      <span>+ triệu</span>
+                    </h5>
                   </div>
                   <p>heo vàng được quyên góp</p>
                 </div>
@@ -120,20 +146,21 @@ export default function SucManh2000() {
                         width: "2px",
                       }}
                     ></div>
-                    <h5>128+ triệu</h5>
+                    <h5>
+                      <span className="num" data-val="128">
+                        0
+                      </span>{" "}
+                      <span>+ triệu</span>
+                    </h5>
                   </div>
                   <p>lượt quyên góp</p>
                 </div>
               </div>
               <div className="hstack gap-2 pb-3">
-                <button
-                  type="button"
-                  className="btn btn-info"
-                  style={{ color: "white" }}
-                >
+                <button type="button" id="quyengop-btn" className="btn">
                   Quyên góp
                 </button>
-                <button type="button" className="btn btn-outline-info">
+                <button type="button" className="btn" id="gioithieu-btn">
                   Giới thiệu
                 </button>
               </div>
