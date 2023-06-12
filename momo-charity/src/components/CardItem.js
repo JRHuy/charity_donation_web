@@ -4,6 +4,8 @@ import Image from "react-bootstrap/Image";
 import Badge from "react-bootstrap/Badge";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { Link } from "react-router-dom";
+import { NumericFormat } from "react-number-format";
+import style from "../styles/style.module.css"
 
 function CardItem(props) {
   return (
@@ -92,8 +94,8 @@ function CardItem(props) {
           </Badge>
         </div>
         <div className="d-flex gap-1 mt-2">
-          <strong>{props.current}</strong>
-          <span>/ {props.target}</span>
+          <strong><NumericFormat name="money" id="money" value={props.current} suffix="đ" displayType="text" thousandSeparator="." decimalSeparator="," className={style.money} /></strong>
+          <span>/ <NumericFormat name="money" id="money" value={props.target} suffix="đ" displayType="text" thousandSeparator="." decimalSeparator="," className={style.money} /></span>
         </div>
         <ProgressBar variant="danger" now={props.pbar} />
         <div className="d-flex justify-content-between align-items-center mt-2">
